@@ -21,19 +21,61 @@ body {
 	margin-right: auto;
 	margin-top: 30px;
 	margin-bottom: 0px;
+	padding: 0 50px;
 	max-width: 1120px;
+}
+header {
+	display: flex;
+	align-items: center;
 	text-align: center;
 }
 h1 {
+	display: inline-block;
 	font-variant: small-caps;
+	font-size: 3.5em;
+	padding-right: 100px;
+	margin: auto;
+}
+#returnhome {
+	display: inline-block;
+	height: 125px;
+	width: 100px;
+	color: white;
+	text-decoration: none;
+}
+#returnimg {
+	height: 100px;
+	width: 100px;
+}
+hr {
+	border: 0;
+	height: 2px;
+	margin-top: 10px;
+	background-image: linear-gradient(to right, transparent, #CCC, transparent);
+}
+article {
+	margin-top: 30px;
+}
+#meimg {
+	width: max(33%, 300px);
+	height: auto;
+	float: right;
 }
 </style>
 	</head>
 
 	<body>
 		<header>
-
+			<a id="returnhome" href="../index.html">
+				<img id="returnimg" src="../assets/reutersvards-triangle-100px.png"/>
+				<h4 style="font-variant: small-caps; margin: 0; font-size: 1.2em">Home</h4>
+			</a>
 			<h1>About Trey</h1>
 		</header>
+		<hr>
+		<article>
+			<img id="meimg" src="../assets/aboutpic.jpg"/>
+			<p>This is trey manuszak.</p>
+		</article>
 	</body>
 </html>
