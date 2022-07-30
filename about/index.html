@@ -59,7 +59,19 @@ article {
 #meimg {
 	width: max(33%, 300px);
 	height: auto;
-	float: right;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  float: right;
+}
+p.indent {
+  font-size: 1.2em;
+  text-indent: 30px;
+}
+b {
+  color: #7DCE82;
+}
+a {
+  color: white;
 }
 </style>
 	</head>
@@ -74,8 +86,48 @@ article {
 		</header>
 		<hr>
 		<article>
-			<img id="meimg" src="../assets/aboutpic.jpg"/>
-			<p>This is trey manuszak.</p>
+      <img id="meimg" src="../assets/aboutpic.jpg"/>
+      <figure style="margin-bottom: 50px;">  
+        <blockquote>
+          <p style="font-size: 1.75em; margin-bottom: 16px;"><em style="margin-right: 10px;">
+            "Only those who attempt the absurd...will achieve the impossible. I think...
+            I think it's in my basement. Let me go upstairs and check."</em></p>
+        </blockquote>
+        <figcaption style="font-weight: bold; font-size: 1.75em;">-M.C. Escher</figcaption>
+      </figure>
+      <p class="indent">Hey, Trey Manuszak here. Most know me for my willingness to open and 
+      explore the many doors that life throws at me. Below is a summary of those doors I've opened.</p>
+      <hr>
+      <section>
+        <h2>Programming</h2>
+        <p class="indent">During my math undergrad, I took an elective 
+        "Intro to Programming" class during the Spring 2018 semester, which 
+        covered the basics of programming and the language <b>Java</b>.
+        Just after quickly learning about reading console input, loops, and arrays, 
+        I started experimenting with my own programs. The first that I have 
+        <a href="https://github.com/tmanuszak/DucciSequence">record</a> of, was 
+        a program that read an <em>n</em>-tuple of integers from the user and 
+        returned the repeating (or non-repeating, if <em>n</em> is a power of 2) 
+        sequence of <em>n</em>-tuples according to the rules of 
+        "<a href="https://en.wikipedia.org/wiki/Ducci_sequence">the Diffy game</a>".
+        </p>
+
+        <p class="indent">Lorem ipsum dolor sit amet, consectetur adipiscing 
+        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Dis parturient montes nascetur ridiculus mus mauris. Dolor magna eget 
+        est lorem ipsum dolor sit. Ipsum suspendisse ultrices gravida dictum 
+        fusce ut. Platea dictumst quisque sagittis purus sit amet volutpat. 
+        Tortor consequat id porta nibh. Id eu nisl nunc mi ipsum faucibus vitae 
+        aliquet. Mi sit amet mauris commodo. Risus in hendrerit gravida rutrum 
+        quisque non tellus. Et egestas quis ipsum suspendisse ultrices. 
+        Duis at tellus at urna condimentum mattis. Malesuada fames ac turpis 
+        egestas sed. Dictumst quisque sagittis purus sit amet volutpat consequat. 
+        Aliquam id diam maecenas ultricies. Cursus turpis massa tincidunt dui ut 
+        ornare lectus. Blandit volutpat maecenas volutpat blandit aliquam etiam 
+        erat velit scelerisque. Vitae turpis massa sed elementum. Molestie nunc 
+        non blandit massa enim. Tortor dignissim convallis aenean et tortor at 
+        risus viverra. Integer feuiat scelerisque varius morbi.</p>
+      </section>
 		</article>
 	</body>
 </html>
