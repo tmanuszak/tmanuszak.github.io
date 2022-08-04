@@ -70,6 +70,12 @@ p.indent {
 b {
   color: #7DCE82;
 }
+ul {
+	font-size: 1.2em;
+}
+li {
+	margin-bottom: 6px;
+}
 a {
   color: white;
 }
@@ -125,17 +131,21 @@ a {
         <p class="indent">Although the course left me highly interested in the field, 
         I didn't take any further computer science courses during my undergrad. 
         But that doesn't mean mean I stopped programming! During my free time, I 
-        would work on <a href="projecteuler.net">Project Euler</a> problems, which are challenging 
+				would work on <a href="projecteuler.net">Project Euler</a> problems, usually in <b>Python</b>, which are challenging 
         math problems that require a cleverly crafted program to solve. Without 
-        any formal knowledge to algorithms or data structures, I ended up getting into
-        the top 1% of solvers on the site (although I sit just outside since I haven't 
+        any formal knowledge in algorithms or data structures, I ended up getting into
+				the <b>top 1%</b> of solvers on the site (although I sit just outside now, since I haven't 
         been solving in a while)!</p>
         <div style="text-align: center;">
           <img id="project-euler-rank" src="https://projecteuler.net/profile/tmanuszak.png"/>
         </div>
 
-        <p class="indent">Following my undergrad in math and short experimentation in secondary education,
-        I got an opportunity for a software developer internship at Asure Software. There,
+        <p class="indent">Following my undergrad in math and short experimentation 
+				in secondary education, I found myself wanting to pursue a Master's in Computer Science,
+				something I only considered a hobby up to that point. I spent a year going 
+				through the necessary undergrad courses to qualify for the graduate program. 
+        Just before my first graduate semster, I got an opportunity for a 
+				software developer internship at Asure Software. There,
         I primarily worked on developing a web application in <b>C#</b> for 
         PGP file encryption and SFTP using the <b>.NET</b> platform. This was my
         first introduction to the world of cryptography, which I am highly 
@@ -145,6 +155,132 @@ a {
         tax management system database schema for a future company-wide transition 
         to a <b>PostgreSQL</b> database schema.
         </p>
+
+				<p class="indent">After completing my internship, I got an email from a 
+				research lab at ASU about an open Applied Cryptography research position.
+				It asked for all the theoretical skills I learned about abstract algebra, 
+				which I learned during my undergrad, that very few computer science students
+				would qualify for. I thought I'd be perfect for the position, applied, and got the job!
+				I held this research position for a year and studied many topics of cryptography, particularly
+			
+				<ul>
+					<li><a href="https://en.wikipedia.org/wiki/Post-quantum_cryptography">
+							Post-quantum Cryptography</a>,</li>
+					<li><a href="https://en.wikipedia.org/wiki/Threshold_cryptosystem">
+											 Threshold Cryptography</a>,</li>
+					<li><a href="https://en.wikipedia.org/wiki/Coding_theory">
+											 Coding Theory</a>,</li>
+					<li>Distributed Storage Blockchain,</li>
+					<li><a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof">
+											 Zero-knowledge Proofs</a>,</li>
+					<li><a href="https://en.wikipedia.org/wiki/Secure_multi-party_computation">
+											 Multi-party Computation</a>.</li>
+				</ul>
+				</p> 
+
+				<p class="indent">In my short time so far programming, I have completed quite a few projects. Here are a few summarized:
+					<ul>
+						<li><a href="https://github.com/tmanuszak/CSE535/tree/main/Project">HelpMeHike</a>: This is an <b>Android</b> application
+						where the user, a hiker, takes occasional 30 second videos of their face and it gets sent to a remote server
+						on an <b>AWS</b> EC2 instance. Once uploaded to the server, using <a href="https://en.wikipedia.org/wiki/Photoplethysmogram">
+							remote photoplethysmography</a> (rPPG) techniques, we extract the user's heart rate and present it 
+						back to the user as a time-independent graph upon request.</li>
+						<li><a href="https://github.com/tmanuszak/CSE579/tree/master/Project">Automated Warehouse Scheduling</a>: Using
+							<b><a style="color: #7DCE82" href="https://potassco.org/clingo/">clingo</a></b> and 
+							<a href="https://en.wikipedia.org/wiki/Answer_set_programming">answer set programming</a> techniques, 
+							I programmed a warehouse robotics scheduler for delivering product in global
+							time optimal schedules. This was one of my favorite projects because it introduced me to the subfield of AI called
+							<a href="https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning">knowledge representation and reasoning</a> (KRR). 
+							When I first started doing my Master's of Computer Science, I thought I wanted to focus on AI and ML, but after taking a
+							few courses, I was quite frustrated and felt that I fell into the trap of taking the artificial <em>intelligence</em> and 
+							machine <em>learning</em> buzzwords too literally. I always had the impression that this field was really breaking ground
+							and truly working towards creating metal machines with consciousness. After taking a few of the courses, the only thing I
+							took away from the field is that there is very little <em>intelligence</em> in what is produced. To me, especially given
+							my background in the theoretical math of multidimensional vector calculus, which is the basis of ML and AI, it felt like
+							AI and ML are just fancy words for cleverly reducing and searching a large space. It just felt like another algorithms course.
+							But, taking a KRR course felt a whole lot different. It was based in logic, which felt far closer to the path of gaining knowledge.
+							It also inherently creates programs that can easily produce reasons for it's output. It's hard to pin down what <em>intelligence</em>
+							and <em>consciousness</em> is, but having an ability to reason certainly <em>feels</em> like it's towards the right step.
+							This felt like what ML and AI were supposed to be.</li>
+					</ul>
+				</p>
+			</section>
+			<section>
+				<hr>
+				<h2>What am I learning right now?</h2>
+				<p class="indent">One of the largest reasons why a career around programming
+				interests me is that it puts you on a never-plateauing learning curve.
+				Constantly learning and improving my world-view is what I live for. Below
+				are some things I plan on learning in the near future, in a semi order of importance.
+
+				<ul>
+					<li>Rust programming. In particular, I want to Rust for its popularity in security-focused applications.
+						I plan on playing around with the <a href="https://kerkour.com/black-hat-rust">
+							Black Hat Rust</a> book by Sylvain Kerkour and <a href="https://rust-for-rustaceans.com/">
+							Rust for Rustaceans</a> by Rust legend Jon Gjengset.</li>
+					<li>Hardware Description Language programming. The research lab that I worked for
+						specialized in secure hardware architectures. Seeing all of my coworkers work
+						on very applied and low-level work showed me how theoretically creating a secure 
+						cryptosystem is quite a bit easier in many aspects than actually implementing it.
+						I recently bought a Basys 3 FPGA trainer board and will be diving into the deep end soon.
+						This is also an opportunity for me to properly sit down and learn computer architecture, 
+						as much of my knowledge just comes from passing conversation. I will be relying heavily on
+						the courses freely available taught by <a href="https://people.inf.ethz.ch/omutlu/">Onur Mutlu</a>.</li>
+					<li><a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof">Zero-knowledge proofs</a>.
+						As I explained above, some of my research was in zero-knowledge proofs and it is a subject
+						that intrigues me greatly. The ability to prove knowledge of something without revealing
+						exactly what it is, absolutlely fascinates me. Its applications to privacy are also going to be 
+						revolutionary in the future. The field is changing unbelievably fast each year largely thanks to 
+						the blockchain and cryptocurrency community. Most of my ZKP
+						knowledge comes from the 80s along with a fairly good understanding of the guarantees and assumptions
+						of today's ZKPs, but no detailed implementational knowledge. I'll be going through Justin Thaler's
+						<a href="https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.html">manuscript</a>, which is 
+						frequently updated with new protocols, along with the 
+						<a href="https://www.youtube.com/channel/UCpqXqQcHL3SAUoOa18osNVQ/videos">summer course</a> on 
+						<a href="https://en.wikipedia.org/wiki/Probabilistically_checkable_proof">PCPs</a>
+						by Alessandro Chiesa, Z-cash co-founder.</li>
+
+					<li><a href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/">
+							Category Theory for Programmers</a>. There are a lot of reasons why I want to go through
+						this blog series. One, is it gives me a chance to try out Haskell. I previously played
+						around with functional programming in F#, and loved it, but I want the real-deal functional programming
+						knowledge. Another reason why I want to go through this series is that 
+						<a href="https://en.wikipedia.org/wiki/Category_theory">category theory</a> was always
+						something that intrigued me during undergrad for its high degrees of math abstraction.</li> 
+					<li>Monetary Mechanics. The last two or three years I've been spending a lot of my free time in deep
+						independent study learning about modern monetary mechanics and the global financial plumbing. I really
+						don't know where this interest came from, but I have been deep into cryptocurrency for many years prior,
+						so maybe there is a connection there. I have long held the belief that a decentralized form of money, like 
+						cryptocurrency could become a new global currency and benefit the world in many ways as a result. I think
+						to test my belief I started actually trying to ask myself "what <em>is</em> money?", and that has sent me down
+						this multi-year long rabbit hole. The more I learn about the global financial plumbing system, the harder
+						it is to actually pin down what money is. In particular, I am really into learning about the 
+						<a href="https://en.wikipedia.org/wiki/Eurodollar">eurodollar system</a> as it is becoming more and more
+						evident to me that it is the true world reserve currency and dictates much of the world's financial stability or disorder.
+						Most of my learning material comes from Jeff and Emil at <a href="https://www.eurodollar.university/">
+							Eurodollar University</a> along with blog posts from <a href="https://maroonmacro.substack.com/">
+							Maroon Macro</a>. Occassionally, I'll read an academic paper on the topic, but not too often.
+						<em>Real</em> monetary mechanics is definitely not being taught to econ majors properly, so a lot of
+						the research is garbage, in my opinion.</li>
+
+					<li>DeFi and Web3. The decentralized web is moderately interesting to me, as you can tell since this
+						website has the option to be browsed via the decentralized web. I dont think it will take over the
+						centralized web, but I do believe there is a place for it. DeFi, or decentralized finance, is also
+						moderately interesting to me. I dont participate in it, but I can see it playing a crucial role
+						in removing a lot of the trust, inneficiencies, and most importantly, <em><strong>anti</strong></em>-transparency
+						I see when I study monetary mechanics, noted above.
+						I haven't explored too much into the topics yet, but I plan on first going through the Berkeley courses
+						<a href="https://people.eecs.berkeley.edu/~dawnsong/">freely available</a> by Dawn Song, 
+						when I get the time to.</li>
+
+					<li><a href="https://en.wikipedia.org/wiki/Measure_(mathematics)">Measure Theory</a>.
+					During my undergrad, I took a course in measure theory and quite enjoyed it. I might have to admit though,
+					a lot of my learning strategy during undergrad optimized for short-term memorization to power me through
+					those very difficult classes. So, I've forgotten most of my quite advanced math knowledge in real analysis
+					and measure theory. Going back and learning the material at my own pace for deep understanding is a 
+					goal of mine.</li>
+				</ul>
+				</p>
       </section>
 		</article>
 	</body>
