@@ -1,0 +1,3 @@
+Use this for map coloring:
+https://www.geophysique.be/2011/01/27/matplotlib-basemap-tutorial-07-shapefiles-unleached/
+https://stackoverflow.com/questions/13397022/fill-countries-in-python-basemap

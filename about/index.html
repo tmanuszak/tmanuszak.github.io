@@ -10,26 +10,6 @@
 								security, travel.">
 		<link rel="icon" href="../assets/favicon/reutersvards-triangle-32px.png" type="image/png">
 		<title>ABOUT || Trey Manuszak</title>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-		<script type="module">
-			// Initialize and add the map
-			function initMap() {
-			  // The location of Uluru
-				const uluru = { lat: -25.344, lng: 131.031 };
-				// The map, centered at Uluru
-				const map = new google.maps.Map(document.getElementById("map"), {
-					zoom: 4,
-					center: uluru,
-				});
-				// The marker, positioned at Uluru
-				const marker = new google.maps.Marker({
-					position: uluru,
-					map: map,
-				});
-			}
-
-			window.initMap = initMap;
-		</script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap');
 body {
@@ -99,8 +79,8 @@ a {
   color: white;
 }
 #map {
-	height: 400px;
-	width: 100%;
+	max-width: 100%;
+	height: auto;
 }
 </style>
 	</head>
@@ -270,20 +250,16 @@ a {
 					my final occupation in some form, but now is not that time. I also felt limited in that I could only teach to 30 students at a time.
 					There will come a time where I will return to a more massive stage of education, but till then...</p>
 			</section>
-				<h3>My Google Maps Demo</h3>
-			  <!--The div element for the map -->
-				<div id="map"></div>
-
-				<!-- 
-					The `defer` attribute causes the callback to execute after the full HTML
-					document has been parsed. For non-blocking uses, avoiding race conditions,
-					and consistent behavior across browsers, consider loading using Promises
-					with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-				-->
-				<script
-					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-      		defer
-    		></script>
+      <section>
+        <hr>
+				<h2>Travel</h2>
+        <p class="indent">One of my life's goals is to join the 
+        <a href="travelerscenturyclub.org">Travelers' Century Club</a>. This is 
+        a club for those who have visited one hundred or more of the world's countries and territories. 
+        Here is my current progress.
+        </p>
+        <img id="map" src="../assets/map.PNG"/>
+      </section>
 			<section>
 				<hr>
 				<h2>What am I learning right now?</h2>
