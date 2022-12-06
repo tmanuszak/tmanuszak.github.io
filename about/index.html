@@ -11,7 +11,13 @@
 		<link rel="icon" href="../assets/favicon/reutersvards-triangle-32px.png" type="image/png">
 		<title>ABOUT || Trey Manuszak</title>
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap');
+@font-face {
+	font-family: 'solstice';
+	src: url('../assets/fonts/solstice.otf') format('opentype'); 
+}
+
 body {
 	font-family: 'Source Serif Pro', serif;
 	background-color: black;
@@ -25,6 +31,7 @@ body {
 }
 header {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	text-align: center;
 }
@@ -32,7 +39,6 @@ h1 {
 	display: inline-block;
 	font-variant: small-caps;
 	font-size: 3.5em;
-	padding-right: 100px;
 	margin: auto;
 }
 #returnhome {
@@ -82,6 +88,12 @@ a {
 	max-width: 100%;
 	height: auto;
 }
+#surf {
+	font-family: 'solstice', sans-serif;
+	text-align: right;
+	text-decoration: none;
+	right: 0
+}
 </style>
 	</head>
 
@@ -92,6 +104,11 @@ a {
 				<h4 style="font-variant: small-caps; margin: 0; font-size: 1.2em">Home</h4>
 			</a>
 			<h1>About Trey</h1>
+			<div>
+				<h2 id="surf">
+					<a style="text-decoration: none; color: #a1a1a1;" href="https://treymanuszak.eth.limo/about/">Decentralized</a></h2>
+				<h2 id="surf" style="color: #7DCE82">Centralized</h2>	
+			</div>
 		</header>
 		<hr>
 		<article>
