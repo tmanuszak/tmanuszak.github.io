@@ -12,10 +12,13 @@
 		<title>ABOUT || Trey Manuszak</title>
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap');
 @font-face {
-	font-family: 'solstice';
-	src: url('../assets/fonts/solstice.otf') format('opentype'); 
+	font-family: 'Source Serif Pro';
+	src: url('../assets/fonts/SourceSerifPro-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Source Serif Pro SemiBold';
+	src: url('../assets/fonts/SourceSerifPro-SemiBold.ttf') format('truetype'); 
 }
 
 body {
@@ -36,10 +39,14 @@ header {
 	text-align: center;
 }
 h1 {
+	font-family: 'Source Serif Pro SemiBold', serif;
 	display: inline-block;
 	font-variant: small-caps;
 	font-size: 3.5em;
 	margin: auto;
+}
+h2 {
+	font-family: 'Source Serif Pro SemiBold', serif;
 }
 #returnhome {
 	display: inline-block;
@@ -73,6 +80,7 @@ p.indent {
   text-indent: 30px;
 }
 b {
+	font-family: 'Source Serif Pro SemiBold', serif;
   color: #7DCE82;
 }
 ul {
@@ -88,12 +96,10 @@ a {
 	max-width: 100%;
 	height: auto;
 }
-#surf {
-	font-family: 'solstice', sans-serif;
-	text-align: right;
-	text-decoration: none;
-	right: 0
+figcaption {
+	font-family: 'Source Serif Pro SemiBold', serif;
 }
+
 </style>
 	</head>
 
@@ -124,7 +130,7 @@ a {
         <p class="indent">During my math undergrad, I took an elective 
         "Intro to Programming" class during the Spring 2018 semester, which 
         covered the basics of programming and the language <b>Java</b>.
-        Just after quickly learning about loopsi, functions and arrays, 
+        Just after quickly learning about loops, functions and arrays, 
         I started experimenting with my own programs. The first that I have 
         <a href="https://github.com/tmanuszak/HofstadterEquation">record</a> of, was 
         a program that found the <em>n</em>-th number in the 
