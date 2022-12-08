@@ -22,16 +22,23 @@
 	font-family: 'Source Serif Pro SemiBold';
 	src: url('./assets/fonts/SourceSerifPro-SemiBold.ttf') format('truetype'); 
 }
+html, body {
+    height: 100%;
+		background-color: black;
+		color: white;
+		font-family: 'Source Serif Pro', serif;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
 
 body {
-	font-family: 'Source Serif Pro', serif;
-	background-color: black;
-	color: white;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 30px;
-	margin-bottom: 0px;
-	text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+		text-align: center;
+		padding-bottom: 30%;
 }
 img {
 	display: block;

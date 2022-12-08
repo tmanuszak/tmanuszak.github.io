@@ -1,360 +1,358 @@
 <!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="author" content="Trey Manuszak">
-    <meta name="description" content="A blog written by Trey Manuszak
-								containing his ramblings about many topics incuding, but not limited to: 
-								cryptography, math, cryptocurrency, security, and travel.">
-		<meta name="keywords" content="blog, cryptography, math, cryptocurrency,
-								security, travel.">
-		<link rel="icon" href="../assets/favicon/reutersvards-triangle-32px.png" type="image/png">
-		<title>ABOUT || Trey Manuszak</title>
-<style>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Trey Manuszak">
+	<meta name="description" content="A blog written by Trey Manuszak
+							containing his ramblings about many topics incuding, but not limited to: 
+							cryptography, math, cryptocurrency, security, and travel.">
+	<meta name="keywords" content="blog, cryptography, math, cryptocurrency,
+							security, travel.">
+	<link rel="icon" href="../assets/favicon/reutersvards-triangle-32px.png" type="image/png">
+	<title>ABOUT || Trey Manuszak</title>
+	<style>
+		@font-face {
+			font-family: 'Source Serif Pro';
+			src: url('../assets/fonts/SourceSerifPro-Regular.ttf') format('truetype');
+		}
+		@font-face {
+			font-family: 'Source Serif Pro SemiBold';
+			src: url('../assets/fonts/SourceSerifPro-SemiBold.ttf') format('truetype'); 
+		}
 
-@font-face {
-	font-family: 'Source Serif Pro';
-	src: url('../assets/fonts/SourceSerifPro-Regular.ttf') format('truetype');
-}
-@font-face {
-	font-family: 'Source Serif Pro SemiBold';
-	src: url('../assets/fonts/SourceSerifPro-SemiBold.ttf') format('truetype'); 
-}
+		body {
+			font-family: 'Source Serif Pro', serif;
+			background-color: black;
+			color: white;
+			font-size: 1.2em;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 30px;
+			margin-bottom: 0px;
+			padding: 0 50px;
+			max-width: 1120px;
+		}
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-align: center;
+		}
+		h1 {
+			font-family: 'Source Serif Pro SemiBold', serif;
+			display: inline-block;
+			font-variant: small-caps;
+			font-size: 3.5em;
+			margin: auto;
+		}
+		h2 {
+			font-family: 'Source Serif Pro SemiBold', serif;
+		}
+		hr {
+			border: 0;
+			height: 4px;
+			margin-top: 10px;
+			background-image: linear-gradient(to right, transparent, #FF8360, #E8E288, #7DCE82, transparent);
+		}	
+		article {
+			margin-top: 30px;
+		}
+		p.indent {
+			text-indent: 30px;
+		}
+		b {
+			font-family: 'Source Serif Pro SemiBold', serif;
+			color: #7DCE82;
+		}
+		li {
+			margin-bottom: 30px;
+		}
+		a {
+			color: white;
+		}
+		figcaption {
+			font-family: 'Source Serif Pro SemiBold', serif;
+		}
+		footer {
+			margin-top: 30px;
+			margin-bottom: 30px;
+			display: flex;
+			justify-content: center;
+		}
+		#returnhome {
+			display: inline-block;
+			text-decoration: none;
+		}
+		#returnimg {
+			height: 100px;
+			width: 100px;
+		}
+		#meimg {
+			width: max(33%, 300px);
+			height: auto;
+			margin-left: 10px;
+			margin-bottom: 10px;
+			float: right;
+		}
+		#project-euler {
+			height: 120px;
+			width: auto;
+		}
+		#map {
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
+</head>
 
-body {
-	font-family: 'Source Serif Pro', serif;
-	background-color: black;
-	color: white;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 30px;
-	margin-bottom: 0px;
-	padding: 0 50px;
-	max-width: 1120px;
-}
-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	text-align: center;
-}
-h1 {
-	font-family: 'Source Serif Pro SemiBold', serif;
-	display: inline-block;
-	font-variant: small-caps;
-	font-size: 3.5em;
-	margin: auto;
-}
-h2 {
-	font-family: 'Source Serif Pro SemiBold', serif;
-}
-#returnhome {
-	display: inline-block;
-	height: 125px;
-	width: 100px;
-	color: white;
-	text-decoration: none;
-}
-#returnimg {
-	height: 100px;
-	width: 100px;
-}
-hr {
-	border: 0;
-	height: 2px;
-	margin-top: 10px;
-	background-image: linear-gradient(to right, transparent, #CCC, transparent);
-}
-article {
-	margin-top: 30px;
-}
-#meimg {
-	width: max(33%, 300px);
-	height: auto;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  float: right;
-}
-p.indent {
-  font-size: 1.2em;
-  text-indent: 30px;
-}
-b {
-	font-family: 'Source Serif Pro SemiBold', serif;
-  color: #7DCE82;
-}
-ul {
-	font-size: 1.2em;
-}
-li {
-	margin-bottom: 6px;
-}
-a {
-  color: white;
-}
-#map {
-	max-width: 100%;
-	height: auto;
-}
-figcaption {
-	font-family: 'Source Serif Pro SemiBold', serif;
-}
-
-</style>
-	</head>
-
-	<body>
-		<header>
-			<a id="returnhome" href="../index.html">
-				<img id="returnimg" src="../assets/reutersvards-triangle-100px.png"/>
-				<h4 style="font-variant: small-caps; margin: 0; font-size: 1.2em">Home</h4>
-			</a>
-			<h1>About Trey</h1>
-		</header>
+<body>
+	<header>
+		<a id="returnhome" href="../index.html">
+			<img id="returnimg" src="../assets/reutersvards-triangle-100px.png"/>
+			<h4 style="font-variant: small-caps; margin: 0;">Home</h4>
+		</a>
+		<h1>About Trey</h1>
+	</header>
+	<hr>
+	<article>
+		<img id="meimg" src="../assets/aboutpic.jpg"/>
+		<figure style="margin-bottom: 50px;">  
+			<blockquote>
+				<p style="font-size: 1.75em; margin-bottom: 16px;"><em style="margin-right: 10px;">
+					"Only those who attempt the absurd...will achieve the impossible. I think...
+					I think it's in my basement. Let me go upstairs and check."</em></p>
+			</blockquote>
+			<figcaption style="font-weight: bold; font-size: 1.75em;">-M.C. Escher</figcaption>
+		</figure>
+		<p class="indent">Hey, Trey Manuszak here. Most know me for my willingness to open and 
+		explore the many doors that life throws at me. Below is a summary of those doors I've opened.</p>
 		<hr>
-		<article>
-      <img id="meimg" src="../assets/aboutpic.jpg"/>
-      <figure style="margin-bottom: 50px;">  
-        <blockquote>
-          <p style="font-size: 1.75em; margin-bottom: 16px;"><em style="margin-right: 10px;">
-            "Only those who attempt the absurd...will achieve the impossible. I think...
-            I think it's in my basement. Let me go upstairs and check."</em></p>
-        </blockquote>
-        <figcaption style="font-weight: bold; font-size: 1.75em;">-M.C. Escher</figcaption>
-      </figure>
-      <p class="indent">Hey, Trey Manuszak here. Most know me for my willingness to open and 
-      explore the many doors that life throws at me. Below is a summary of those doors I've opened.</p>
-      <hr>
-      <section>
-        <h2>Programming</h2>
-        <p class="indent">During my math undergrad, I took an elective 
-        "Intro to Programming" class during the Spring 2018 semester, which 
-        covered the basics of programming and the language <b>Java</b>.
-        Just after quickly learning about loops, functions and arrays, 
-        I started experimenting with my own programs. The first that I have 
-        <a href="https://github.com/tmanuszak/HofstadterEquation">record</a> of, was 
-        a program that found the <em>n</em>-th number in the 
-        <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence">Hofstadter Q sequence</a>.
-        You might be thinking that's quite a handful for a first big jump into programming
-        and it surprises me too! Although, it wasn't the mathematical complexity 
-        that was tough to grapple with, but the programming of finding elements 
-        in an array according to other elements in the same array.</p>
-        <p class=indent>You might also be thinking that it is quite an esoteric program to 
-        implement for a first timer, but I was reading 
-        <em><a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">G&#246del, Escher, Bach: an Eternal Golden Braid</a></em> 
-        by Douglas Hofstadter at the time of taking this class. It is a book that 
-        has influenced much of my curiosity for highly abstract ideas today. Hofstadter's 
-        book explores the notions of self-reference being the basis for consciousness 
-        through the mathematics introduced by G&#246del, etchings by Escher, and 
-        music composed by Bach.
-        </p>
+		<section>
+			<h2>Programming</h2>
+			<p class="indent">During my math undergrad, I took an elective 
+			"Intro to Programming" class during the Spring 2018 semester, which 
+			covered the basics of programming and the language <b>Java</b>.
+			Just after quickly learning about loops, functions and arrays, 
+			I started experimenting with my own programs. The first that I have 
+			<a href="https://github.com/tmanuszak/HofstadterEquation">record</a> of, was 
+			a program that found the <em>n</em>-th number in the 
+			<a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence">Hofstadter Q sequence</a>.
+			You might be thinking that's quite a handful for a first big jump into programming
+			and it surprises me too! Although, it wasn't the mathematical complexity 
+			that was tough to grapple with, but the programming of finding elements 
+			in an array according to other elements in the same array.</p>
+			<p class=indent>You might also be thinking that it is quite an esoteric program to 
+			implement for a first timer, but I was reading 
+			<em><a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">G&#246del, Escher, Bach: an Eternal Golden Braid</a></em> 
+			by Douglas Hofstadter at the time of taking this class. It is a book that 
+			has influenced much of my curiosity for highly abstract ideas today. Hofstadter's 
+			book explores the notions of self-reference being the basis for consciousness 
+			through the mathematics introduced by G&#246del, etchings by Escher, and 
+			music composed by Bach.
+			</p>
 
-        <p class="indent">Although the course left me highly interested in the field, 
-        I didn't take any further computer science courses during my undergrad. 
-        But that doesn't mean mean I stopped programming! During my free time, I 
-				would work on <a href="projecteuler.net">Project Euler</a> problems, usually in <b>Python</b>, which are challenging 
-        math problems that require a cleverly crafted program to solve. Without 
-        any formal knowledge in algorithms or data structures, I ended up getting into
-				the <b>top 1%</b> of solvers on the site (although I sit just outside now, since I haven't 
-        been solving in a while)!</p>
-        <div style="text-align: center;">
-          <img id="project-euler-rank" src="https://projecteuler.net/profile/tmanuszak.png"/>
-        </div>
+			<p class="indent">Although the course left me highly interested in the field, 
+			I didn't take any further computer science courses during my undergrad. 
+			But that doesn't mean mean I stopped programming! During my free time, I 
+			would work on <a href="projecteuler.net">Project Euler</a> problems, usually in <b>Python</b>, which are challenging 
+			math problems that require a cleverly crafted program to solve. Without 
+			any formal knowledge in algorithms or data structures, I ended up getting into
+			the <b>top 1%</b> of solvers on the site (although I sit just outside now, since I haven't 
+			been solving in a while)!</p>
+			<div style="text-align: center;">
+				<img id="project-euler" src="https://projecteuler.net/profile/tmanuszak.png"/>
+			</div>
 
-        <p class="indent">Following my undergrad in math and short experimentation 
-				in secondary education, I found myself wanting to pursue a Master's in Computer Science,
-				something I only considered a hobby up to that point. I spent a year going 
-				through the necessary undergrad courses to qualify for the graduate program. 
-        Just before my first graduate semster, I got an opportunity for a 
-				software developer internship at Asure Software. There,
-        I primarily worked on developing a web application in <b>C#</b> for 
-        PGP file encryption and SFTP using the <b>.NET</b> platform. This was my
-        first introduction to the world of cryptography, which I am highly 
-        passionate about now. Also at the internship, I built a class library 
-        for interacting with the Goldman Sachs Transaction Banking API for seamless 
-        ACH payments. Lastly, I worked with my mentor to rewrite the existing payroll 
-        tax management system database schema for a future company-wide transition 
-        to a <b>PostgreSQL</b> database schema.
-        </p>
+			<p class="indent">Following my undergrad in math and short experimentation 
+			in secondary education, I found myself wanting to pursue a Master's in Computer Science, which is 
+			something I only considered a hobby up to that point. I spent a year going 
+			through the necessary undergrad courses to qualify for the graduate program. 
+			Just before my first graduate semster, I got an opportunity for a 
+			software developer internship at Asure Software. There,
+			I primarily worked on developing a web application in <b>C#</b> for 
+			PGP file encryption and SFTP using the <b>.NET</b> platform. This was my
+			first introduction to the world of cryptography, which I am highly 
+			passionate about now. Also at the internship, I built a class library 
+			for interacting with the Goldman Sachs Transaction Banking API for seamless 
+			ACH payments. Lastly, I worked with my mentor to rewrite the existing payroll 
+			tax management system database schema for a future company-wide transition 
+			to a <b>PostgreSQL</b> database schema.
+			</p>
 
-				<p class="indent">After completing my internship, I got an email from a 
-				research lab at ASU about an open Applied Cryptography research position.
-				It asked for all the theoretical skills I learned about abstract algebra, 
-				which I learned during my undergrad, that very few computer science students
-				would qualify for. I thought I'd be perfect for the position, applied, and got the job!
-				I held this research position for a year and studied many topics of cryptography, particularly
-			
+			<p class="indent">After completing my internship, I got an email from the 
+			<a href="ascslab.org">Adaptive & Secure Computing Systems Laboratory</a> at ASU about an open Applied Cryptography research position.
+			Seeing that it required knowledge of abstract algrebra and number theory,
+			which I had learned during my undergrad, I knew the role would be uniquely perfect for my skillsets.
+			I held this research position for a year and studied many topics of cryptography, particularly
+		
+			<ul>
+				<li><a href="https://en.wikipedia.org/wiki/Post-quantum_cryptography">
+						Post-quantum Cryptography</a>,</li>
+				<li><a href="https://en.wikipedia.org/wiki/Threshold_cryptosystem">
+										 Threshold Cryptography</a>,</li>
+				<li><a href="https://en.wikipedia.org/wiki/Coding_theory">
+										 Coding Theory</a>,</li>
+				<li>Distributed Storage Blockchain,</li>
+				<li><a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof">
+										 Zero-knowledge Proofs</a>,</li>
+				<li><a href="https://en.wikipedia.org/wiki/Secure_multi-party_computation">
+										 Multi-party Computation</a>.</li>
+			</ul>
+			</p> 
+
+			<p class="indent">In my short time so far programming, I have completed quite a few projects. Here are a few summarized:
 				<ul>
-					<li><a href="https://en.wikipedia.org/wiki/Post-quantum_cryptography">
-							Post-quantum Cryptography</a>,</li>
-					<li><a href="https://en.wikipedia.org/wiki/Threshold_cryptosystem">
-											 Threshold Cryptography</a>,</li>
-					<li><a href="https://en.wikipedia.org/wiki/Coding_theory">
-											 Coding Theory</a>,</li>
-					<li>Distributed Storage Blockchain,</li>
-					<li><a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof">
-											 Zero-knowledge Proofs</a>,</li>
-					<li><a href="https://en.wikipedia.org/wiki/Secure_multi-party_computation">
-											 Multi-party Computation</a>.</li>
+					<li><a href="https://github.com/tmanuszak/CSE535/tree/main/Project">HelpMeHike</a>: This is an <b>Android</b> application
+					where the user, a hiker, takes occasional 30 second videos of their face and it gets sent to a remote server
+					on an <b>AWS</b> EC2 instance. Once uploaded to the server, using <a href="https://en.wikipedia.org/wiki/Photoplethysmogram">
+						remote photoplethysmography</a> (rPPG) techniques, we extract the user's heart rate and present it 
+					back to the user as a time-independent graph upon request.</li>
+					<li><a href="https://github.com/tmanuszak/CSE579/tree/master/Project">Automated Warehouse Scheduling</a>: Using
+						<b><a style="color: #7DCE82" href="https://potassco.org/clingo/">clingo</a></b> and 
+						<a href="https://en.wikipedia.org/wiki/Answer_set_programming">answer set programming</a> techniques, 
+						I programmed a warehouse robotics scheduler for delivering product in global
+						time optimal schedules. This was one of my favorite projects because it introduced me to the subfield of AI called
+						<a href="https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning">knowledge representation and reasoning</a> (KRR). 
+						When I first started doing my Master's of Computer Science, I thought I wanted to focus on AI and ML. I always had the impression that this field was really breaking ground and truly working towards creating metal machines with consciousness. 
+<p class="indent">However, after taking a few of the courses, it seemed like my views of the field were changing. I guess that is what happens when you see how the sausage is made, right? I started believing that there is very little <em>intelligence</em> in what is produced. Given my background in the math of multidimensional vector calculus, which is the basis of most ML and AI techniques, it felt like AI and ML are just fancy words for cleverly reducing and searching a large space.</p> 
+<p class="indent">But, after taking a KRR course, my views are starting to change back around! KRR was rooted in logic, which felt far closer to the path of gaining knowledge. KRR techniques also inherently creates programs that can easily produce reasons for it's output. It's hard to pin down what <em>intelligence</em> and <em>consciousness</em> is, but having an ability to reason certainly <em>feels</em> like it's towards the right step. <em>This</em> felt like what ML and AI were supposed to be.</p></li>
+					<li><a href="https://github.com/rajrkane/iaas_img_recognition">Auto-scaling Image Recognition</a>: 
+						This project got my feet wet into cloud computing on the <b>Amazon Web Services</b> platform.
+						It is a web application where a user uploads an image to an <b>Express</b> web server hosted on
+						an EC2 instance. The server then uploads the image to S3 and passes a message to the app tier 
+						instances, which pull the image back from the bucket and classifies the image with a pre-trained 
+						ResNet18 classifier. The classification is then delivered back to the user.</li>
+					<li><a href="https://github.com/tmanuszak/CSE535/tree/main/Assignment/HandGestures">HandGestures App</a>
+						This is another <b>Android</b> application where users can download and learn sign language gestures, specific
+						to the subject area of computer science. Then, the user can practice the gestures, which involves recording
+						themseslves performing the sign and uploading it to the server, which is hosted in an EC2 instance. 
+						Then, on the backend, we have a trained ML model to take the body coordinates with <b>Tensorflow</b> PoseNet and classify
+						the gesture that the user performed.</li>
+					<li>Movie Recommender System: This project was attempted two different times. The first time, I wanted to
+						focus on making the movie <a href="https://en.wikipedia.org/wiki/Recommender_system">recommender system</a>
+						using one-class <a href="https://en.wikipedia.org/wiki/Collaborative_filtering">collaborative filtering</a> techniques. I wanted
+						to try working with a one-class recommender system, since most real world applications to recommender systems
+						involve one-class data sets. Also it would be a challenge for me to make a decent recommender system with 
+						less descriptive data. It also had to be usable with just student-accessible hardware resources. 
+						The final result was a space-improved <a href="http://faculty.ist.psu.edu/xzz89/publications/DualCF_CIKM14.pdf">
+							<em>wi</em>ZAN-Dual algorithm</a>. For the <a href="https://github.com/tmanuszak/CSE573">
+							second attempt</a>, done in a <b>Jupyter Notebook</b>, I wanted to still use collaborative filtering, but
+						I took a community clustering approach. I mapped user's movie preferences in high-dimensional movie preference space
+						and clustered communities of similar users together. Most importantly, the act of computing a recommendation for the
+						user can be done on the client-side with less than 10KB of data transfer, which recommends movies from the 
+						<a href="https://en.wikipedia.org/wiki/Netflix_Prize">Netflix competition</a> catalog.</li>
 				</ul>
-				</p> 
+			</p>
+		</section>
+		<section>
+			<hr>
+			<h2>Mathematics and Teaching</h2>
+			<p class="indent">I was always a stellar math student in my youth. After my brief trade school <a href="https://en.wikipedia.org/wiki/Luthier">luthiery</a> experience,
+				I was unsure if I what I wanted to commit to studying upon going back to school, so I just started taking math courses.
+				Soon enough, I ran out of math courses to take at the community college, so I said "why not just keep going and get a
+				mathematics degree?". And so, I attended Arizona State for my Bachelor's in Mathematics. During the same time, I
+				was a math tutor for the community college and absolutely loved it.
+			</p>
+			<p class="indent">By the time I was getting to the end of my undergrad,
+				I decided that I should try my hand at secondary education. I was working toward my certificate in teaching and student taught
+				for both middle school and high school, all while still doing my mathematics classes and tutoring! After six months of each, 
+				it was rewarding, but something about it was not as romantic as my tutoring position. Self reflecting now, I could tell that there
+				was just 5% of my time spent teaching and 95% on administrative and baby sitting duties. I still believe teaching is going to be 
+				my final occupation in some form, but now is not that time. I also felt limited in that I could only teach to 30 students at a time.
+				There will come a time where I will return to a more massive stage of education, but till then...</p>
+		</section>
+		<section>
+			<hr>
+			<h2>Travel</h2>
+			<p class="indent">One of my life's goals is to join the 
+			<a href="travelerscenturyclub.org">Travelers' Century Club</a>. This is 
+			a club for those who have visited one hundred or more of the world's countries and territories. So far I've checked off 35 on the official list of 330 countries and territories! 
+			Here is my current progress.
+			</p>
+			<img id="map" src="../assets/map.PNG"/>
+		</section>
+		<section>
+			<hr>
+			<h2>What am I learning right now?</h2>
+			<p class="indent">One of the largest reasons why a career around programming
+			interests me is that it puts you on a never-plateauing learning curve.
+			Constantly learning and improving my world-view is what I live for. Below
+			are some things I plan on learning in the near future, in a semi order of importance.
 
-				<p class="indent">In my short time so far programming, I have completed quite a few projects. Here are a few summarized:
-					<ul>
-						<li><a href="https://github.com/tmanuszak/CSE535/tree/main/Project">HelpMeHike</a>: This is an <b>Android</b> application
-						where the user, a hiker, takes occasional 30 second videos of their face and it gets sent to a remote server
-						on an <b>AWS</b> EC2 instance. Once uploaded to the server, using <a href="https://en.wikipedia.org/wiki/Photoplethysmogram">
-							remote photoplethysmography</a> (rPPG) techniques, we extract the user's heart rate and present it 
-						back to the user as a time-independent graph upon request.</li>
-						<li><a href="https://github.com/tmanuszak/CSE579/tree/master/Project">Automated Warehouse Scheduling</a>: Using
-							<b><a style="color: #7DCE82" href="https://potassco.org/clingo/">clingo</a></b> and 
-							<a href="https://en.wikipedia.org/wiki/Answer_set_programming">answer set programming</a> techniques, 
-							I programmed a warehouse robotics scheduler for delivering product in global
-							time optimal schedules. This was one of my favorite projects because it introduced me to the subfield of AI called
-							<a href="https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning">knowledge representation and reasoning</a> (KRR). 
-							When I first started doing my Master's of Computer Science, I thought I wanted to focus on AI and ML, but after taking a
-							few courses, I was quite frustrated and felt that I fell into the trap of taking the artificial <em>intelligence</em> and 
-							machine <em>learning</em> buzzwords too literally. I always had the impression that this field was really breaking ground
-							and truly working towards creating metal machines with consciousness. After taking a few of the courses, the only thing I
-							took away from the field is that there is very little <em>intelligence</em> in what is produced. To me, especially given
-							my background in the theoretical math of multidimensional vector calculus, which is the basis of ML and AI, it felt like
-							AI and ML are just fancy words for cleverly reducing and searching a large space. It just felt like another algorithms course.
-							But, taking a KRR course felt a whole lot different. It was based in logic, which felt far closer to the path of gaining knowledge.
-							It also inherently creates programs that can easily produce reasons for it's output. It's hard to pin down what <em>intelligence</em>
-							and <em>consciousness</em> is, but having an ability to reason certainly <em>feels</em> like it's towards the right step.
-							This felt like what ML and AI were supposed to be.</li>
-						<li><a href="https://github.com/rajrkane/iaas_img_recognition">Auto-scaling Image Recognition</a>: 
-							This project got my feet wet into cloud computing on the <b>Amazon Web Services</b> platform.
-							It is a web application where a user uploads an image to an <b>Express</b> web server hosted on
-							an EC2 instance. The server then uploads the image to S3 and passes a message to the app tier 
-							instances, which pull the image back from the bucket and classifies the image with a pre-trained 
-							ResNet18 classifier. The classification is then delivered back to the user.</li>
-						<li><a href="https://github.com/tmanuszak/CSE535/tree/main/Assignment/HandGestures">HandGestures App</a>
-							This is another <b>Android</b> application where users can download and learn sign language gestures, specific
-							to the subject area of computer science. Then, the user can practice the gestures, which involves recording
-							themseslves performing the sign and uploading it to the server, which is hosted in an EC2 instance. 
-							Then, on the backend, we have a trained ML model to take the body coordinates with <b>Tensorflow</b> PoseNet and classify
-							the gesture that the user performed.</li>
-						<li>Movie Recommender System: This project was attempted two different times. The first time, I wanted to
-							focus on making the movie <a href="https://en.wikipedia.org/wiki/Recommender_system">recommender system</a>
-							using one-class <a href="https://en.wikipedia.org/wiki/Collaborative_filtering">collaborative filtering</a> techniques. I wanted
-							to try working with a one-class recommender system, since most real world applications to recommender systems
-							involve one-class data sets. Also it would be a challenge for me to make a decent recommender system with 
-							less descriptive data. It also had to be usable with just student-accessible hardware resources. 
-							The final result was a space-improved <a href="http://faculty.ist.psu.edu/xzz89/publications/DualCF_CIKM14.pdf">
-								<em>wi</em>ZAN-Dual algorithm</a>. For the <a href="https://github.com/tmanuszak/CSE573">
-								second attempt</a>, done in a <b>Jupyter Notebook</b>, I wanted to still use collaborative filtering, but
-							I took a community clustering approach. I mapped user's movie preferences in high-dimensional movie preference space
-							and clustered communities of similar users together. Most importantly, the act of computing a recommendation for the
-							user can be done on the client-side with less than 10KB of data transfer, which recommends movies from the 
-							<a href="https://en.wikipedia.org/wiki/Netflix_Prize">Netflix competition</a> catalog.</li>
-					</ul>
-				</p>
-			</section>
-			<section>
-				<hr>
-				<h2>Mathematics and Teaching</h2>
-				<p class="indent">I was always a stellar math student in my youth. After my brief trade school luthiery experience,
-					I was unsure if I what I wanted to commit to studying upon going back to school, so I just started taking math courses.
-					Soon enough, I ran out of math courses to take at the community college, so I said "why not just keep going and get a
-					mathematics degree?". And so, I attended Arizona State for my Bachelor's in Mathematics. During the same time, I
-					was a math tutor for the community college and absolutely loved it.
-				</p>
-				<p class="indent">By the time I was getting to the end of my undergrad,
-					I decided that I should try my hand at secondary education. I was working toward my certificate in teaching and student taught
-					for both middle school and high school, all while still doing my mathematics classes and tutoring! After six months of each, 
-					it was rewarding, but something about it was not as romantic as my tutoring position. Self reflecting now, I could tell that there
-					was just 5% of my time spent teaching and 95% on administrative and baby sitting duties. I still believe teaching is going to be 
-					my final occupation in some form, but now is not that time. I also felt limited in that I could only teach to 30 students at a time.
-					There will come a time where I will return to a more massive stage of education, but till then...</p>
-			</section>
-      <section>
-        <hr>
-				<h2>Travel</h2>
-        <p class="indent">One of my life's goals is to join the 
-        <a href="travelerscenturyclub.org">Travelers' Century Club</a>. This is 
-        a club for those who have visited one hundred or more of the world's countries and territories. 
-        Here is my current progress.
-        </p>
-        <img id="map" src="../assets/map.PNG"/>
-      </section>
-			<section>
-				<hr>
-				<h2>What am I learning right now?</h2>
-				<p class="indent">One of the largest reasons why a career around programming
-				interests me is that it puts you on a never-plateauing learning curve.
-				Constantly learning and improving my world-view is what I live for. Below
-				are some things I plan on learning in the near future, in a semi order of importance.
+			<ul>
+				<li>Rust programming. In particular, I want to Rust for its popularity in security-focused applications.
+					I plan on playing around with the <a href="https://kerkour.com/black-hat-rust">
+						Black Hat Rust</a> book by Sylvain Kerkour and <a href="https://rust-for-rustaceans.com/">
+						Rust for Rustaceans</a> by Rust legend Jon Gjengset.</li>
+				<li>Hardware Description Language programming. The research lab that I worked for
+					specialized in secure hardware architectures. Seeing all of my coworkers work
+					on very applied and low-level work showed me how theoretically creating a secure 
+					cryptosystem is quite a bit easier in many aspects than actually implementing it.
+					I recently bought a Basys 3 FPGA trainer board and will be diving into the deep end soon.
+					This is also an opportunity for me to properly sit down and learn computer architecture, 
+					as much of my knowledge just comes from passing conversation. I will be relying heavily on
+					the courses freely available taught by <a href="https://people.inf.ethz.ch/omutlu/">Onur Mutlu</a>.</li>
+				<li><a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof">Zero-knowledge proofs</a>.
+					As I explained above, some of my research was in zero-knowledge proofs and it is a subject
+					that intrigues me greatly. The ability to prove knowledge of something without revealing
+					exactly what it is, absolutlely fascinates me. Its applications to privacy are also going to be 
+					revolutionary in the future. The field is changing unbelievably fast each year largely thanks to 
+					the blockchain and cryptocurrency community. Most of my ZKP
+					knowledge comes from the 80s along with a fairly good understanding of the guarantees and assumptions
+					of today's ZKPs, but no detailed implementational knowledge. I'll be going through Justin Thaler's
+					<a href="https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.html">manuscript</a>, which is 
+					frequently updated with new protocols, along with the 
+					<a href="https://www.youtube.com/channel/UCpqXqQcHL3SAUoOa18osNVQ/videos">summer course</a> on 
+					<a href="https://en.wikipedia.org/wiki/Probabilistically_checkable_proof">PCPs</a>
+					by Alessandro Chiesa, Z-cash co-founder.</li>
 
-				<ul>
-					<li>Rust programming. In particular, I want to Rust for its popularity in security-focused applications.
-						I plan on playing around with the <a href="https://kerkour.com/black-hat-rust">
-							Black Hat Rust</a> book by Sylvain Kerkour and <a href="https://rust-for-rustaceans.com/">
-							Rust for Rustaceans</a> by Rust legend Jon Gjengset.</li>
-					<li>Hardware Description Language programming. The research lab that I worked for
-						specialized in secure hardware architectures. Seeing all of my coworkers work
-						on very applied and low-level work showed me how theoretically creating a secure 
-						cryptosystem is quite a bit easier in many aspects than actually implementing it.
-						I recently bought a Basys 3 FPGA trainer board and will be diving into the deep end soon.
-						This is also an opportunity for me to properly sit down and learn computer architecture, 
-						as much of my knowledge just comes from passing conversation. I will be relying heavily on
-						the courses freely available taught by <a href="https://people.inf.ethz.ch/omutlu/">Onur Mutlu</a>.</li>
-					<li><a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof">Zero-knowledge proofs</a>.
-						As I explained above, some of my research was in zero-knowledge proofs and it is a subject
-						that intrigues me greatly. The ability to prove knowledge of something without revealing
-						exactly what it is, absolutlely fascinates me. Its applications to privacy are also going to be 
-						revolutionary in the future. The field is changing unbelievably fast each year largely thanks to 
-						the blockchain and cryptocurrency community. Most of my ZKP
-						knowledge comes from the 80s along with a fairly good understanding of the guarantees and assumptions
-						of today's ZKPs, but no detailed implementational knowledge. I'll be going through Justin Thaler's
-						<a href="https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.html">manuscript</a>, which is 
-						frequently updated with new protocols, along with the 
-						<a href="https://www.youtube.com/channel/UCpqXqQcHL3SAUoOa18osNVQ/videos">summer course</a> on 
-						<a href="https://en.wikipedia.org/wiki/Probabilistically_checkable_proof">PCPs</a>
-						by Alessandro Chiesa, Z-cash co-founder.</li>
+				<li><a href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/">
+						Category Theory for Programmers</a>. There are a lot of reasons why I want to go through
+					this blog series. One, is it gives me a chance to try out Haskell. I previously played
+					around with functional programming in F#, and loved it, but I want the real-deal functional programming
+					knowledge. Another reason why I want to go through this series is that 
+					<a href="https://en.wikipedia.org/wiki/Category_theory">category theory</a> was always
+					something that intrigued me during undergrad for its high degrees of math abstraction.</li> 
+				<li>Monetary Mechanics. The last two or three years I've been spending a lot of my free time in deep
+					independent study learning about modern monetary mechanics and the global financial plumbing. I really
+					don't know where this interest came from, but I have been deep into cryptocurrency for many years prior,
+					so maybe there is a connection there. I have long held the belief that a decentralized form of money, like 
+					cryptocurrency could become a new global currency and benefit the world in many ways as a result. I think
+					to test my belief I started actually trying to ask myself "what <em>is</em> money?", and that has sent me down
+					this multi-year long rabbit hole. The more I learn about the global financial plumbing system, the harder
+					it is to actually pin down what money is. In particular, I am really into learning about the 
+					<a href="https://en.wikipedia.org/wiki/Eurodollar">eurodollar system</a> as it is becoming more and more
+					evident to me that it is the true world reserve currency and dictates much of the world's financial stability or disorder.
+					Most of my learning material comes from Jeff and Emil at <a href="https://www.eurodollar.university/">
+						Eurodollar University</a> along with blog posts from <a href="https://maroonmacro.substack.com/">
+						Maroon Macro</a>. Occassionally, I'll read an academic paper on the topic, but not too often.
+					<em>Real</em> monetary mechanics is definitely not being taught to econ majors properly, so a lot of
+					the research is garbage, in my opinion.</li>
 
-					<li><a href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/">
-							Category Theory for Programmers</a>. There are a lot of reasons why I want to go through
-						this blog series. One, is it gives me a chance to try out Haskell. I previously played
-						around with functional programming in F#, and loved it, but I want the real-deal functional programming
-						knowledge. Another reason why I want to go through this series is that 
-						<a href="https://en.wikipedia.org/wiki/Category_theory">category theory</a> was always
-						something that intrigued me during undergrad for its high degrees of math abstraction.</li> 
-					<li>Monetary Mechanics. The last two or three years I've been spending a lot of my free time in deep
-						independent study learning about modern monetary mechanics and the global financial plumbing. I really
-						don't know where this interest came from, but I have been deep into cryptocurrency for many years prior,
-						so maybe there is a connection there. I have long held the belief that a decentralized form of money, like 
-						cryptocurrency could become a new global currency and benefit the world in many ways as a result. I think
-						to test my belief I started actually trying to ask myself "what <em>is</em> money?", and that has sent me down
-						this multi-year long rabbit hole. The more I learn about the global financial plumbing system, the harder
-						it is to actually pin down what money is. In particular, I am really into learning about the 
-						<a href="https://en.wikipedia.org/wiki/Eurodollar">eurodollar system</a> as it is becoming more and more
-						evident to me that it is the true world reserve currency and dictates much of the world's financial stability or disorder.
-						Most of my learning material comes from Jeff and Emil at <a href="https://www.eurodollar.university/">
-							Eurodollar University</a> along with blog posts from <a href="https://maroonmacro.substack.com/">
-							Maroon Macro</a>. Occassionally, I'll read an academic paper on the topic, but not too often.
-						<em>Real</em> monetary mechanics is definitely not being taught to econ majors properly, so a lot of
-						the research is garbage, in my opinion.</li>
+				<li>DeFi and Web3. The decentralized web is moderately interesting to me, as you can tell since this
+					website has the option to be browsed via the decentralized web. I dont think it will take over the
+					centralized web, but I do believe there is a place for it. DeFi, or decentralized finance, is also
+					moderately interesting to me. I dont participate in it, but I can see it playing a crucial role
+					in removing a lot of the trust, inneficiencies, and most importantly, <em><strong>anti</strong></em>-transparency
+					I see when I study monetary mechanics, noted above.
+					I haven't explored too much into the topics yet, but I plan on first going through the Berkeley courses
+					<a href="https://people.eecs.berkeley.edu/~dawnsong/">freely available</a> by Dawn Song, 
+					when I get the time to.</li>
 
-					<li>DeFi and Web3. The decentralized web is moderately interesting to me, as you can tell since this
-						website has the option to be browsed via the decentralized web. I dont think it will take over the
-						centralized web, but I do believe there is a place for it. DeFi, or decentralized finance, is also
-						moderately interesting to me. I dont participate in it, but I can see it playing a crucial role
-						in removing a lot of the trust, inneficiencies, and most importantly, <em><strong>anti</strong></em>-transparency
-						I see when I study monetary mechanics, noted above.
-						I haven't explored too much into the topics yet, but I plan on first going through the Berkeley courses
-						<a href="https://people.eecs.berkeley.edu/~dawnsong/">freely available</a> by Dawn Song, 
-						when I get the time to.</li>
-
-					<li><a href="https://en.wikipedia.org/wiki/Measure_(mathematics)">Measure Theory</a>.
-					During my undergrad, I took a course in measure theory and quite enjoyed it. I might have to admit though,
-					a lot of my learning strategy during undergrad optimized for short-term memorization to power me through
-					those very difficult classes. So, I've forgotten most of my quite advanced math knowledge in real analysis
-					and measure theory. Going back and learning the material at my own pace for deep understanding is a 
-					goal of mine.</li>
-				</ul>
-				</p>
-      </section>
-		</article>
-	</body>
+				<li><a href="https://en.wikipedia.org/wiki/Measure_(mathematics)">Measure Theory</a>.
+				During my undergrad, I took a course in measure theory and quite enjoyed it. I might have to admit though,
+				a lot of my learning strategy during undergrad optimized for short-term memorization to power me through
+				those very difficult classes. So, I've forgotten most of my quite advanced math knowledge in real analysis
+				and measure theory. Going back and learning the material at my own pace for deep understanding is a 
+				goal of mine.</li>
+			</ul>
+			</p>
+		</section>
+		<hr>
+	</article>
+	<footer>
+		<a href=https://www.linkedin.com/in/tmanuszak" style="margin-right: 30px;"><img src="../assets/icons8-linkedin.svg"/></a>
+		<a href="https://github.com/tmanuszak"><img src="../assets/icons8-github.svg"/></a>
+	</footer>
+</body>
 </html>
