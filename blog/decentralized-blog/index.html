@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Trey Manuszak">
+	<meta name="description" content="A blog written by Trey Manuszak
+							containing his ramblings about many topics incuding, but not limited to: 
+							cryptography, math, cryptocurrency, security, and travel.">
+	<meta name="keywords" content="blog, cryptography, math, cryptocurrency,
+							security, travel.">
+	<link rel="icon" href="../../assets/favicon/reutersvards-triangle-32px.png" type="image/png">
+	<title>BLOG || Trey Manuszak</title>
+	<style>
+		@font-face {
+			font-family: 'Source Serif Pro';
+			src: url('../../assets/fonts/SourceSerifPro-Regular.ttf') format('truetype');
+		}
+		@font-face {
+			font-family: 'Source Serif Pro SemiBold';
+			src: url('../../assets/fonts/SourceSerifPro-SemiBold.ttf') format('truetype'); 
+		}
+
+		body {
+			font-family: 'Source Serif Pro', serif;
+			background-color: black;
+			color: white;
+			font-size: 1.2em;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 30px;
+			margin-bottom: 0px;
+			padding: 0 50px;
+			max-width: 1120px;
+		}
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-align: center;
+		}
+		h1 {
+			font-family: 'Source Serif Pro SemiBold', serif;
+			display: inline-block;
+			font-variant: small-caps;
+			font-size: 3em;
+			margin: auto;
+		}
+		h2 {
+			font-family: 'Source Serif Pro SemiBold', serif;
+			display: inline-block;
+			font-variant: small-caps;
+			font-size: 2.5em;
+		}	
+		hr {
+			border: 0;
+			height: 4px;
+			margin-top: 10px;
+			background-image: linear-gradient(to right, transparent, #FF8360, #E8E288, #7DCE82, transparent);
+		}	
+		b {
+			font-family: 'Source Serif Pro SemiBold', serif;
+		}
+		a {
+			color: white;
+		}
+		p.indent {
+			text-indent: 30px;
+		}
+		.date {
+			display: inline-block;
+			text-align: right;
+			padding-right: 8px;
+			border-bottom: 3px solid;
+			border-right: 3px solid;
+			border-image: linear-gradient(to top right, transparent, #FF8360, #E8E288, #7DCE82, transparent);
+			border-image-slice: 1;
+		}				
+		.drawing {
+			align-self: center;
+			height: auto;
+			width: 80%;
+		}
+		em.typewriter {
+ 			background-color: #292F36;
+			color: #7DCE82;
+			font-family: monospace;
+			font-style: normal;
+			border-radius: 2px;
+			padding: 0 3px;
+		}
+		#returnhome {
+			display: inline-block;
+			text-decoration: none;
+		}
+		#returnimg {
+			height: 100px;
+			width: 100px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<a id="returnhome" href="../index.html">
+			<img id="returnimg" src="../../assets/reutersvards-triangle-100px.png"/>
+			<h4 style="font-variant: small-caps; margin: 0;">Back</h4>
+		</a>
+		<h1>How Decentralized is this Blog?</h1>
+	</header>
+	<hr>
+	<span class="date">12-12-22</span>
+	<article>
+		<p class="indent">
+			There are many things that this website does to prefer the use of a decentralized 
+			internet protocol and architecture over a centralized one. In this blog post, 
+			I go over what a decentralized versus centralized internet is, what I use the 
+			decentralized internet for, and we finish by considering if this blog is 
+			<em>actually</em> decentralized.
+		</p>
+		<h2>Centralized Internet</h2>
+		<p class="indent">
+			To understand what the decentralized internet is, we first need to 
+			understand the inner workings of the centralized web. Picture this, 
+			you open your web browser and type <em class="typewriter">https://google.com/</em> 
+			into the address bar at the top, and press <em class="typewriter">Enter</em>. 
+			For some brevity, we will skip over discussing all of the OS interrupts 
+			and possible auto-complete features while typing the previous step, 
+			but let’s walk through what happens afterward.
+		</p>
+		<p class="indent">
+			First, the <em class="typewriter">Enter</em> key closes an electrical circuit in your keyboard, 
+			at which point the logic in the keyboard will recognize the <em class="typewriter">Enter</em> key
+			is pressed, converting it to an integer, specifically 13. The controller 
+			encodes this for transport, usually over a USB or Bluetooth connection, 
+			to the computer. If this is a virtual keyboard, likely in the case of a 
+			smartphone, this process has differences, which we don’t go into here. 
+			Also, we now skip over some steps in the communication from the keyboard, 
+			to the operating system, the computation steps in all levels of the 
+			computer architecture, and the steps of the key-press event notifying 
+			the browser program. We assume the browser now recognizes the <em class="typewriter">Enter</em> 
+			key has been pressed. 
+		</p>
+		<p class="indent">
+			An overview of this next step is the process of resolving the human-readable 
+			URL to the IP address of the server that hosts the website. In a bit more 
+			specifics, necessary for the topic of this article, the browser now parses 
+			the URL, which retrieves the protocol <em class="typewriter">https</em>, 
+			the domain name <em class="typewriter">google</em>, the top-level domain name 
+			<em class="typewriter">com</em>, and the resource <em class="typewriter">/</em>. 
+			The browser is now ready to perform a 
+			<a href="https://en.wikipedia.org/wiki/Domain_Name_System">Domain Name System</a> (DNS) 
+			lookup. First, it looks in the application level DNS cache to see if the 
+			IP address associated with <em class="typewriter">google.com</em> exists there. 
+			It usually does, if it has been searched recently. Assuming not, the web 
+			browser asks the operating system it is hosted on to check its DNS cache. 
+			This may be bigger than the browser cache, thus containing more entries, 
+			or contains entries from other DNS lookups that originated in other browser 
+			applications recently. If not, it will ask a local network cache at your 
+			router if it has the associated IP address.
+		</p>
+		<p class="indent">
+			If it can’t be found there, it will reach out to a resolver server. 
+			Usually, this resolver server is provided by your Internet Service Provider (ISP). 
+			From here, this resolver handles all further requests to get the IP associated 
+			with <em class="typewriter">google.com</em>, so the client will wait until 
+			this resolver server responds with an IP address if found. If this resolver 
+			server does not find “google.com” in its DNS cache, it will query a root 
+			name server. There are 13 of these root name servers distributed across the 
+			globe. The root server won’t know the IP address associated with 
+			<em class="typewriter">google.com</em>, but it will know the address of 
+			the <em class="typewriter">.com</em> top-level domain (TLD) server to query 
+			further. So, the resolver then queries the TLD server for the IP address 
+			associated with <em class="typewriter">google.com</em>, which it will not know. 
+			The TLD server responds with the IP address of an Authoritative Name (AN) 
+			server, which might know. This final query to the AN server will know the 
+			IP address associated with <em class="typewriter">google.com</em> if it exists. 
+			Assuming it does, the resolver then finally responds to your client computer 
+			that originated the request with the IP address associated with 
+			<em class="typewriter">google.com</em>, which will process it and give it 
+			to the web browser. This IP address is now likely cached in the resolver 
+			server and your local DNS caches, for some amount of time, to avoid going 
+			through this DNS lookup process in its entirety again. 
+		</p>
+		<p class="indent">
+			Note, we still have not even communicated with Google yet, but now we 
+			have the IP address to start talking to Google! It is likely, in the case 
+			of a popular site like Google, you are not communicating with a single 
+			server at the end of the IP address, rather it is either a load balancer 
+			or reverse proxy that sits at the end of the IP address. This load balancer 
+			or reverse proxy will further direct the query to one of its servers on its 
+			private network to process the query. Now, since our protocol is 
+			<em class="typewriter">https</em>, we want to establish a secure HTTP 
+			connection with this server. We do this by performing a TLS handshake. 
+			The first part of this handshake occurs just over TCP, which involves 
+			routing packets between your client, router, your ISP, potentially other 
+			ISPs, and the server’s local routers. Following halfway through the handshake, 
+			communication can start to be done over TLS sitting on top of TCP, after 
+			the execution of various cryptographic primitives. One of these cryptographic 
+			primitives that are important to the discussion of centralization is 
+			certificates. One of the largest footholds enforcing the security of our 
+			establishing connection is the necessary trust in the possible many certificate 
+			authorities used by Google. The chain of certificate authorities verifies 
+			that the public key we are using to encrypt our request for the 
+			<em class="typewriter">google.com</em> homepage does belong to Google. 
+			There is a long history of <a href="https://en.wikipedia.org/wiki/Supply_chain_attack">supply chain attacks</a> 
+			that disrupt the establishment of security in this procedure. 
+		</p>
+		<p class="indent">
+			Assuming this connection is now finally established, the google server 
+			will now read the request, which is a GET request for the <em class="typewriter">/</em> 
+			resource, or home page. It returns this homepage as an HTML file, CSS stylesheet, 
+			along with possibly some Javascript files, images, etc., back over the TLS 
+			connection on top of TCP. Our browser then receives these files and can render 
+			them in the browser. 
+		</p>
+		<p class="indent">
+			I have skipped many other technicalities, details, edge cases, alternatives, 
+			and exceptions describing this process for the sake of brevity. This whole 
+			process could take up many university-level courses, but I think we have 
+			the necessary broad strokes. 
+		</p>
+		<h2>Decentralized Internet</h2>
+		<p class="indent">
+			Now, what is the decentralized web? There are many buzzwords thrown 
+			around today that fall under the umbrella of “decentralized web”, but 
+			what is a decentralized web in its most general form? A decentralized web 
+			is a file transfer protocol that utilizes a peer-to-peer (P2P) infrastructure, 
+			rather than the client-server architecture above. What this often means 
+			is that the content accessed on the decentralized web does not have to be 
+			retrieved from a particular server. Rather, you can have a connected mesh 
+			of servers that choose or volunteer to host content, freely accessible to 
+			everyone using the network. So, rather than searching for the server that 
+			has the content you want as above, in a decentralized web you are just 
+			searching for the content you want with no concern as to who has it.
+		</p>
+		<p class="indent">
+			In the case of this blog, I host the web pages on a small 
+			<a href="https://www.hardkernel.com/shop/odroid-c4/">Odroid C4</a> single-board 
+			computer (SBC), which is connected to the 
+			<a href="https://ipfs.tech/">Interplanetary File System</a> (IPFS) 
+			decentralized web. That is correct, there can be 
+			<a href="https://en.wikipedia.org/wiki/List_of_P2P_protocols">many different decentralized webs</a>. 
+			But, someone else on the network may like my ramblings and volunteer to host 
+			my blog as well. So, when you browse my blog, you may be getting the pages 
+			from my little SBC, or some other kind user across the globe. 
+		</p>
+		<p class="indent">
+			Okay, but how does it work? I’ll briefly describe the IPFS decentralized web. 
+			When you search for a page on the IPFS network, you ask the web by the hash 
+			of the desired web page. You may be wondering how you know the hash of what 
+			you want without knowing the content. There are a few ways you might come 
+			about a hash that you want. One is that a hyperlink in the decentralized web 
+			IS a hash, or pointer, to another piece of content. If you want to follow 
+			this link, you ask the network to deliver the content that hashes to that 
+			digest you want.
+		</p>
+		<p class="indent">
+			If you are running an IPFS node, using the Kubo CLI, you can enter the command: 
+			<em class="typewriter">ipfs get [CID]</em>. Here, CID is the content identifier, 
+			or the hash, of the content you are requesting. By default, this is a base 
+			58-encoded SHA-256 hash. If you are using a browser, you can access the IPFS 
+			network using an IPFS gateway. An IPFS gateway is an HTTP addressable IPFS node 
+			that serves content hosted on the IPFS network. There are many different available 
+			gateways, and many modern web browsers have default gateways that get used. This 
+			should already be raising questions about potential centrality issues.
+		</p>
+		<p class="indent">
+			A node in the IPFS network holds a part of a 
+			<a href="https://en.wikipedia.org/wiki/Distributed_hash_table">decentralized hash table</a> (DHT). 
+			This DHT holds information about who has what in the network. A single node 
+			holds a piece of this hash table locally, which will describe what content 
+			it can currently provide to the network, as well as, connected peers and what they have, 
+			or potentially know about. So, a request will follow a series of pointers through 
+			the network for potential nodes that hold the desired content. This is often 
+			less efficient than the centralized internet, which is one of the many tradeoffs we must incur.
+		</p>
+		<p class="indent">
+			You may also be thinking it could be easy to be malicious on the decentralized web. 
+			How can you trust that the web page you query for is the one you receive? Thanks to 
+			the oneway-ness of hash functions, you can just hash the content you receive to 
+			check if it is the one you requested. Of course, hash functions tend to lose security 
+			strength over time, so you should only be asking for content with a hash function 
+			that you deem to be secure. If it is not, someone could produce a malicious document 
+			that collides with the one you desire when hashed.
+		</p>
+		<p class="indent">
+			One issue with the decentralized web is that it may be difficult to program 
+			on since one changed byte in your document will change the identifier. How do 
+			you know the document you browse is endorsed by the creator as being the most 
+			up-to-date or legitimate? While content addressing in IPFS is immutable, an 
+			IPNS pointer is mutable and points to IPFS resources. Specifically, an IPNS pointer 
+			is a hash of a public key, and the content that this pointer points to can be 
+			changed only with the holder of the secret key. So, I hold a public-secret key pair 
+			and I currently have my IPNS pointing to the home page of my blog. So, if you follow 
+			this link, you will be directed to whatever version of my homepage is current.
+		</p>
+		<p class="indent">
+			Another method of accessing content on the IPFS decentralized web can be 
+			done in a more human-readable format using DNS links or an ENS domain name. 
+			If you own a domain name, you can link your domain name to an IPNS pointer, 
+			which then points to an IPFS resource. The other method, which I use for this blog, 
+			is purchasing an <a href="https://ens.domains/">Ethereum Naming Service</a> (ENS) name, 
+			which can point to an IPNS pointer. ENS is a distributed and open naming system 
+			on the Ethereum blockchain. You can interact with the ENS smart contract to 
+			purchase names, which you can use to link to addresses on Ethereum, other blockchain 
+			addresses, or even IPFS and IPNS pointers. Since I purchased the rights to 
+			“treymanuszak.eth” and linked it to my IPNS pointer, you can use 
+			<a href="treymanuszak.eth.limo">treymanuszak.eth.limo</a> to browse my blog 
+			via an ENS gateway hosted at <a href="eth.limo">eth.limo</a>, which can 
+			also act as an IPFS gateway and serve IPFS content, like my blog.
+		</p>
+		<h2>Is this blog <em>actually</em> decentralized?</h2>
+		<p class="indent">
+			Let’s take a look at what IPFS does and does not do to decentralize the web. 
+			It is extremely important to note that a large majority of the content 
+			delivered and requested over the network is transmitted over the TCP transport 
+			layer, which is the default. So, it still uses a lot of the infrastructure 
+			we described in the centralized internet section. Namely, the bottom 4 layers 
+			of the <a href="https://en.wikipedia.org/wiki/OSI_model">OSI model</a> are largely the same. 
+			Any centralization issues that exist 
+			in these layers are still largely persistent in the decentralized web. Exploits 
+			in these layers can be used to drop communication between IPFS nodes. 
+		</p>
+		<p class="indent">
+			Not only is it possible to censor a decentralized web, but it has also 
+			been done before. Since P2P protocols often use much more communication than 
+			the client-server model, there have been cases where ISPs limit P2P traffic. 
+			IP address blocking and <a href="https://en.wikipedia.org/wiki/Geo-blocking">geo-blocking</a> 
+			is also an example of a similar level of censorship. This is an example of a 
+			Layer 3 exploit in the OSI model. Proxies could be used to mitigate this, 
+			but it isn’t friendly to set up for a non-technical user of the decentralized web. 
+			If an entity has many IPFS nodes under control in the network, they can themselves 
+			choose to drop service for certain or all content between nodes in the network, 
+			which would be an exploit on the third and fourth layers.
+		</p>
+		<p class="indent">
+			Exploits can even be done in higher layers, such as the application layer. 
+			This is where DNS sits. Many of the friendly ways of accessing the 
+			decentralized web for non-technical users involve some kind of DNS lookup. 
+			There are many opportunities for censorship in DNS. One is the case of DNS spoofing. 
+			This is where corrupted data is injected into a DNS resolver's cache, sending 
+			incorrect records as a result. This exploit was made famous by 
+			<a href="https://duo.com/decipher/hacker-history-how-dan-kaminsky-almost-broke-the-internet">Dan Kaminsky</a> 
+			in 2008. DNS hijacking is another type of exploit on DNS. It involves the corruption of a 
+			client's default DNS server configuration to point to a malicious DNS server. A famous example is the 
+			<a href="https://en.wikipedia.org/wiki/Great_Firewall">Great Firewall of China</a>. 
+			But, this is not limited to censorship-ridden nations we commonly know, if fact, it has been used by 
+			<a href="https://www.dslreports.com/forum/r26682725-">many</a> 
+			<a href="https://forums.att.com/conversations/att-internet-features/att-dns-assist-page/5defcd0dbad5f2f6069dd157">many</a> 
+			<a href="http://infiniteedge.blogspot.com/2009/10/who-stole-my-web-browser.html">many</a> American ISPs. 
+			IPFS gateways and ENS gateways could be involved in censorship at this layer as well.
+		</p>
+		<p class="indent">
+			Overall, is this blog really decentralized? Not really in my opinion. 
+			It is unlikely that someone doesn’t enjoy my writings on cryptography, 
+			math, tech, or travel enough to block all of my content from being delivered 
+			to you kind reader, but it is possible. The only form of “censorship” 
+			I can kind of understand and be okay with the above-listed issues is ISP 
+			rate limiting P2P traffic. I don't believe they do it maliciously, as many of our 
+			P2P protocols do use extreme amounts of traffic at times, which can limit 
+			the use of the centralized internet as well. I do not in any way at all 
+			condone the censorship of any other methods listed.
+		</p>
+		<p class="indent">
+			On the centralized internet, I do understand the importance and necessity 
+			of it at times and don’t see it going away. But, I write this on the 
+			decentralized web to let you know that it does exist as an option. And most 
+			of all, you as a reader are largely unaware of actively browsing a 
+			decentralized web, aside from possibly slow speed.
+		</p>
+		<p class="indent">
+
+		</p>
+	</article>
+</body>
+</html>
