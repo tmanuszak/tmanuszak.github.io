@@ -42,9 +42,15 @@
 			font-family: 'Source Serif Pro SemiBold', serif;
 			display: inline-block;
 			font-variant: small-caps;
-			font-size: 3.5em;
+			font-size: 3em;
 			margin: auto;
 		}
+		h2 {
+			font-family: 'Source Serif Pro SemiBold', serif;
+			display: inline-block;
+			font-variant: small-caps;
+			font-size: 2.5em;
+		}	
 		hr {
 			border: 0;
 			height: 4px;
@@ -57,37 +63,30 @@
 		a {
 			color: white;
 		}
-		ul {
-			list-style: none;
-			margin: 5%;
-			font-size: 1.5em;
-			padding: 0px;
-		} 
-		ul li:before {
-			content: ' ';
-			margin: 0 1em;
-		}
-		li {
-			display: flex;
-			margin: 30px 0;
-			align-items: flex-start;
+		p.indent {
+			text-indent: 30px;
 		}
 		.date {
 			display: inline-block;
-			padding-right: 8px;
-			min-width: 135px;
 			text-align: right;
-		}
-		.title {
-			margin-left: 30px;
-			display: inline;
-			word-wrap: break-word;
-		}
-		.color-border {
+			padding-right: 8px;
 			border-bottom: 3px solid;
 			border-right: 3px solid;
 			border-image: linear-gradient(to top right, transparent, #FF8360, #E8E288, #7DCE82, transparent);
 			border-image-slice: 1;
+		}				
+		.drawing {
+			align-self: center;
+			height: auto;
+			width: 80%;
+		}
+		em.typewriter {
+ 			background-color: #292F36;
+			color: #7DCE82;
+			font-family: monospace;
+			font-style: normal;
+			border-radius: 2px;
+			padding: 0 3px;
 		}
 		#returnhome {
 			display: inline-block;
@@ -102,28 +101,15 @@
 
 <body>
 	<header>
-		<a id="returnhome" href="/index.html">
+		<a id="returnhome" href="/blog/index.html">
 			<img id="returnimg" src="/assets/reutersvards-triangle-100px.png"/>
-			<h4 style="font-variant: small-caps; margin: 0;">Home</h4>
+			<h4 style="font-variant: small-caps; margin: 0;">Back</h4>
 		</a>
-		<h1>Blog</h1>
+		<h1>Game Theory and its Influence on Randomized Algorithms</h1>
 	</header>
 	<hr>
-	<section>
-		<ul>
-			<li>
-				<span class="date color-border">12-14-2022</span>
-				<a class="title" href="/blog/north-korea-trip-report">North Korea Trip Report 2016</a>
-			</li>
-			<li>
-				<span class="date color-border">12-13-2022</span>
-				<a class="title" href="/blog/yao-minimax">Game Theory and its Influence on Randomized Algorithms</a>
-			</li>
-			<li>
-				<span class="date color-border">12-12-2022</span>
-				<a class="title" href="/blog/decentralized-blog">How Decentralized is this Blog?</a>
-			</li>
-		</ul>	
-	</section>
+	<span class="date">12-13-22</span>
+	<article>
+	</article>
 </body>
 </html>
