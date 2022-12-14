@@ -41,6 +41,13 @@
 			align-items: center;
 			text-align: center;
 		}
+		footer {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 1.5em;
+			font-size: 1.5em;
+		}
 		h1 {
 			font-family: 'Source Serif Pro SemiBold', serif;
 			display: inline-block;
@@ -74,6 +81,11 @@
 		}	
 		p.indent {
 			text-indent: 30px;
+		}
+		.qed {
+			color: #7DCE82;
+			display: inline;
+			margin: 0 0 0 auto;
 		}
 		.MathJax {
 		
@@ -127,6 +139,18 @@
 		.theorem > p {
 			margin: 0;
 		}
+		.left {
+			border-left: 3px solid #7DCE82 !important;
+		}
+		.top {
+			border-top: 3px solid #7DCE82 !important;
+		}
+		.right {
+			border-right: 3px solid #7DCE82 !important;
+		}
+		.bottom {
+			border-bottom: 3px solid #7DCE82 !important;
+		}	
 		.tg {
 			border-collapse: collapse;
 			border-spacing: 0;
@@ -172,6 +196,10 @@
 			text-align: left;
 			vertical-align: top
 		}
+		.center {
+			text-align: center !important; 
+			vertical-align: middle !important;
+		}
 		#returnhome {
 			display: inline-block;
 			text-decoration: none;
@@ -189,6 +217,9 @@
 			.figure {
 				max-width: 70%;
 			}
+			.theorem {
+				max-width: 70%;
+			}
 		}
 	</style>
 </head>
@@ -202,7 +233,7 @@
 		<h1>Game Theory and its Influence on Randomized Algorithms</h1>
 	</header>
 	<hr>
-	<span class="date">12-13-22</span>
+	<span class="date">12-14-22</span>
 	<article>
 		<p class="indent">
 			In my last semester of graduate school, I attended a 
@@ -220,7 +251,7 @@
 			required prerequisites that are “Combinatorial Algorithms”, “Foundations of Algorithms”, 
 			and “Theory of Computation”. Most of the class relied HEAVILY on statistics, which I 
 			had not formally taken either. I saw the course as a final boss battle to test my limits. 
-			Anyway, I wanted to break this interesting topic as I grappled with it as someone who 
+			Anyway, I wanted to break down this interesting topic as I grappled with it as someone who 
 			tried to learn it with little foundational experience.
 		</p>
 		<h2>Game Theory Basics</h2>
@@ -247,28 +278,28 @@
 					<tr>
 						<td class="tg-0pky" style="border: none;"></td>
 						<td class="tg-c3ow" style="border: none"></td>
-						<td class="tg-c3ow">Scissors</td>
-						<td class="tg-c3ow">Paper</td>
-						<td class="tg-baqh">Rock</td>
+						<td class="tg-c3ow bottom">Scissors</td>
+						<td class="tg-c3ow bottom">Paper</td>
+						<td class="tg-baqh bottom">Rock</td>
 					</tr>
 					<tr>
 						<td class="tg-0pky" rowspan="3" style="transform: rotate(270deg) translate(0px, 40px);">Robert</td>
-						<td class="tg-0pky">Scissors</td>
-						<td class="tg-c3ow">\(0\)</td>
-						<td class="tg-c3ow">\(1\)</td>
-						<td class="tg-baqh">\(-1\)</td>
+						<td class="tg-0pky right">Scissors</td>
+						<td class="tg-c3ow top left">\(0\)</td>
+						<td class="tg-c3ow top">\(1\)</td>
+						<td class="tg-baqh top right">\(-1\)</td>
 					</tr>
 					<tr>
-						<td class="tg-0pky">Paper</td>
-						<td class="tg-c3ow">\(-1\)</td>
+						<td class="tg-0pky right">Paper</td>
+						<td class="tg-c3ow left">\(-1\)</td>
 						<td class="tg-c3ow">\(0\)</td>
-						<td class="tg-baqh">\(1\)</td>
+						<td class="tg-baqh right">\(1\)</td>
 					</tr>
 					<tr>
-						<td class="tg-0lax">Rock</td>
-						<td class="tg-baqh">\(1\)</td>
-						<td class="tg-baqh">\(-1\)</td>
-						<td class="tg-baqh">\(0\)</td>
+						<td class="tg-0lax right">Rock</td>
+						<td class="tg-baqh bottom left">\(1\)</td>
+						<td class="tg-baqh bottom">\(-1\)</td>
+						<td class="tg-baqh bottom right">\(0\)</td>
 					</tr>
 				</tbody>
 				</table>
@@ -323,7 +354,7 @@
 			smallest payoff in each row. Robert chooses the largest of these, which is 
 			underlined in his strategies. I have highlighted <span style="color: #E8E288">yellow</span> 
 			in each column the 
-			largest payoff. Charles will choose the strategy with the largest of these values, 
+			largest payoff. Charles will choose the strategy with the smallest of these values, 
 			which is underlined in his strategies as well. Notice that now, this game has a 
 			solution of \(V = 1\). It isn’t a very fun game for Charles, since the 
 			best he can do is always pay Robert $1, but it is the best option if forced to play.
@@ -341,28 +372,28 @@
 					<tr>
 						<td class="tg-0pky" style="border: none;"></td>
 						<td class="tg-c3ow" style="border: none"></td>
-						<td class="tg-c3ow"i style="text-decoration: underline">Scissors</td>
-						<td class="tg-c3ow">Paper</td>
-						<td class="tg-baqh">Rock</td>
+						<td class="tg-c3ow bottom"i style="text-decoration: underline">Scissors</td>
+						<td class="tg-c3ow bottom">Paper</td>
+						<td class="tg-baqh bottom">Rock</td>
 					</tr>
 					<tr>
 						<td class="tg-0pky" rowspan="3" style="transform: rotate(270deg) translate(0px, 40px);">Robert</td>
-						<td class="tg-0pky" style="text-decoration: underline">Scissors</td>
-						<td class="tg-c3ow" style="background: linear-gradient(90deg, #FF8360, #E8E288)">\(1\)</td>
-						<td class="tg-c3ow" style="background: #E8E288">\(2\)</td>
-						<td class="tg-baqh" style="background: #E8E288">\(3\)</td>
+						<td class="tg-0pky right" style="text-decoration: underline">Scissors</td>
+						<td class="tg-c3ow left top" style="background: linear-gradient(90deg, #FF8360, #E8E288)">\(1\)</td>
+						<td class="tg-c3ow top" style="background: #E8E288">\(2\)</td>
+						<td class="tg-baqh top right" style="background: #E8E288">\(3\)</td>
 					</tr>
 					<tr>
-						<td class="tg-0pky">Paper</td>
-						<td class="tg-c3ow" style="background: #FF8360">\(0\)</td>
+						<td class="tg-0pky right">Paper</td>
+						<td class="tg-c3ow left" style="background: #FF8360">\(0\)</td>
 						<td class="tg-c3ow">\(1\)</td>
-						<td class="tg-baqh">\(2\)</td>
+						<td class="tg-baqh right">\(2\)</td>
 					</tr>
 					<tr>
-						<td class="tg-0lax">Rock</td>
-						<td class="tg-baqh" style="background: #FF8360">\(-1\)</td>
-						<td class="tg-baqh">\(0\)</td>
-						<td class="tg-baqh">\(1\)</td>
+						<td class="tg-0lax right">Rock</td>
+						<td class="tg-baqh left bottom" style="background: #FF8360">\(-1\)</td>
+						<td class="tg-baqh bottom">\(0\)</td>
+						<td class="tg-baqh right bottom">\(1\)</td>
 					</tr>
 				</tbody>
 				</table>
@@ -386,7 +417,8 @@
 		</p>
 		<p class="indent">
 			Now, <a href="https://en.wikipedia.org/wiki/John_von_Neumann">John von Neumann</a> 
-			found the following theorem in his early work in game theory.
+			found the following theorem in his early work in game theory. In simple terms, it says 
+			that every two-person zero-sum game has a solution when using mixed strategies.
 		</p>
 		<div class="theorem-container">
 			<div class="theorem">
@@ -398,23 +430,197 @@
 			</div>
 		</div>
 		<p class="indent">
-
+			Shortly after, <a href="https://en.wikipedia.org/wiki/Lynn_Harold_Loomis">Lynn Loomis</a> 
+			found that von Neumann’s theorem allowed for less strict 
+			strategies of play. It says in simple terms that for a two-person zero-sum game, 
+			having one player use a mixed strategy and the other use a pure strategy is 
+			sufficient for a solution to the game.
+		</p>
+		<div class="theorem-container" style="margin-bottom: 15px;">
+			<div class="theorem">
+				<p>
+					<b>Theorem 2</b>: For any two-person zero-sum game specified by a payoff
+					matrix \(P\), \[\max_\boldsymbol{p} \min_j \boldsymbol{p}^T P \boldsymbol{e}_j = 
+					\min_\boldsymbol{q} \max_i \boldsymbol{e}_i^T P \boldsymbol{q}.\]	
+				</p>
+			</div>
+		</div>
+		<h2>Randomized Algorithms</h2>
+		<p class="indent">
+			Now, we have the necessary foundations of game theory set in place to start talking 
+			about its profound influence on randomized algorithms. First, I should note that a 
+			randomized algorithm can be modeled by a 
+			<a href="https://en.wikipedia.org/wiki/Probabilistic_Turing_machine">probabilistic Turing machine</a>. 
+			That is, a Turing machine that also takes as input a tape of uniformly random bits. 
+			Or, it is a probability distribution on deterministic algorithms. Remember that, 
+			we’ll come back to this idea. 
 		</p>
 		<p class="indent">
-
+			Why might we prefer a randomized algorithm? It is easy for an adversary to devise 
+			an input such that a deterministic algorithm performs in its worst-case. But, it will be 
+			difficult for an adversary to foil a randomized algorithm, as the steps of execution, and thus performance, 
+			will differ with each execution. When we analyze randomized algorithm performance, 
+			we usually want to bound its expected performance. Moreover, we usually show that it 
+			achieves this bound with high probability. Specifically, for a problem of size \(n\), 
+			we say that some property is true with high probability if it is true with probability 
+			\(1-1/n^k\) for some constant \(k \geq 1\).
 		</p>
 		<p class="indent">
-
+			Now, <a href="https://en.wikipedia.org/wiki/Andrew_Yao">Andrew Yao</a> took the 
+			above ideas from Loomis and von Neumann and applied it to randomized algorithms 
+			in what is known famously as <a href="https://en.wikipedia.org/wiki/Yao%27s_principle">Yao’s minimax principle</a>. 
+			The idea is this. Let the columns represent all deterministic algorithms that give a correct solution to the 
+			problem. The algorithm designer is selecting these strategies. Then, view the rows 
+			as the set of all possible inputs of fixed size. The adversary is selecting these 
+			inputs as their strategy to the game. For an input \(x_i\) and an algorithm \(A_j\), the 
+			performance of \(A_j\) on input \(x_j\) is \(T(x_i, A_j)\), which is component 
+			\(P_{i,j}\) of the payoff matrix. I say “performance” generally, because we may be 
+			measuring the complexity of the algorithm with respect to time, space, communication cost, etc. See 
+			<b>Figure 3</b> for the pictorial representation of the game.
+		</p>
+		<div class="figure-container">
+			<div class="figure">
+				<table class="tg">
+				<tbody>
+					<tr>
+						<td class="tg-sxqf center" style="border: none;"></td>
+						<td class="tg-c3ow center" style="border: none;"></td>
+						<td class="tg-c3ow center" colspan="3">Algorithm Designer</td>
+					</tr>
+					<tr>
+						<td class="tg-0pky center" style="border: none;"></td>
+						<td class="tg-c3ow center" style="border: none;"></td>
+						<td class="tg-c3ow center bottom">\(A_1\)</td>
+						<td class="tg-c3ow center bottom">\(\dots\)</td>
+						<td class="tg-baqh center bottom">\(A_m\)</td>
+					</tr>
+					<tr>
+						<td class="tg-0pky center" rowspan="3" style="transform: rotate(270deg); width: 30px;">Input Designer</td>
+						<td class="tg-0pky center right">\(x_1\)</td>
+						<td class="tg-c3ow center left top">\(T(x_1, A_1)\)</td>
+						<td class="tg-c3ow center top">\(\dots\)</td>
+						<td class="tg-baqh center top right">\(T(x_1, A_m)\)</td>
+					</tr>
+					<tr>
+						<td class="tg-0pky center right">\(\vdots\)</td>
+						<td class="tg-c3ow center left">\(\vdots\)</td>
+						<td class="tg-c3ow center">\(\ddots\)</td>
+						<td class="tg-baqh center right">\(\vdots\)</td>
+					</tr>
+					<tr>
+						<td class="tg-0lax center right">\(x_n\)</td>
+						<td class="tg-baqh center bottom left">\(T(x_n, A_1)\)</td>
+						<td class="tg-baqh center bottom">\(\dots\)</td>
+						<td class="tg-baqh center bottom right">\(T(x_n, A_m)\)</td>
+					</tr>
+				</tbody>
+				</table>
+				<p>
+					<b>Figure 3</b>: Payoff matrix for a game between an algorithm designer and
+					input designer, where the components are the performance of the algorithm chosen
+					on the input chosen.
+				</p>
+			</div>
+		</div>
+		<p class="indent">
+			As before, the column player, the algorithm designer, wants to minimize the payoff. Likewise, 
+			the row player, the input adversary, wants to maximize the payoff. The optimal pure strategy 
+			for the algorithm designer is the optimal deterministic algorithm. An optimal pure strategy 
+			for the input adversary is a specific input. A mixed strategy for the algorithm designer is a 
+			<a href="https://en.wikipedia.org/wiki/Las_Vegas_algorithm">Las Vegas randomized algorithm</a>, 
+			or a randomized algorithm that always produces a correct answer. Remember, we require the 
+			columns to be deterministic algorithms that must provide a correct solution. A mixed strategy 
+			for the input adversary is a distribution on the inputs.
 		</p>
 		<p class="indent">
-
+			Listen up! This is the climax of the article and realization of Yao! Following the results 
+			of von Neumann and Loomis above, we find that the expected performance of the best 
+			deterministic algorithm over the worst distribution of inputs is less or equal than the 
+			expected performance over the best distribution of all deterministic algorithms on the worst 
+			input. Yao’s minimax principle is mathematically defined in the following theorem.
+		</p>
+		<div class="theorem-container">
+			<div class="theorem">
+				<p>
+					<b>Theorem 3</b>: Let \(\Pi\) be a problem with a finite set \(\mathcal{X}\) of 
+					fixed size input instances, and a finite set of deterministic algorithms \(\mathcal{A}\) 
+					that give a correct result to \(\Pi\). For input \(X \in \mathcal{X}\) and algorithm 
+					\(A \in \mathcal{A}\), let \(T(X, A)\) denote the performance of algorithm \(A\) on input \(X\).
+					For probability distributions \(\boldsymbol{p}\) over \(\mathcal{X}\) and \(\boldsymbol{q}\) 
+					over \(\mathcal{A}\), let \(X_\boldsymbol{p}\) denote a random input chosen according to 
+					\(\boldsymbol{p}\) and \(A_\boldsymbol{q}\) dentoe a random algorithm chosen according to 
+					\(\boldsymbol{q}\). Then, for all distributions \(\boldsymbol{p}\) over \(\mathcal{X}\) 
+					and \(\boldsymbol{q}\) over \(\mathcal{A}\), \[\min_{A \in \mathcal{A}} \mathbb{E}
+					\left[ T(X_\boldsymbol{p}, A) \right] \leq \max_{X \in \mathcal{X}} \mathbb{E} 
+					\left[ T(X, A_\boldsymbol{q}) \right].\]
+				</p>
+			</div>
+		</div>
+		<p class="indent">
+			The RHS is the expected performance of our randomized algorithm on the worst possible input.
+			Thus, to lower bound this complexity, we can choose a distribution \(\boldsymbol{p}\) over the input space 
+			and prove a lower bound on the expected running time of deterministic algorithms for that distribution. 
+			One mistake I often made when attempting this lower bounding technique in the beginning is not realizing 
+			that Yao's minimax principle implies that the best deterministic algorithm "knows" the distribution 
+			of inputs with which it is being tested on.	
+		</p>
+		<h2>Applying Yao's Minimax Principle</h2>
+		<p class="indent">
+			In this final section, I give an example of applying Yao's minimax principle for finding a lower 
+			bound of a randomized algorithm's performance. In this example, we will be bounding its expected 
+			running time.	First, we note that the definition of a <a href="https://mathworld.wolfram.com/PerfectMatching.html">perfect matching</a>
+			on a graph \(G = (V, E)\) with \(|V| = n\), where \(n\) is even, is a set of \(n/2\) edges, no two of which 
+			share a common vertex. 
 		</p>
 		<p class="indent">
-
+			<b>Problem 1</b>: Consider a randomized algorithm that takes an \(n\)-vertex graph as input 
+			and correctly determines if the graph has a perfect matching. At each step, the algorithm may ask a question 
+			of the form "Is there an edge between vertex \(i\) and vertex \(j\)?" The cost of asking the question is 1, and 
+			this is the only operation with a cost. The complexity \(C(n)\) of the algorithm is the maximum over all 
+			\(n\)-vertex  graphs \(G\), of the expected number of questions asked when the input graph is \(G\). We want 
+			to prove \(C(n) = \Omega(n^2)\).
 		</p>
 		<p class="indent">
-
+			<em><b>Proof</b>.</em> To use Yao's minimax principle, we want to construct an input distribution over all \(n\)-vertex 
+			graphs such that any deterministic algorithm asks, on average, \(\Omega(n^2)\) questions to determine if the 
+			input graph has a perfect matching. Let \(P\) be the set of all graphs with perfect matchings on \(n\) vertices. Let 
+			\(Q\) be the set of all graphs with matchings of size \(n/2 - 1\) on \(n\) vertices. We will create the input 
+			distribution so that we sample a graph from \(P\) with probability \(1/2\) and sample from \(Q\) 
+			with probability \(1/2\). 
+		</p>
+		<p class="indent">
+			Remember, a deterministic algorithm will know what this input distribution is, so 
+			sampling strictly from one of these sets with probability \(1\) will allow the deterministic algorithm to solve 
+			the problem trivially. But, now that the deterministic algorithm does not immediately know the solution, 
+			it will deterministically ask if a fixed vertex, say \(v_1\), is connected to any other vertex until it finds one. On average, 
+			this costs at least \(n/2\) questions. If we condition on the event that \(v_1\) is connected to another vertex, 
+			say \(v_2\), then the deterministic algorithm will check if a vertex, say \(v_3\), which is different from 
+			\(v_1\) and \(v_2\), is connected to any of the remaining vertices. Remember, this is a deterministic algorithm, 
+			so it will have some predefined non-random logic for the order of selecting these vertices. This second step will 
+			take an average of at least \((n - 2) / 2\) questions. In general, the \(k\)th step takes, on average, 
+			at least \((n - 2k) / 2\) questions, conditioned on the event that \(k\) pairs of vertices have already been 
+			successfully matched.  
+		</p>
+		<p class="indent">
+			Now, if we condition on the event that the input graph was sampled from \(P\), then on average, 
+			it will take at least \[ \sum_{k = 0}^{\frac{n-2}{2}}\frac{n-2k}{2} = \Omega(n^2) \] questions. Since we sampled 
+			from \(P\) with probability \(1/2\), then it also takes an average \(C(n) = \Omega(n^2)\) questions. 
+			<span class="qed">\[\tag*{$\blacksquare$}\]</span>
+		</p>
+		<h2>References</h2>
+		<p>
+			Bonanno, G. (2018). <em>Game Theory: Volume 1: Basic Concepts</em>. North Charleston, SC: Createspace Independent 
+			Publishing Platform.
+		</p>
+		<p>
+			Motwani, R., & Raghavan, P. (1995). <em>Randomized Algorithms</em>. Cambridge, England: Cambridge University Press.
 		</p>
 	</article>
 </body>
+<hr>
+<footer>
+<a href="/" style="margin-right: 30px; font-variant: small-caps;">Home</a>
+<a href="/blog/" style="margin-left: 0 30px; font-variant: small-caps;">Blog</a>
+<a href="/about/" style="margin-left: 30px; font-variant: small-caps;">About</a>
+</footer>
 </html>
