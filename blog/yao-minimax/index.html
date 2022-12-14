@@ -82,13 +82,50 @@
 		p.indent {
 			text-indent: 30px;
 		}
-		.qed {
-			color: #7DCE82;
-			display: inline;
-			margin: 0 0 0 auto;
+		.qed-cube {
+			width: 10px;
+			height: 10px;
+			transform-style: preserve-3d;
+			animation: turn 5s linear infinite;
+			margin: 0 inherit 0 auto;
 		}
-		.MathJax {
-		
+		.qed-face {
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			transform: translateZ(10px);
+		}
+    .qed-front {
+			background: #FF8360;
+			transform: translateZ(10px);
+		}
+		.qed-back {
+			background: #FF8360;
+			transform: translateZ(-10px) rotateY(180deg);
+		}
+		.qed-left {
+			background: #E8E288;
+			transform: translateX(-10px) rotateY(-90deg);
+		}
+		.qed-right {
+			background: #E8E288;
+			transform: translateX(10px) rotateY(90deg);
+		}
+		.qed-top {
+			background: #7DCE82;
+			transform: translateY(-10px) rotateX(90deg);
+		}
+		.qed-bottom {
+			background: #7DCE82;
+			transform: translateY(10px) rotateX(-90deg);
+		}
+		@keyframes turn {
+			from {
+				transform: rotate3d(0, 0, 0, 0);
+			}
+			to {
+				transform: rotate3d(1, .75, .25, 360deg);
+			}
 		}
 		.date {
 			display: inline-block;
@@ -605,7 +642,14 @@
 			Now, if we condition on the event that the input graph was sampled from \(P\), then on average, 
 			it will take at least \[ \sum_{k = 0}^{\frac{n-2}{2}}\frac{n-2k}{2} = \Omega(n^2) \] questions. Since we sampled 
 			from \(P\) with probability \(1/2\), then it also takes an average \(C(n) = \Omega(n^2)\) questions. 
-			<span class="qed">\[\tag*{$\blacksquare$}\]</span>
+			<div class="qed-cube">
+				<div class="qed-face qed-front"></div>
+				<div class="qed-face qed-right"></div>
+				<div class="qed-face qed-back"></div>
+				<div class="qed-face qed-left"></div>
+				<div class="qed-face qed-bottom"></div>
+				<div class="qed-face qed-top"></div>
+			</div>
 		</p>
 		<h2>References</h2>
 		<p>
