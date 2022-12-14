@@ -8,8 +8,13 @@
 							cryptography, math, cryptocurrency, security, and travel.">
 	<meta name="keywords" content="blog, cryptography, math, cryptocurrency,
 							security, travel.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="/assets/favicon/reutersvards-triangle-32px.png" type="image/png">
 	<title>BLOG || Trey Manuszak</title>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" async
+  	src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	</script>
 	<style>
 		@font-face {
 			font-family: 'Source Serif Pro';
@@ -19,17 +24,15 @@
 			font-family: 'Source Serif Pro SemiBold';
 			src: url('/assets/fonts/SourceSerifPro-SemiBold.ttf') format('truetype'); 
 		}
-
 		body {
 			font-family: 'Source Serif Pro', serif;
 			background-color: black;
 			color: white;
-			font-size: 1.2em;
 			margin-left: auto;
 			margin-right: auto;
 			margin-top: 30px;
-			margin-bottom: 0px;
-			padding: 0 50px;
+			margin-bottom: 50px;
+			padding: 0 30px;
 			max-width: 1120px;
 		}
 		header {
@@ -42,14 +45,12 @@
 			font-family: 'Source Serif Pro SemiBold', serif;
 			display: inline-block;
 			font-variant: small-caps;
-			font-size: 3em;
 			margin: auto;
 		}
 		h2 {
 			font-family: 'Source Serif Pro SemiBold', serif;
 			display: inline-block;
 			font-variant: small-caps;
-			font-size: 2.5em;
 		}	
 		hr {
 			border: 0;
@@ -59,12 +60,21 @@
 		}	
 		b {
 			font-family: 'Source Serif Pro SemiBold', serif;
+			color: #7DCE82;
 		}
 		a {
 			color: white;
 		}
+		b > a {
+			font-family: 'Source Serif Pro SemiBold', serif;
+			color: #7DCE82;
+		}	
 		p.indent {
 			text-indent: 30px;
+			font-size: 1.2em;
+		}
+		.MathJax {
+		
 		}
 		.date {
 			display: inline-block;
@@ -88,6 +98,53 @@
 			border-radius: 2px;
 			padding: 0 3px;
 		}
+		.figure-container {
+			display: flex;
+			justify-content: center;
+		}
+		.figure {
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			flex-direction: column;
+		}
+		.tg {
+			border-collapse: collapse;
+			border-spacing: 0;
+			margin: auto;
+		}
+		.tg td {
+			border-color: black;
+			border-style: solid;
+			border-width: 1px;
+  		overflow: hidden;
+			padding: 10px 5px;
+			word-break: normal;
+		}
+		.tg th {
+			border-color: black;
+			border-style: solid;
+			border-width: 1px;
+			overflow: hidden;
+			padding: 10px 5px;
+			word-break: normal;
+		}
+		.tg .tg-c3ow {
+			border-color: inherit;
+			text-align: center;
+			vertical-align: top
+		}
+		.tg .tg-sxqf {
+			border-color:	inherit;
+			font-family: inherit;
+			text-align: left;
+			vertical-align: top
+		}
+		.tg .tg-0pky {
+			border-color: inherit;
+			text-align: left;
+			vertical-align: top
+		}
 		#returnhome {
 			display: inline-block;
 			text-decoration: none;
@@ -95,6 +152,16 @@
 		#returnimg {
 			height: 100px;
 			width: 100px;
+		}
+		@media screen and (max-width: 600px) {
+			h1 {
+				font-size: 1.5em;
+			}
+		}
+		@media screen and (min-width: 601px) {
+			.figure {
+				max-width: 70%;
+			}
 		}
 	</style>
 </head>
@@ -110,6 +177,73 @@
 	<hr>
 	<span class="date">12-13-22</span>
 	<article>
+		<p class="indent">
+			In my last semester of graduate school, I attended a 
+			“<a href="https://en.wikipedia.org/wiki/Randomized_algorithm">Randomized</a> 
+			and <a href="https://en.wikipedia.org/wiki/Approximation_algorithm">Approximation</a> 
+			Algorithms” course. It was by far the most rigorous course in my graduate studies 
+			and reminded me a great deal of the difficulty of my courses I took during 
+			my undergrad in Mathematics. There was one particular topic in the randomized 
+			algorithms section that stood out as fascinating and profound. <b>There 
+			is only one known method of lower bounding the expected performance of 
+			randomized algorithms and it comes from famous results in 
+			<a href="https://en.wikipedia.org/wiki/Game_theory">game theory</a>.</b> 
+			This particular section did not come easy to me as I had no experience with game theory. 
+			In fact, the whole course was an uphill battle as I had not done any of the three 
+			required prerequisites that are “Combinatorial Algorithms”, “Foundations of Algorithms”, 
+			and “Theory of Computation”. Most of the class relied HEAVILY on statistics, which I 
+			had not formally taken either. I saw the course as a final boss battle to test my limits. 
+			Anyway, I wanted to break this interesting topic as I grappled with it as someone who 
+			tried to learn it with little foundational experience.
+		</p>
+		<h2>Game Theory Basics</h2>
+		<p class="indent">
+			Game theory provides a formal language for the representation and analysis 
+			of situations where several entities take rational actions that affect each other 
+			[Bonanno, 2018]. Imagine a game of rock, paper, scissors with the standard rules 
+			between two players, Robert and Charles. We can represent this game from the 
+			perspective of Robert as what is called a payoff matrix. Each row of the matrix 
+			represents a strategy available to Robert and each column represents a strategy 
+			available to Charles. For our payoff matrix \(P\), which we can find in <b>Figure 1</b>, 
+			the component \(P_{i,j}\) represents the amount that Charles pays to Robert when 
+			Robert chooses strategy \(i\) and Charles chooses strategy \(j\). 
+		</p>
+		<div class="figure-container">
+			<div class="figure">
+				<table class="tg">
+				<tbody>
+					<tr>
+						<td class="tg-sxqf"></td>
+						<td class="tg-c3ow">Scissors</td>
+						<td class="tg-c3ow">Paper</td>
+						<td class="tg-c3ow">Rock</td>
+					</tr>
+					<tr>
+						<td class="tg-0pky">Scissors</td>
+						<td class="tg-c3ow">\(0\)</td>
+						<td class="tg-c3ow">\(1\)</td>
+						<td class="tg-c3ow">\(-1\)</td>
+					</tr>
+					<tr>
+						<td class="tg-0pky">Paper</td>
+						<td class="tg-c3ow">\(-1\)</td>
+						<td class="tg-c3ow">\(0\)</td>
+						<td class="tg-c3ow">\(1\)</td>
+					</tr>
+					<tr>
+						<td class="tg-0pky">Rock</td>
+						<td class="tg-c3ow">\(1\)</td>
+						<td class="tg-c3ow">\(-1\)</td>
+						<td class="tg-c3ow">\(0\)</td>
+					</tr>
+				</tbody>
+				</table>
+				<p>
+					<b>Figure 1</b>: Payoff matrix for normal rock, paper, scissors game.
+					Robert's strategies are the rows and Charles strategies are the columns.
+				</p>
+			</div>
+		</div>
 	</article>
 </body>
 </html>
