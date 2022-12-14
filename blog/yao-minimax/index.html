@@ -68,10 +68,12 @@
 		b > a {
 			font-family: 'Source Serif Pro SemiBold', serif;
 			color: #7DCE82;
+		}
+		p {
+			font-size: 1.2em;
 		}	
 		p.indent {
 			text-indent: 30px;
-			font-size: 1.2em;
 		}
 		.MathJax {
 		
@@ -108,13 +110,30 @@
 			align-content: center;
 			flex-direction: column;
 		}
+		.theorem-container {
+			display: flex;
+			justify-content: center;
+		}
+		.theorem {
+			padding: 20px 15px;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			flex-direction: column;
+			border: 3px solid;
+			border-image: linear-gradient(to bottom right, #FF8360, #E8E288, #7DCE82);
+			border-image-slice: 1;
+		}
+		.theorem > p {
+			margin: 0;
+		}
 		.tg {
 			border-collapse: collapse;
 			border-spacing: 0;
 			margin: auto;
 		}
 		.tg td {
-			border-color: black;
+			border-color: white;
 			border-style: solid;
 			border-width: 1px;
   		overflow: hidden;
@@ -122,26 +141,34 @@
 			word-break: normal;
 		}
 		.tg th {
-			border-color: black;
+			border-color: white;
 			border-style: solid;
 			border-width: 1px;
 			overflow: hidden;
 			padding: 10px 5px;
 			word-break: normal;
 		}
+		.tg .tg-baqh {
+			text-align: center;
+			vertical-align: top
+		}
 		.tg .tg-c3ow {
-			border-color: inherit;
+			border-color: white;
 			text-align: center;
 			vertical-align: top
 		}
 		.tg .tg-sxqf {
-			border-color:	inherit;
+			border-color:	white;
 			font-family: inherit;
 			text-align: left;
 			vertical-align: top
 		}
 		.tg .tg-0pky {
-			border-color: inherit;
+			border-color: white;
+			text-align: left;
+			vertical-align: top
+		}
+		.tg .tg-0lax {
 			text-align: left;
 			vertical-align: top
 		}
@@ -213,28 +240,35 @@
 				<table class="tg">
 				<tbody>
 					<tr>
-						<td class="tg-sxqf"></td>
-						<td class="tg-c3ow">Scissors</td>
-						<td class="tg-c3ow">Paper</td>
-						<td class="tg-c3ow">Rock</td>
+						<td class="tg-sxqf" style="border: none;"></td>
+						<td class="tg-c3ow" style="border: none"></td>
+						<td class="tg-c3ow" colspan="3">Charles</td>
 					</tr>
 					<tr>
+						<td class="tg-0pky" style="border: none;"></td>
+						<td class="tg-c3ow" style="border: none"></td>
+						<td class="tg-c3ow">Scissors</td>
+						<td class="tg-c3ow">Paper</td>
+						<td class="tg-baqh">Rock</td>
+					</tr>
+					<tr>
+						<td class="tg-0pky" rowspan="3" style="transform: rotate(270deg) translate(0px, 40px);">Robert</td>
 						<td class="tg-0pky">Scissors</td>
 						<td class="tg-c3ow">\(0\)</td>
 						<td class="tg-c3ow">\(1\)</td>
-						<td class="tg-c3ow">\(-1\)</td>
+						<td class="tg-baqh">\(-1\)</td>
 					</tr>
 					<tr>
 						<td class="tg-0pky">Paper</td>
 						<td class="tg-c3ow">\(-1\)</td>
 						<td class="tg-c3ow">\(0\)</td>
-						<td class="tg-c3ow">\(1\)</td>
+						<td class="tg-baqh">\(1\)</td>
 					</tr>
 					<tr>
-						<td class="tg-0pky">Rock</td>
-						<td class="tg-c3ow">\(1\)</td>
-						<td class="tg-c3ow">\(-1\)</td>
-						<td class="tg-c3ow">\(0\)</td>
+						<td class="tg-0lax">Rock</td>
+						<td class="tg-baqh">\(1\)</td>
+						<td class="tg-baqh">\(-1\)</td>
+						<td class="tg-baqh">\(0\)</td>
 					</tr>
 				</tbody>
 				</table>
@@ -244,6 +278,143 @@
 				</p>
 			</div>
 		</div>
+		<p class="indent">
+			This is an example of what is called a <em>two-person zero-sum game</em>. 
+			That is, the net amount won by Robert and Charles is exactly zero. 
+		</p>
+		<p class="indent">
+			Now, notice that Robert, the row player, wants to maximize the payoff, 
+			while Charles, the column player, wants to minimize the payoff. If 
+			neither player has information about what the opposing player wants to play, 
+			and Robert chooses strategy \(i\), then he is guaranteed to win at least the 
+			smallest payoff in row \(i\), no matter what Charles chooses. Similarly, if 
+			Charles chooses strategy \(j\), then he is guaranteed to win at most the 
+			largest payoff in column \(j\), no matter what Robert’s strategy is. Since 
+			Robert wants to maximize the payoff, an optimal strategy for Robert, we denote 
+			\(\mathcal{O}_R\), is to choose the strategy \(i\) that maximizes \(\min_j P_{i,j}\). 
+			Similarly, since Charles wants to minimize the payoff, an optimal strategy for 
+			Charles, we denote \(\mathcal{O}_C\), is to choose the strategy \(j\) that 
+			minimizes \(\max_i P_{i,j}\).
+		</p>
+		<p class="indent">
+			In simpler terms, each player is choosing the strategy that satisfies their 
+			respective statement from the following:
+		</p>
+		<ul>
+			<li>
+				<p>Robert: For each row, find the smallest payoff. Choose the strategy 
+				that is the largest of these.</p>
+			</li>
+			<li>
+				<p>Charles: For each column, find the largest payoff. Choose the strategy 
+				that is the smallest of these.</p>
+			</li>
+		</ul>
+		<p class="indent">
+			The strategy chosen will be their optimal strategy. For <b>Figure 1</b>, we have 
+			\(\mathcal{O} _R = -1\) and \(\mathcal{O}_C = 1\). When these two are equal, the 
+			game is said to have a solution and the value of the game is 
+			\(V = \mathcal{O}_R = \mathcal{O}_C\). 
+		</p>
+		<p class="indent">
+			Now, let’s change up the payoff matrix. Say we are playing rock, paper, scissors, 
+			where the payoff is denoted in <b>Figure 2</b>. In <span style="color: #FF8360;">red</span>, 
+			I have highlighted the 
+			smallest payoff in each row. Robert chooses the largest of these, which is 
+			underlined in his strategies. I have highlighted <span style="color: #E8E288">yellow</span> 
+			in each column the 
+			largest payoff. Charles will choose the strategy with the largest of these values, 
+			which is underlined in his strategies as well. Notice that now, this game has a 
+			solution of \(V = 1\). It isn’t a very fun game for Charles, since the 
+			best he can do is always pay Robert $1, but it is the best option if forced to play.
+			Neither player has any incentive to deviate from their strategy.
+		</p>
+		<div class="figure-container">
+			<div class="figure">
+				<table class="tg">
+				<tbody>
+					<tr>
+						<td class="tg-sxqf" style="border: none;"></td>
+						<td class="tg-c3ow" style="border: none"></td>
+						<td class="tg-c3ow" colspan="3">Charles</td>
+					</tr>
+					<tr>
+						<td class="tg-0pky" style="border: none;"></td>
+						<td class="tg-c3ow" style="border: none"></td>
+						<td class="tg-c3ow"i style="text-decoration: underline">Scissors</td>
+						<td class="tg-c3ow">Paper</td>
+						<td class="tg-baqh">Rock</td>
+					</tr>
+					<tr>
+						<td class="tg-0pky" rowspan="3" style="transform: rotate(270deg) translate(0px, 40px);">Robert</td>
+						<td class="tg-0pky" style="text-decoration: underline">Scissors</td>
+						<td class="tg-c3ow" style="background: linear-gradient(90deg, #FF8360, #E8E288)">\(1\)</td>
+						<td class="tg-c3ow" style="background: #E8E288">\(2\)</td>
+						<td class="tg-baqh" style="background: #E8E288">\(3\)</td>
+					</tr>
+					<tr>
+						<td class="tg-0pky">Paper</td>
+						<td class="tg-c3ow" style="background: #FF8360">\(0\)</td>
+						<td class="tg-c3ow">\(1\)</td>
+						<td class="tg-baqh">\(2\)</td>
+					</tr>
+					<tr>
+						<td class="tg-0lax">Rock</td>
+						<td class="tg-baqh" style="background: #FF8360">\(-1\)</td>
+						<td class="tg-baqh">\(0\)</td>
+						<td class="tg-baqh">\(1\)</td>
+					</tr>
+				</tbody>
+				</table>
+				<p>
+					<b>Figure 2</b>: Payoff matrix for a rock, paper, scissors game with a solution.
+				</p>
+			</div>
+		</div>
+		<p class="indent">
+			Up until now, we have only considered what is called <em>pure strategies</em>. 
+			That is, choosing exactly one strategy and sticking to it. However, what if 
+			our strategy was chosen randomly from some distribution? This is called 
+			<em>mixed strategies</em>. If the payoff matrix \(P\) is of dimension \(n \times m\), 
+			then Robert’s probability distribution is a column vector \(\boldsymbol{p} = (p_1, \dots, p_n)\), 
+			from which he will choose a strategy \(i\) with probability \(p_i\). 
+			Similarly, Charles’ probability distribution is a column vector 
+			\(\boldsymbol{q} = (q_1, \dots, q_m)\), from which he will choose a strategy 
+			\(j\) with probability \(q_j\). Thus, we have \[\begin{aligned} \mathcal{O}_R &= 
+			\max_\boldsymbol{p} \min_\boldsymbol{q} \boldsymbol{p}^T P \boldsymbol{q}, \\ 
+			\mathcal{O}_C &= \min_\boldsymbol{q} \max_\boldsymbol{p} \boldsymbol{p}^T P \boldsymbol{q}.\end{aligned}\]
+		</p>
+		<p class="indent">
+			Now, <a href="https://en.wikipedia.org/wiki/John_von_Neumann">John von Neumann</a> 
+			found the following theorem in his early work in game theory.
+		</p>
+		<div class="theorem-container">
+			<div class="theorem">
+				<p>
+					<b>Theorem 1</b>: For any two-person zero-sum game specified by a payoff
+					matrix \(P\), \[\max_\boldsymbol{p} \min_\boldsymbol{q} \boldsymbol{p}^T P \boldsymbol{q} = 
+					\min_\boldsymbol{q} \max_\boldsymbol{p} \boldsymbol{p}^T P \boldsymbol{q}.\]	
+				</p>
+			</div>
+		</div>
+		<p class="indent">
+
+		</p>
+		<p class="indent">
+
+		</p>
+		<p class="indent">
+
+		</p>
+		<p class="indent">
+
+		</p>
+		<p class="indent">
+
+		</p>
+		<p class="indent">
+
+		</p>
 	</article>
 </body>
 </html>
