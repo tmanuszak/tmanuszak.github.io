@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Trey Manuszak" />
+    <meta
+      name="description"
+      content="A blog written by Trey Manuszak
+							containing his ramblings about many topics incuding, but not limited to: 
+							cryptography, math, cryptocurrency, security, and travel."
+    />
+    <meta
+      name="keywords"
+      content="blog, cryptography, math, cryptocurrency,
+							security, travel."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="/assets/favicon/reutersvards-triangle-32px.png"
+      type="image/png"
+    />
+    <title>BLOG || Trey Manuszak</title>
+    <style>
+      @font-face {
+        font-family: "Source Serif Pro";
+        src: url("/assets/fonts/SourceSerifPro-Regular.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "Source Serif Pro SemiBold";
+        src: url("/assets/fonts/SourceSerifPro-SemiBold.ttf") format("truetype");
+      }
+      body {
+        font-family: "Source Serif Pro", serif;
+        background-color: black;
+        color: white;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        padding: 0 30px;
+        max-width: 1120px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+      }
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1.5em;
+        font-size: 1.5em;
+      }
+      h1 {
+        font-family: "Source Serif Pro SemiBold", serif;
+        display: inline-block;
+        font-variant: small-caps;
+        margin: auto;
+      }
+      h2 {
+        font-family: "Source Serif Pro SemiBold", serif;
+        display: block;
+        font-variant: small-caps;
+        color: #7dce82;
+      }
+      hr {
+        border: 0;
+        height: 4px;
+        margin-top: 10px;
+        background-image: linear-gradient(
+          to right,
+          transparent,
+          #ff8360,
+          #e8e288,
+          #7dce82,
+          transparent
+        );
+      }
+      b {
+        font-family: "Source Serif Pro SemiBold", serif;
+        color: #7dce82;
+      }
+      a {
+        color: white;
+      }
+      b > a {
+        font-family: "Source Serif Pro SemiBold", serif;
+        color: #7dce82;
+      }
+      p {
+        font-size: 1.2em;
+      }
+      p.indent {
+        text-indent: 30px;
+      }
+      .date {
+        display: inline-block;
+        text-align: right;
+        padding-right: 8px;
+        border-bottom: 3px solid;
+        border-right: 3px solid;
+        border-image: linear-gradient(
+          to top right,
+          transparent,
+          #ff8360,
+          #e8e288,
+          #7dce82,
+          transparent
+        );
+        border-image-slice: 1;
+      }
+      .big-img {
+        display: block;
+        max-width: 100%;
+        width: auto;
+        padding: 25px 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .collage {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      .collage-img {
+        max-width: 95%;
+        width: auto;
+        padding: 5px;
+      }
+      .half {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .half-img {
+        max-width: 45%;
+        width: auto;
+        padding: 5px;
+      }
+      .third {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .third-img {
+        max-width: 30%;
+        width: auto;
+        padding: 5px;
+      }
+      .right-img {
+        max-width: 70%;
+        width: auto;
+        padding: 20px;
+        float: right;
+      }
+      #returnhome {
+        display: inline-block;
+        text-decoration: none;
+      }
+      #returnimg {
+        height: 100px;
+        width: 100px;
+      }
+      video {
+        max-width: 90%;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+      }
+      @media screen and (max-width: 600px) {
+        h1 {
+          font-size: 1.5em;
+        }
+        .left-img {
+          display: block;
+          max-width: 90%;
+          width: auto;
+          padding: 20px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      @media screen and (min-width: 601px) {
+        .left-img {
+          max-width: 70%;
+          width: auto;
+          padding: 20px;
+          float: left;
+        }
+        video {
+          display: block;
+          max-height: 800px;
+          max-width: 90%;
+          width: auto;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a id="returnhome" href="/blog/index.html">
+        <img id="returnimg" src="/assets/reutersvards-triangle-100px.png" />
+        <h4 style="font-variant: small-caps; margin: 0">Back</h4>
+      </a>
+      <h1>North Korea Trip Report 2016</h1>
+    </header>
+    <hr />
+    <span class="date">12-21-22</span>
+    <article>
+      <img class="big-img" src="/assets/north-korea/mansu_hill_portrait.jpeg" />
+      <p class="indent">
+        Let's get some potpourri topics out of the way before diving into my
+        trip to the
+        <a href="https://en.wikipedia.org/wiki/North_Korea"
+          >Democratic People's Republic of Korea</a
+        >, or more commonly known as North Korea. I often feel the need to
+        justify my travel to North Korea when I tell anybody that I went. One
+        concern I get from people is the safety of travel, as people often think
+        of the case of
+        <a href="https://en.wikipedia.org/wiki/Otto_Warmbier">Otto Warmbier</a>.
+        I have to say, experiencing the country first hand, there is absolutely
+        no way he did not know the consequences of his unfortunate actions. I
+        will talk about reasons for this later, but I want to put that out there
+        now. This also does not mean I believe he was deserving of the
+        punishment he got. I feel awful for his loved ones that had to live that
+        experience. I absolutely understand that they are a ruthless and
+        terrible regime.
+      </p>
+      <p class="indent">
+        Second, I often have to justify that my trip provided some amount of
+        direct funding to the regime. I'll say this. My trip only cost $1,060
+        for five days and four nights. That included food, accommodation,
+        transportation within the country, entrance fees, and anything else I
+        did within the country. Whatever might be left after subtracting that
+        from the total, along with whatever my tour company takes home (they are
+        not North Korean by the way), and my Australian and American guide's
+        salary, is maybe going to the regime. It's not going to buy their next
+        ICBM, that's for sure. Anyway, many people don't know it is likely some
+        nonzero amount of their spending each year goes to the regime when the
+        products they buy are getting their manufacturing outsourced from China
+        to North Korea
+        <a href="https://apnews.com/article/42f4b6e658964fcb83305e7cb19faa47"
+          >[1]</a
+        >
+        <a
+          href="https://www.reuters.com/article/us-northkorea-labour-china-insight/north-korea-factories-humming-with-made-in-china-clothes-traders-say-idUSKBN1AT00Q"
+          >[2]</a
+        >
+        <a
+          href="https://www.wsj.com/articles/outsourced-to-north-korea-1456185838"
+          >[3]</a
+        >
+        <a
+          href="https://edition.cnn.com/2010/BUSINESS/09/28/north.korea.outsource.hub/index.html"
+          >[4]</a
+        >
+        <a
+          href="https://www.nknews.org/2013/09/american-brand-clothing-seen-at-north-korean-garment-factory/"
+          >[5]</a
+        >. That seems like a greater issue.
+      </p>
+      <p class="indent">
+        Third, I believe, if possible, it is incredibly important for people to
+        experience the effects of human rights atrocities first hand. From
+        visiting a death camp, or visiting a totalitarian country, it is
+        important for people in much better off parts of the world to realize
+        just how awful the world can be. It's often a much needed wakeup call
+        because in my experience, the venn diagram of similarities and
+        differences between a country like the US and North Korea overlap much
+        more than you think and there are really not a lot of steps or actions
+        that can be taken before making the overlap whole. Admittedly, I did not
+        have this view before visiting the country, but it is one of my few
+        foundational beliefs now. If my three points of justification still
+        upsets you reader, then we must just disagree, and I ultimately don't
+        care if we do.
+      </p>
+      <p class="indent">
+        Okay, now for the fun trip report. First, how did I decide to go to
+        North Korea? In 2016, I was not what you'd call a world traveler, having
+        only been to Mexico and around the states, but I had been working hard
+        at a local YMCA, saving for a year and a half at the time. This is just
+        shortly after completing high school and certification in luthiery. I
+        didn't really know what to do with my life at the time and was thinking
+        about traveling for a few months to learn more about myself. I spent
+        most of 2016 secretly planning where to go, not really telling anyone
+        about my planned adventure until shortly before my departure.
+      </p>
+      <p class="indent">
+        I remember reading earlier in the year about Otto and his attempted
+        theft of a propaganda poster in North Korea. My first thought was “Hey,
+        that's interesting. I didn't know you could go there. I wonder what it
+        is like.” I extensively researched travel to North Korea and there are
+        many options and tours and it looked like a thousand or so Americans,
+        and many more foreigners visit every year through official guided tours
+        (the only way to travel there). After much research on the safety of
+        such travel, I personally concluded that Otto was quite negligent and it
+        was perfectly safe to travel, if you followed clear judgment.
+      </p>
+      <p class="indent">
+        Of the few companies offering tours,
+        <a href="https://www.youngpioneertours.com/">Young Pioneer Tours</a>
+        (YPT), sounded the most experienced and professional. It was also much
+        cheaper than I had expected and they offer many off-the-beaten path
+        tours around the world, which I will for sure attend in the future. Stay
+        tuned for that. I decided on the
+        <a
+          href="https://web.archive.org/web/20160416170638/http://www.youngpioneertours.com/tour/grand-national-day-2016"
+          >Grand National Day Tour</a
+        >. It occurs over their Grand National Day holiday, every 9th of
+        September, which celebrates the founding of the country. Basically
+        America's 4th of July. As you may imagine, it is one of the most festive
+        and important days of the year for them. Festivities include
+        performances, fireworks, mass dancing, sporting events, and military
+        parades. Sounded like a great time, so sign me up!
+      </p>
+      <hr />
+      <h2>Day -3: September 4, 2016</h2>
+      <p class="indent">
+        I start my trip report on this day because there is quite an interesting
+        North Korea predicament I got myself into. First, I arrived at Sky
+        Harbor airport ready to depart on my four month long journey around the
+        globe! My layover on my way to Beijing was Seattle. While I was in
+        Seattle and made my way to check in for my flight to China, there was an
+        issue. I intended to use what was at the time
+        <a href="https://www.travelchinaguide.com/embassy/visa/free-72hour/"
+          >China's 72-hour visa-free travel</a
+        >
+        within Beijing. There were quite a few constraints to using this though.
+        You had to stay within the Beijing city limits and you had to be
+        traveling onward to a country different from the one you came from. As
+        you might imagine, it doesn't get much use. I was nervous about using it
+        though since I would not be given my flight information to North Korea
+        until the day before. I was worried about proving my departure. After
+        some research online and speaking to my YPT tour company beforehand,
+        apparently it's never been an issue at the gate before departure. It is
+        rarely an issue at customs in China, and when it is, they still let you
+        in after a few minutes of understanding.
+      </p>
+      <div class="third">
+        <img class="third-img" src="/assets/north-korea/flight_1.jpg" />
+        <img class="third-img" src="/assets/north-korea/flight_2.jpg" />
+        <img class="third-img" src="/assets/north-korea/flight_3.jpg" />
+      </div>
+      <p class="indent">
+        With my luck it was absolutely an issue with the gate attendant before
+        my flight and she was not budging. After texting with my American guide
+        in China, she drafted an official looking letter on my behalf hopefully
+        good enough to let me pass.
+      </p>
+      <img class="big-img" src="/assets/north-korea/ypt_letter.png" />
+      <p class="indent">
+        Not even this would be enough to let me pass. With one hour to departure
+        I was very nervous this would already foil my trip. The last resort my
+        guide suggested was to buy the cheapest one-way flight out of Beijing to
+        another country in the next three days. I obviously wouldn't take it,
+        but it should be convincing enough to let me through. I found a $250
+        one-way flight leaving for Hong Kong the next day from Beijing. I bought
+        it and thankfully it was enough to let me on that plane to Beijing. The
+        gate attendant was suspicious nonetheless though. I never had any issues
+        at customs in China though!
+      </p>
+      <hr />
+      <h2>Day -1: September 7, 2016</h2>
+      <p class="indent">
+        Our tour group had a pre-tour meeting at the City Line Hotel, near the
+        Beijing Railway Station to discuss what to expect and ground rules. We
+        discussed items we should leave behind, such as the obvious drugs and
+        weapons, as well as the non-obvious items from religious paraphernalia
+        to the recently released “<a
+          href="https://www.imdb.com/title/tt2788710/"
+          >The Interview</a
+        >” movie. We were made aware that if we brought digital items, such as
+        phones, laptops, or cameras, they may thoroughly check everything on
+        there. Forgetting to remove any of the forbidden items from your device
+        before arrival, wouldn't be enough to warrant punishment, but they will
+        sternly demand you delete it in front of them. Better to over-exercise
+        precaution if an item may be questionable. We were also notified that
+        our phones and computers would not work within the country.
+      </p>
+      <p class="indent">
+        Topics of discussion were also on actions inside the country. These are
+        pretty obvious what to do, not do, say, and not say. Otto was actually
+        on a tour with my guides the year prior and was given the same very
+        clear warnings. It was also demanded to stay within sight of your tour
+        guides or on the hotel property for the entirety of the trip. As
+        mentioned before, I had one Australian tour guide and one American on my
+        trip, but I also had two North Korean tour guides, which we joined up
+        with when entering the country. One was female, I unfortunately forget
+        her name, was really in charge of leading our group, and was a real joy
+        to be around. The other, a male, was stern and quiet, just following
+        along. He was honestly probably just an agent to keep watch on us in his
+        cool aviators.
+      </p>
+      <p class="indent">
+        There were two non-obvious things you must do though. One, is that if
+        you take a picture of their dear leaders, you must make sure you get the
+        entire portrait or statue in frame. Failing to do so, our guides will
+        ask you to delete and retake the picture. It happens to everyone at
+        least once, including me, as it's easy to forget. The other non-obvious
+        request is to not take pictures of the military personnel, which is
+        predictable, but also construction workers. The reason for that, which
+        was not obvious prior to arrival, is that almost all construction
+        workers are military. If there was a military parade though, we would be
+        allowed pictures. Great publicity! But, we never did get to see one.
+      </p>
+      <p class="indent">
+        All of the rules to follow were fairly obvious and some of the most
+        obvious that could be broken were clear to have consequences. It was
+        also clear that some of the easier to forget rules would just have stern
+        warnings and be understanding if accidentally broken. I really want to
+        emphasize that it was not stressful at all during the trip to try to
+        adhere to any of these rules.
+      </p>
+      <p class="indent">
+        I was handed at this meeting my flight information and visa for entering
+        the country, you can see below. Unfortunately, I don't get to keep this
+        visa, and there is no stamping of my passport.
+      </p>
+      <div class="collage">
+        <img class="half-img" src="/assets/north-korea/visa_1.jpg" />
+        <img class="half-img" src="/assets/north-korea/visa_2.jpg" />
+        <img class="collage-img" src="/assets/north-korea/visa_3.jpg" />
+      </div>
+      <hr />
+      <h2>Day 1: September 8, 2016</h2>
+      <p class="indent">
+        I arrived at the Beijing Capital International Airport (PEK) for my 2pm
+        flight to Pyongyang International Airport on the North Korean airline
+        <a href="http://www.airkoryo.com.kp/">Air Koryo</a>. The airline fleet
+        consists of old soviet aircraft. It is apparently the
+        <a
+          href="https://www.bloomberg.com/news/articles/2016-02-18/north-korea-s-air-koryo-why-you-should-fly-with-the-world-s-worst-airline"
+          >world's only one-star airline</a
+        >. Judging by the picture I took of the inflight propaganda tunes played
+        on the TVs and cross-referencing interior pictures I found online, it
+        looks like I was on their Tupolev Tu-204 aircraft. Upon boarding the
+        aircraft, I was offered an English version of the local Pyongyang Times,
+        which I flipped through on the flight, and have it framed today.
+      </p>
+      <div class="collage">
+        <img class="collage-img" src="/assets/north-korea/air_koryo_1.jpg" />
+        <img class="collage-img" src="/assets/north-korea/air_koryo_2.jpg" />
+        <img class="collage-img" src="/assets/north-korea/newspaper_1.jpg" />
+      </div>
+      <p class="indent">
+        Walking down the aisle to find my seat, everybody was shaking the hand
+        of a cartoonish looking gentleman in first class. You know how there are
+        some people that just give off a vibe as being famous or important? This
+        guy definitely had it. I shook his hand, not knowing who it was until
+        after my entire North Korea trip and reading about
+        <a
+          href="https://www.japantimes.co.jp/news/2016/09/10/national/politics-diplomacy/inoki-meets-with-north-koreas-top-diplomat/"
+          >Antonio Inoki's diplomatic trip to North Korea</a
+        >. It was clearly him. He was a legendary Japanese
+        wrestler-turned-politician, who even had a
+        <a href="https://en.wikipedia.org/wiki/Muhammad_Ali_vs._Antonio_Inoki"
+          >face-off against Muhammad Ali</a
+        >
+        back in the day.
+      </p>
+      <div class="collage">
+        <img
+          class="collage-img"
+          src="/assets/north-korea/antonio_inoki_1.jpg"
+        />
+        <img
+          class="collage-img"
+          src="/assets/north-korea/antonio_inoki_2.jpg"
+        />
+        <img
+          class="collage-img"
+          src="/assets/north-korea/antonio_inoki_3.jpg"
+        />
+      </div>
+      <p class="indent">
+        I was also offered an in-flight meal, (I think chicken sandwich???). I
+        don't think Chick-fil-A has to worry about any competition here. It was
+        highly questionable what I was eating. The flight was short and ended
+        with some of the usual paperwork.
+      </p>
+      <div class="half">
+        <img class="half-img" src="/assets/north-korea/air_koryo_3.jpg" />
+        <img class="half-img" src="/assets/north-korea/air_koryo_4.jpg" />
+      </div>
+      <div class="half">
+        <img class="half-img" src="/assets/north-korea/air_koryo_5.jpg" />
+        <img class="half-img" src="/assets/north-korea/air_koryo_6.jpg" />
+      </div>
+      <img class="big-img" src="/assets/north-korea/FNJ.jpg" />
+      <p class="indent">
+        We landed and went through customs. Everybody all had the same nerve
+        wracking thoughts as we went through and got our items searched,
+        wondering if we thoroughly cleaned everything enough. The customs
+        agents, who probably easily recognize the nervousness of every newcomer,
+        liked to crack jokes and pretend they found forbidden materials. They
+        had a dark humor that I found kind of funny and honestly oddly relieving
+        that they recognize the persona the country somewhat falsely gives.
+      </p>
+      <p class="indent">
+        We met our guides there and headed to the
+        <a href="https://en.wikipedia.org/wiki/Yanggakdo_International_Hotel"
+          >Yanggakdo International Hotel</a
+        >, where we would stay for the rest of the day. It is quite isolated
+        from the locals, being on its own secluded island in the middle of the
+        Taedong river, which runs directly through the capital. Although there
+        are
+        <a href="https://en.wikipedia.org/wiki/List_of_hotels_in_North_Korea"
+          >very few hotels in the country</a
+        >
+        it is by far the largest, and in fact, one of the largest buildings in
+        the whole country. It stands out quite prominently among the capital.
+      </p>
+      <img class="big-img" src="/assets/north-korea/yanggakdo_1.jpg" />
+      <p class="indent">
+        It could one day be overtaken as the largest hotel in the country if the
+        hellish looking
+        <a href="https://en.wikipedia.org/wiki/Ryugyong_Hotel"
+          >Ryugyong Hotel</a
+        >
+        (below) ever completes. But it seems to be forever in perpetual
+        construction since 1987. In fact, it would be the 4th largest hotel in
+        the world if it ever does complete. Pretty impressive for a rarely
+        visited country. Sadly could have helped a lot of their people instead.
+      </p>
+      <img class="big-img" src="/assets/north-korea/pyramid_hotel.jpg" />
+      <p class="indent">
+        Upon arrival at our hotel, we are met with the quite grand, mildly
+        decorated for the holiday, and opulent-for-the-country hotel lobby. The
+        hotel had many amenities any normal North Korean could never even dream
+        of seeing. It has a revolving rooftop restaurant, banquet halls, gift
+        shop, bowling alley, billiards room, sauna, swimming pool, barber shop,
+        and a casino, which was considered territory of Macau for legal reasons.
+        It even has a tailor shop where you can get a fitted suit, the same
+        style as Kim Jong Un! It even has a karaoke bar where you can belt out
+        your favorite North Korean tune, Bon Jovi's “Livin' On a Prayer”, or any
+        other of your favorite American jams. You can actually see my Aussie
+        guide, Rowan, give a tour of the hotel
+        <a href="https://www.youtube.com/watch?v=kCkYRLMThXY">here</a>. Also
+        attached below is the view from the rooftop restaurant.
+      </p>
+      <img class="big-img" src="/assets/north-korea/yanggakdo_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/yanggakdo_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/yanggakdo_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/yanggakdo_6.jpg" />
+      <img class="big-img" src="/assets/north-korea/yanggakdo_7.jpg" />
+      <video
+        src="/assets/north-korea/karaoke.mp4"
+        controls
+        type="video/mp4"
+      ></video>
+      <p class="indent">
+        As our guides were checking our group in at the front desk, we could see
+        military personnel in full regalia come in and out of the hotel,
+        occasionally stopping to chit chat or exchange words to each other. Most
+        of them seemed to be of Russian, or ex-Soviet nationality. Maybe here to
+        attend the festivities or attend classified meetings with their allies?
+        There was an issue with checking our group in though. The front desk was
+        adamant that the hotel was fully booked. This was clearly false since
+        the hotel was just so massive and there are incredibly few tourists,
+        even for the busiest of their holidays. It is just one of the many
+        experiences we are to have in trying to convince us foreigners they are
+        a prospering and bustling nation. After a little convincing, they
+        magically found enough rooms for us. What a surprise \s!
+      </p>
+      <p class="indent">
+        I chose not to pay extra for a room and got a roommate from my group. I
+        don't remember the gentleman's name or occupation, but I recall him
+        being from Italy. The room had two twin beds, an old radio, television,
+        and probably many hidden bugged devices to listen to our conversations.
+      </p>
+      <img class="big-img" src="/assets/north-korea/yanggakdo_5.jpg" />
+      <img class="big-img" src="/assets/north-korea/yanggakdo_8.jpg" />
+      <p class="indent">
+        I watched the television a bit during my stay and found it absolutely
+        fascinating. If I recall, it was only a news channel. It was in korean,
+        so I didn't understand what was said, but I vividly remember how
+        dramatized and animated the female host was.
+      </p>
+      <p class="indent">
+        Before I went to bed for the first night, I believe I was hanging out on
+        the basement level, where many of the activities are, and took the
+        elevator up to my room, which is at a fairly high level. Now, I had
+        heard
+        <a
+          href="https://en.wikipedia.org/wiki/Yanggakdo_International_Hotel#The_Fifth_Floor"
+          >rumors of the "missing" floors</a
+        >
+        in this hotel, that are supposedly replaced with rooms of surveillance
+        equipment. I do recall the elevator having many missing floors to go to.
+        Well, when I took the elevator up this first night, I was looking at my
+        phone, not paying attention. The doors opened, I got out, and the doors
+        shut behind me. I had not realized that it dropped me off on a dark
+        floor. I pulled out my phone to film, in case anything went wrong, as I
+        looked around the corner to see if there were any stairs, or to wait for
+        the next one to hopefully come and pick me up. If you watch the video
+        below, it may just look like a normal, maybe darker than usual floor
+        without any context of a normal one. But, I assure you this was surely
+        NOT a valid floor to be on. In hind sight, it may not have been a smart
+        thing to look around the corner for stairs, which I did not find, but
+        all was well and took the next elevator up.
+      </p>
+      <video
+        src="/assets/north-korea/dark_floor.mp4"
+        controls
+        type="video/mp4"
+      ></video>
+      <hr />
+      <h2>Day 2: September 9, 2016 (Grand National Day)</h2>
+      <p class="indent">
+        Today is the most important day on the trip. We formally, as required
+        for today's visit, since we were visiting the
+        <a href="https://en.wikipedia.org/wiki/Kumsusan_Palace_of_the_Sun"
+          >Kumsusan Palace of the Sun</a
+        >. It is the mausoleum of the late “Great Leader” Kim Il Sung and “Dear
+        Leader” Kim Jong Il, the
+        <a href="https://en.wikipedia.org/wiki/Eternal_leaders_of_North_Korea"
+          >Eternal Leaders of North Korea</a
+        >. I show below pictures from the outside as a few so fortunate locals
+        or elites were allowed to pay their respects, from the outside of
+        course.
+      </p>
+      <img class="big-img" src="/assets/north-korea/kumsusan_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/kumsusan_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/kumsusan_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/kumsusan_5.jpg" />
+      <video
+        src="/assets/north-korea/kumsusan_2.mp4"
+        controls
+        type="video/mp4"
+      ></video>
+      <p class="indent">
+        We were allowed inside though, only after giving up all of our
+        belongings. Unfortunately, as such, I have no photos from the inside and
+        they are very hard to come by on the internet. Below are some of the
+        things I remember seeing inside. It was absolutely the most immaculate,
+        beautiful, and quite impressive place I had ever seen, which, again, is
+        quite sad given the nation's predicament and what this place is
+        dedicated to.
+      </p>
+      <p class="indent">
+        As estimates for the cost to build the mausoleum ranges between $100
+        million and $1 billion, from my personal experience there, I'd easily
+        peg it on the higher end of the scale. Words can't describe how huge it
+        is either, other than saying it is 115,000 square feet. Inside are rooms
+        full of memorabilia, personal belongings, and even rooms (PLURAL!)
+        dedicated to awards and medals received from foreign dignitaries. Medals
+        and gifts from everyone you can imagine, even US presidents. It even
+        holds Kim Jong Il's personal car, boat, and train carriage on display.
+        We were there for three hours and still barely saw everything.
+      </p>
+      <p class="indent">
+        Out of all things on display there, two are burned in my mind forever.
+        We walk into two separate giant marble rooms outlined with fresh
+        bouquets of flowers. In the first room, up on the top floor, lies the
+        embalmed body of
+        <a href="https://en.wikipedia.org/wiki/Kim_Il-sung">Kim Il Sung</a>
+        lying in state in a glass sarcophagus, and the body of
+        <a href="https://en.wikipedia.org/wiki/Kim_Jong-il">Kim Jong Il</a> in
+        the second room on the lower level. Military personnel were
+        strategically positioned and at the ready, as if they were guarding
+        America's Tomb of the Unknown Soldier, or a member of the Royal Guard of
+        Buckingham Palace. We were instructed beforehand what we were instructed
+        to do in these rooms.
+      </p>
+      <p class="indent">
+        We walk in one at a time, arms to our side, approaching the feet of the
+        leaders first, and perform a long, slow, and deep bow before them. Then,
+        you walk around to their left side, and again deeply bow. Walking around
+        to the top, by their heads, you pass, rounding the final corner.
+        Finally, around to their right side and perform your final bow. With
+        each turn around the glass sarcophaguses, you stare deeply into the
+        perfectly preserved face, as if they are just sleeping, of the two
+        people responsible for some of the most reprehensible crimes against
+        humanity. I took absolutely not a single amount of joy bowing to them,
+        but felt it was incredibly important to see the first-person point of
+        view face of a person capable of such evil. It carries different weight
+        and meaning to see the person, rather than a black and white grainy
+        photo in a book. It is easy to attach the atrocities they committed to
+        their name, or photograph, but to see the face and be able to better
+        attribute the horrors to the person as you physically stare at them just
+        feet away is quite surreal.
+      </p>
+      <div class="collage">
+        <img class="collage-img" src="/assets/north-korea/mausoleum_1.jpg" />
+        <img class="collage-img" src="/assets/north-korea/mausoleum_2.jpg" />
+        <img class="collage-img" src="/assets/north-korea/mausoleum_3.jpg" />
+        <img class="collage-img" src="/assets/north-korea/mausoleum_4.jpg" />
+        <img
+          class="collage-img"
+          src="/assets/north-korea/mausoleum_kim_il_sung.jpg"
+        />
+        <img
+          class="collage-img"
+          src="/assets/north-korea/mausoleum_kim_jong_il.jpg"
+        />
+      </div>
+      <p class="indent">
+        Following the mausoleum experience, we headed for a short drive south
+        down the river to the
+        <a href="https://en.wikipedia.org/wiki/Okryu-gwan">Okryu Restaurant</a>
+        for lunch. Sitting on the river bank, it is one of the most iconic
+        restaurants around town. The main dish served is raengmyon (cold
+        noodles). Other dishes include jijim (green bean pancake), onban (rice
+        with beef soup), and jongol (beef casserole). I'm going to be honest, I
+        consider myself to have a fairly decent appetite for trying foreign
+        cuisine, but I did not eat much this trip. It was difficult to stomach
+        anything more than just a taste of most dishes. I often opted for the
+        cold noodles when possible, which seemed to be palatable enough until a
+        hopefully more fulfilling meal or snack later on. Looking back many
+        years later, I wish I had taken more photographs of this trip. I
+        unfortunately don't have any of this restaurant or meal, but I found
+        some online that reminded me of the experience (below).
+      </p>
+      <div class="collage">
+        <img class="collage-img" src="/assets/north-korea/okryu_1.jpg" />
+        <img class="collage-img" src="/assets/north-korea/okryu_2.jpg" />
+      </div>
+      <p class="indent">
+        After lunch, we walked next door to the Moran Hill Park to take part in
+        some of the day's festivities around town. There was much jubilee with
+        dancing and singing in the pavilions all around. There was even a party
+        taking wedding photographs.
+      </p>
+      <img class="big-img" src="/assets/north-korea/park_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/park_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/park_5.jpg" />
+      <video
+        src="/assets/north-korea/park_2.mp4"
+        controls
+        type="video/mp4"
+      ></video>
+      <video
+        src="/assets/north-korea/park_3.mp4"
+        controls
+        type="video/mp4"
+      ></video>
+      <p class="indent">
+        After our joyous walk in the park, our North Korean handlers had gotten
+        word through the phone that we had a rare opportunity to go off schedule
+        and attend a performance! We rushed our way over to a large theater
+        close by to watch acrobats fly gracefully through the air, diving into a
+        pool below for synchronized swimming, and proudly belt songs of the
+        homeland along the way. It was quite an impressive performance,
+        understandably so as these performers were likely trained for such work
+        starting at a few years old.
+      </p>
+      <img class="big-img" src="/assets/north-korea/performance_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/performance_3.jpg" />
+      <video
+        src="/assets/north-korea/performance_1.mp4"
+        controls
+        type="video/mp4"
+      ></video>
+      <p class="indent">
+        After finishing the performance, we made our way to Mansudae Fountain
+        Park to participate and watch festive mass dances with local Soong Ui
+        College students. All men were in their white shirts with black ties and
+        pants, while the women wore their colorful Hanboks. You of course can't
+        go anywhere in the country without the portraits of the Eternal Leaders
+        watching from above.
+      </p>
+      <img class="big-img" src="/assets/north-korea/dance_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/dance_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/dance_5.jpg" />
+      <img class="big-img" src="/assets/north-korea/dance_6.jpg" />
+      <img class="big-img" src="/assets/north-korea/dance_7.jpeg" />
+      <video
+        src="/assets/north-korea/dance_1.mp4"
+        controls
+        type="video/mp4"
+      ></video>
+      <video
+        src="/assets/north-korea/dance_3.mp4"
+        controls
+        type="video/mp4"
+      ></video>
+      <p class="indent">
+        After the sun had set on the dances and the day, we headed back on the
+        tour bus, off to visit Kwangbok Department Store. One absolutely
+        incredible event happened on our way to the store. Our bus got
+        rear-ended by a pickup truck carrying construction workers. Looking back
+        at this trip it still blows my mind that this happened, because the
+        roads are just so extremely desolate, this has to be such a rare
+        experience. The truck that hit us actually fled the scene. After getting
+        out and observing the damage, seen below, our North Korean guides were
+        quick to recognize the situation and huddled us back on the bus to avoid
+        us taking pictures of the mishap. We eventually arrived at the
+        department store, but they took the bus away from us and replaced it
+        with another for the rest of the trip, despite the minor dings, probably
+        to keep up the appearance of perfection in the country.
+      </p>
+      <img class="big-img" src="/assets/north-korea/bus.jpg" />
+      <p class="indent">
+        This department store is dedicated to the rich and elite locals of
+        Pyongyang, who look to satisfy their foreign and premium goods desires.
+        I have a photo of the outside, but there are no pictures allowed on the
+        inside. The interior pictures below can be found on the web. I have to
+        imagine it is to not make it evident to the rest of the world they can
+        fairly easily skirt out most trade restrictions. I saw many premium
+        brands and goods, from Jack Daniels to Oreos to Whirlwind appliances.
+      </p>
+      <div class="collage">
+        <img class="collage-img" src="/assets/north-korea/market_5.jpg" />
+        <img class="collage-img" src="/assets/north-korea/market_1.jpg" />
+        <img class="collage-img" src="/assets/north-korea/market_2.jpg" />
+        <img class="collage-img" src="/assets/north-korea/market_3.jpg" />
+        <img class="collage-img" src="/assets/north-korea/market_4.jpg" />
+      </div>
+      <p class="indent">
+        I'm unsure if the locals I saw shopping were for show or real, since we
+        were trading in the store with the “official” exchange rate, which is
+        many magnitudes stronger than the black market rate everybody commonly
+        uses. Many people probably don't realize that the North Korean regime
+        has lost control of their currency, or at least the rate they want
+        everybody to use. The famine that ravaged the country in the mid to late
+        90s, known locally as the “<a
+          href="https://en.wikipedia.org/wiki/North_Korean_famine"
+          >Arduous March</a
+        >”, is one of the most devastating accounts of famine in human history.
+        Estimates peg the famine related fatalities wiped out nearly ten percent
+        of the entire population. Since the government was only reserving food
+        for the few elite at the time, while many people were resorting to
+        cannibalism, black markets flourished and the regime lost their
+        widespread economic control of the populace. Still, with the famine so
+        fresh in the public's minds, these black markets are still regularly
+        used by everyday citizens to this day. There is a widespread culture of
+        harsh punishment and snitching between friends, family, and neighbors
+        within the country still, but black market trade is largely considered a
+        norm and allowed.
+      </p>
+      <p class="indent">
+        Now is a good point for me to mention that although I didn't see
+        massively impoverished people as we primarily stayed in the city limits
+        of Pyongyang, moreso the best parts of it, I could tell, while glancing
+        at towns far off the roadside, watching people bathe in absolutely
+        disgusting creeks, and witnessing some severely malnourished country
+        folk, that the human condition and lifestyle is still at an incredibly
+        depressing level. I would like to talk more about this topic, but I do
+        not believe I understood and saw enough of it to give the topic the
+        justice and nuance it needs.
+      </p>
+      <p class="indent">
+        What I am sure of, is that foreign media outlets do not know and/or tell
+        the full picture. There are many levels of deception between what goes
+        on in the country of North Korea, and what a foreign citizen, say from
+        the US, might hear. The media and elite within North Korea of course do
+        not want to know, hear about, or report on what real life is like in
+        their country. They of course lie to foreign news outlets on conditions.
+      </p>
+      <p class="indent">
+        Then, we have to further deal with what our outlets decide to report or
+        lie to us about as well. Some of the outlandish tales you hear about the
+        country are for sure real, while others are laughable even to the local
+        North Koreans. You can choose to believe me or not, but in my chats with
+        the locals, they think it's funny Americans believe that North Koreans
+        revere a supposed rumor that Kim Jong Il scores a 34 on a round of golf.
+        One of my biggest gripes about the many American journalists that
+        publish a “tell all” about their “dAngErOus eScaPE!” during their North
+        Korean visit and having to stick their thumb drives up their ass to
+        sneak their “SuPEr SecReT NeveR beFoRE SEEn PhoTOs!” out of the country.
+        It's laughable and completely negligent journalism because it does not
+        help the North Koreans actually get the help or understanding of the
+        conditions they need from the rest of the world.
+      </p>
+      <p class="indent">
+        If anyone wants a stellar deep dive into the true living conditions with
+        little barriers between the source material and book, I highly recommend
+        “<a
+          href="https://www.goodreads.com/book/show/22892099-north-korea-confidential"
+          >North Korea Confidential: Private Markets, Fashion Trends, Prison
+          Camps, Dissenters and Defectors</a
+        >” by Daniel Tudor and James Pearson.
+      </p>
+      <p class="indent">
+        We finish our long and exhausting day with a visit to North Korea's
+        first ever Taedong Beer Festival! That was plenty of fun to sit and chat
+        with the locals over a pint. The first two pictures are my own, the
+        other can be found easily elsewhere.
+      </p>
+      <div class="collage">
+        <img
+          class="collage-img"
+          src="/assets/north-korea/beer_festival_3.jpg"
+        />
+        <img
+          class="collage-img"
+          src="/assets/north-korea/beer_festival_4.jpg"
+        />
+        <img
+          class="collage-img"
+          src="/assets/north-korea/beer_festival_1.jpg"
+        />
+        <img
+          class="collage-img"
+          src="/assets/north-korea/beer_festival_2.jpg"
+        />
+      </div>
+      <hr />
+      <h2>Day 2: September 10, 2016</h2>
+      <p class="indent">
+        Early in the morning after our hotel breakfast, we headed to the famous
+        bronze
+        <a href="https://en.wikipedia.org/wiki/Mansu_Hill_Grand_Monument"
+          >Mansu Hill Grand Monument</a
+        >
+        of Kim Il Sung and Kim Jong Il to pay respects. The mural in the
+        backdrop of the monuments displays Mount Paektu, which is one of the
+        most iconic symbols in North Korea. It represents the mythological
+        birthplace of the Korean people and of Korean ancestry. On both sides
+        stood a large featuring a collage of people from the Worker's party and
+        their anti-Japanese revolution with a backdrop of a waving communist
+        flag. For such an important holiday, it was quite a barren and empty
+        concrete platform, overlooking the
+        <a href="https://en.wikipedia.org/wiki/Monument_to_Party_Founding"
+          >Worker's Party Foundation Monument</a
+        >
+        across the river, which we will visit later.
+      </p>
+      <img class="big-img" src="/assets/north-korea/mansu_hill_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/mansu_hill_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/mansu_hill_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/mansu_hill_4.jpg" />
+      <p class="indent">
+        Our next visit is just down the road south to the
+        <a href="https://en.wikipedia.org/wiki/Grand_People%27s_Study_House"
+          >Grand People's Study House</a
+        >. It is a large library home to many documents, pamphlets, and
+        manuscripts contributing to the study of the Dear Leaders,
+        <a href="https://en.wikipedia.org/wiki/Juche">Juche</a>
+        philosophy, and North Korean history. The library even has many
+        computers to access the North Korean intranet and radios to listen to
+        past speeches. Below I have many photos I took from inside.
+      </p>
+      <img class="big-img" src="/assets/north-korea/library_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/library_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/library_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/library_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/library_5.jpg" />
+      <img class="big-img" src="/assets/north-korea/library_6.jpg" />
+      <img class="big-img" src="/assets/north-korea/library_7.jpg" />
+      <img class="big-img" src="/assets/north-korea/library_8.jpg" />
+      <img class="big-img" src="/assets/north-korea/library_9.jpg" />
+      <img class="big-img" src="/assets/north-korea/library_10.jpg" />
+      <p class="indent">
+        We then made our way to the balcony of the library, which overlooks Kim
+        Il Sung square and the Juche tower directly in view across the river. It
+        is from this balcony you have likely seen the many videos and
+        photographs of the military parades roll through with large ICBMs
+        strapped to vehicles.
+      </p>
+      <img class="big-img" src="/assets/north-korea/balcony_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/balcony_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/balcony_3.jpg" />
+      <p class="indent">
+        Of course, we couldn't exit the library without first going through the
+        gift shop. It was here that I purchased many postcards, a book titled
+        “On the Juche Idea and the Korean People's Struggle for its Application”
+        by Kim Il Sung, and even a propaganda poster. Yes, I purchased a
+        propaganda poster, which we knew before the trip we would be able to do
+        so. I want to emphasize this just to make it clear that Otto was
+        malicious and negligent in his intent to steal one instead. This book I
+        purchased is one of hundreds “authored” by Kim Il Sung about the Juche
+        philosophy. I also took a photo, but regret not purchasing it now, of
+        one humorously titled book “The Great Man of the Century” by the man
+        himself, Kim Il Sung. If he's authoring it, why limit it to just the
+        century? Who has him beat on the millennium?
+      </p>
+      <img class="big-img" src="/assets/north-korea/book_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/book_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/poster.jpg" />
+      <img class="big-img" src="/assets/north-korea/postcards.jpg" />
+      <p class="indent">
+        We left the library and had a walk around the square below. You can see
+        the many marks on the ground for positions on where to stand or march
+        for the parades. One thing you may notice in many pictures so far is
+        just how barren the roads are. Pyongyang is obviously the busiest in car
+        traffic in the country, but it is still astonishingly empty and eerie.
+        One building of prominence lining the square is the Worker's Party of
+        Korea Headquarters, which is the building donning the country's flag.
+        Walking a bit down the road, we walked by a few common Pyongyang bus
+        stops, one decorated in a beautiful sunset landscape and the other a
+        winter battle scene.
+      </p>
+      <img class="big-img" src="/assets/north-korea/square_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/square_2.jpeg" />
+      <img class="big-img" src="/assets/north-korea/square_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/square_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/square_5.jpg" />
+      <img class="big-img" src="/assets/north-korea/square_6.jpg" />
+      <img class="big-img" src="/assets/north-korea/square_7.jpg" />
+      <img class="big-img" src="/assets/north-korea/square_8.jpg" />
+      <img class="big-img" src="/assets/north-korea/square_9.jpg" />
+      <img class="big-img" src="/assets/north-korea/square_10.jpg" />
+      <p class="indent">
+        We also see one of the most iconic scenes of Pyongyang, the traffic
+        girls. Since there are no traffic lights in Pyongyang, traffic is
+        monitored and directed in a militaristic manner by these women, and
+        rarely men. It is one of the most respected and revered jobs in the
+        city. One of the most unexpected things I learned from this trip is that
+        there is really little to no misogyny in the country and you can see
+        women in all positions of power. There is one legendary traffic girl by
+        the name of
+        <a
+          href="https://www.huffpost.com/entry/ri-kyong-sim-north-korea-traffic-cop-hero-of-the-republic-award_n_3247830"
+          >Ri Kyong Sim</a
+        >
+        who received the “Hero of the Republic” award, which is the highest
+        honor, in 2013 for a deed which is unknown, but apparently “displayed
+        the heroic self-sacrificing spirit of safeguarding the security of the
+        headquarters of the revolution in an unexpected circumstance,” according
+        to state media.
+      </p>
+      <video
+        src="/assets/north-korea/traffic.mp4"
+        controls
+        type="video/mp4"
+      ></video>
+      <p class="indent">
+        We then headed back to the buses and left to the southwest outskirts of
+        the capital to the claimed birthplace of Kim Il Sung. It is a beautiful
+        perfectly preserved large park area and near the center is a little
+        yellow adobe looking hut with straw roofing. Here is supposedly his
+        birthplace.
+      </p>
+      <img class="big-img" src="/assets/north-korea/birthplace_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/birthplace_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/birthplace_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/birthplace_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/birthplace_5.jpg" />
+      <img class="big-img" src="/assets/north-korea/birthplace_6.jpg" />
+      <p class="indent">
+        At the park, our bus parked next to an amusement park, which is
+        occasionally open for a lucky tour or festival. Today, it was closed and
+        barren.
+      </p>
+      <img class="big-img" src="/assets/north-korea/amusement_park_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/amusement_park_2.jpg" />
+      <p class="indent">
+        We then headed over to the
+        <a href="https://en.wikipedia.org/wiki/Puhung_station"
+          >Puhung station</a
+        >
+        on the Chollima line of the
+        <a href="https://en.wikipedia.org/wiki/Pyongyang_Metro"
+          >Pyongyang metro</a
+        >. It is one of the longest escalators in the world and took probably a
+        minute to go all the way down. That is because many of the stations in
+        the metrosystem double as bomb shelters for the people. At the bottom
+        are three beautiful murals. One at the end is aptly titled “The Great
+        Leader Kim Il-sung Among Workers.” One on the left side is titled “A
+        Morning of Innovation,” featuring workers at what I think is the nearby
+        thermal power plant. The one on the right when you enter is titled “Song
+        of a Bumper Crop,” which I did not get a picture of, since a metrocar
+        was in the way, but I found a photo below elsewhere on the internet.
+      </p>
+      <img class="big-img" src="/assets/north-korea/puhung_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/puhung_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/puhung_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/puhung_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/puhung_5.jpg" />
+      <p class="indent">
+        Riding the rail cars was unexpectedly a very loud experience. You could
+        not easily hold a conversation as it was going at nearly 70 km/h. The
+        trains were built in the late 50s to early 60s for the West Berlin
+        U-Bahn system and bought second hand by North Korea in 1999. Each car of
+        course featured the portraits of Kim Il sung and Kim Jong Il to keep
+        watch over the travelers. We took this train down one station to the
+        Yonggwang station, getting out for some pictures of the scenic murals
+        here, and to wave at the passing by workers and school children, which
+        you see below.
+      </p>
+      <img class="big-img" src="/assets/north-korea/yonggwang_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/yonggwang_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/yonggwang_5.jpg" />
+      <video
+        src="/assets/north-korea/yonggwang_2.mp4"
+        controls
+        type="video/mp4"
+      ></video>
+      <video
+        src="/assets/north-korea/yonggwang_3.mp4"
+        controls
+        type="video/mp4"
+      ></video>
+      <p class="indent">
+        We hopped back on the following train and headed four more stops down
+        the line to the Kaeson station, located under the Arch of Triumph. In
+        this station is yet another inspirational mural titled “The People Rise
+        up in the Building of a New Country”. It has since been refurbished in
+        2019 with new lighting, TVs, and LED signs displaying the local weather.
+        At the end of the station stood an illuminated golden statue of a young
+        Kim Il Sung. I did get a warning for standing too close to it for the
+        picture below. Oops.
+      </p>
+      <img class="big-img" src="/assets/north-korea/kaeson_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/kaeson_1.jpg" />
+      <p class="indent">
+        We exited the station above to the
+        <a href="https://en.wikipedia.org/wiki/Arch_of_Triumph_(Pyongyang)"
+          >Arch of Triumph</a
+        >, a very impressive structure commemorating the Korean resistance to
+        Japan in the early 20th century. It is the second tallest triumphal arch
+        in the world at 200 ft tall, behind the one in Mexico City. Here we
+        could also see to the east the
+        <a href="https://en.wikipedia.org/wiki/Kim_Il-sung_Stadium"
+          >Kim Il Sung stadium</a
+        >, which is primarily used for soccer matches and the start and finish
+        line of the annual Pyongyang marathon.
+      </p>
+      <img class="big-img" src="/assets/north-korea/arch_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/arch_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/kis_stadium.jpg" />
+      <p class="indent">
+        Now is actually a good time to mention the government's and people's
+        foreign relations as I experienced in my travels there. In my time
+        there, I recognized a deep hatred for Japan and the Japanese people
+        there, largely due to the atrocities Japan had committed against all of
+        the Korean people in the previous centuries. It is actually the only
+        foreign nation that I felt the North Korean people actually had a deep
+        seeded hatred of the foreign people as well as the government. In my
+        experience as an American, I actually didn't feel like I got glances of
+        hatred from the locals there, nor did I feel they were aggressive when I
+        communicated with them. My assumption is that they despise our
+        government, but not the people, aside from the ones that participated in
+        the Korean war, as I will get to later. It feels similar to how much of
+        the American public feels toward Russia in that we don't enjoy the
+        people in power there, but are indifferent to the people. One thing that
+        I found interesting there was actually the extreme longing for a
+        reunification of the Korean peninsula. It is a true goal that all of the
+        people and government want to work towards in my experience there, but
+        of course they want it under the terms of a North Korean culture and
+        philosophy, rather than a southern one.
+      </p>
+      <p class="indent">
+        Next we headed west to the
+        <a href="https://en.wikipedia.org/wiki/Victorious_War_Museum"
+          >Fatherland Liberation War Victory Museum</a
+        >, which is a history museum dedicated to the Korean War. The outside
+        square is adorned with statues of animated North Korean soldiers in
+        battle and some structures covering a few American tanks, a helicopter,
+        and a plane, which were recovered or shot down during the war. The
+        museum sits against the Potong river in the capital and docked against
+        the museum is the captured USS Pueblo on display.
+      </p>
+      <img class="big-img" src="/assets/north-korea/museum_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/museum_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/museum_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/museum_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/museum_5.jpg" />
+      <p class="indent">
+        We visited the inside of the museum, but very unfortunately pictures
+        were not allowed to be taken. This is probably one of the most
+        fascinating parts of the trip to me. It sounds insane and an oxymoron to
+        say this, but it is definitely one of the most well curated and put
+        together museums I have ever seen, akin to a Smithsonian, but just about
+        everything inside was just clearly dramatized fake history. It is so
+        intriguing seeing our museum tour guide show us extremely detailed wax
+        dioramas of a “common” Korean war scene of American soldiers eating
+        North Korean babies, while speaking to a group with a couple Americans.
+        It was so odd seeing her talk in deep hatred about these supposed
+        atrocities we committed to the level of devouring infants, but between
+        walking between halls and talking to her, there was no association in
+        her mind to me being an American attached to these supposed atrocities.
+      </p>
+      <p class="indent">
+        One piece of “history” on display there was memorabilia and claims of a
+        sinking of our USS Baltimore, being torpedoed by their Navy, but our USS
+        Baltimore was nowhere near the Korean War. The actual boat involved in
+        the battle they describe was the USS Juneau, but it actually destroyed
+        three of their torpedo boats without suffering any damage itself. It's
+        quite hilarious to see such a lopsided portrayal of history. Skimming
+        through books I find through the country, and the one I purchased, these
+        false accounts are very common.
+      </p>
+      <p class="indent">
+        The most impressive feature of the whole museum was a rotating room with
+        a 360 panoramic cyclorama of the
+        <a href="https://en.wikipedia.org/wiki/Battle_of_Taejon"
+          >Battle of Taejon</a
+        >. There are very few pictures from the interior of the museum in
+        general, but I did find that someone was allowed to video a guide
+        talking showing and talking about this cyclorama
+        <a href="https://www.youtube.com/watch?v=JGgbY8QGCQ4">here</a>. It is
+        actually more impressive than the video because here you just have the
+        museum guide talking about the battle and cyclorama, but in our case, we
+        sat on the bench as the lights dimmed, spinning us around the room for
+        about five to ten minutes narrating the battle, shooting light and smoke
+        around the panorama, while providing war sound ambiance. Credit where
+        credit is due, North Korea can make a killer museum.
+      </p>
+      <p class="indent">
+        After leaving the museum, we headed to the Juche tower, across the
+        river. It is a large Washington Monument-esque tower with a large, red,
+        permanently-illuminated red flame at the top. It is easily visible all
+        around town to remind everyone, as if they needed it, to live a life
+        consumed by the
+        <a href="https://en.wikipedia.org/wiki/Juche">Juche philosophy</a>. As I
+        noted previously the Juche philosophy is permanently and pervasively in
+        the minds of every single North Korean. It is a unique variant of
+        Marxism conceptualized by Kim Il Sung where the main ideas actually
+        focus on self-reliance and independence. While Marxism famously endorses
+        the working class owning the means of production and relying on fair
+        distribution of its output, Juche truly encourages the individual and
+        nation state to work towards independence and sovereignty. It is a much
+        more nationalistic ideology than Marxism. Although they still struggle
+        in achieving these goals and largely rely on trade with China, Russia,
+        and African republics, you can see how having such a pervasive
+        encouragement of working toward independence and heavy nationalism in
+        its citizens has had some benefit to their success in keeping the regime
+        alive to this day compared to formerly Marxist nations.
+      </p>
+      <p class="indent">
+        Usually, tour groups get a chance to ride the elevator to the top of the
+        tower, but it was out of service for our visit. Just inside at the base
+        of the tower are 82 plaques of famous foreign dignitaries and proponents
+        of the Juche philosophy. Also near the base of the tower is a statue of
+        three figures each holding a sickle, hammer, and writing brush. Directly
+        across the river from the tower we see the library, residential
+        buildings, and the pyramid hotel. We were also surprised with a passing
+        by school band.
+      </p>
+      <img class="big-img" src="/assets/north-korea/juche_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/juche_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/juche_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/juche_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/juche_5.jpg" />
+      <img class="big-img" src="/assets/north-korea/juche_6.jpg" />
+      <p class="indent">
+        We then headed just north to the
+        <a href="https://en.wikipedia.org/wiki/Monument_to_Party_Founding"
+          >Worker's Party Foundation Monument</a
+        >. It is a large stone monument consisting of a hammer, sickle, and
+        writing brush held high in the sky, each representing the worker,
+        farmer, and intellectual, respectively. It is lined on the inside with
+        an inscribed mural of North Korean people standing up to the Japanese
+        during the revolution. It is dedicated to the founding of the
+        <a href="https://en.wikipedia.org/wiki/Workers%27_Party_of_Korea"
+          >Workers' Party</a
+        >, which is the one political party of the country. Members of the party
+        wear a red flag pin on the left side of their chest over their heart,
+        which most of the population participates in. Directly across the river
+        is the Mansu Hill Grand Monument which was our first stop of the morning
+        and an ominous high-rising Ryugyong hotel in the background as dusk
+        fell.
+      </p>
+      <img class="big-img" src="/assets/north-korea/workers_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/workers_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/workers_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/workers_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/workers_5.jpg" />
+      <img class="big-img" src="/assets/north-korea/workers_6.jpg" />
+      <p class="indent">
+        We finish the evening with a trip to a local cinema to watch a locally
+        made film. Kim Jong Il was famously an avid film fan, starring and
+        directing in many films himself. I don't believe this one we saw, which
+        I believe is the title screen below if I remember, was related to any of
+        his work. If I remember it was a martial arts-esque action movie. If
+        anyone knows what movie this is, I would absolutely love to know.
+      </p>
+      <img class="big-img" src="/assets/north-korea/movie_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/movie_2.jpg" />
+      <hr />
+      <h2>Day 4: September 11, 2016</h2>
+      <p class="indent">
+        Today was the day we got to escape the capital, and travel south to the
+        <a href="https://en.wikipedia.org/wiki/Korean_Demilitarized_Zone">DMZ</a
+        >. We got an early start and on our way out of town we stopped by the
+        <a href="https://en.wikipedia.org/wiki/Arch_of_Reunification"
+          >Arch of Reunification</a
+        >. It towers above the Reunification Highway on the way from Pyongyang
+        to the DMZ picturing two women holding a picture of the Korean
+        peninsula, meant to commemorate a reunified Korea. As I mentioned
+        before, the North Korean people actively want and long for a
+        reunification of the peninsula, just with the demand that it be a
+        culture and governed in the style of the North. As you can see, even the
+        highways are barren and we could easily walk out and take a picture.
+      </p>
+      <img class="big-img" src="/assets/north-korea/reunification_1.jpeg" />
+      <p class="indent">
+        The drive to the DMZ was our best chance to observe life in the
+        countryside. Although they seemingly strategically pushed the towns away
+        far from the highway from tourists' eyes, you could see from the
+        distance it was clearly decrepit. It was approximately an hour and a
+        half drive, but cars are such a rare sight, I could probably count
+        passing by less than ten the entirety of this trip on a multilane
+        highway. Nobody in the countryside would ever be able to afford a car.
+        Having a bike would be quite well off. It is for this reason in my first
+        person experience there that I find it very odd that a common excuse for
+        not liberating these people is that it would cause a mass migration of
+        their population into China or the south. A vast majority of these
+        people can not travel, unless by foot, and no, they do not have
+        livestock like horses or mules to travel either. Interestingly, cannabis
+        grows like weeds along the roadside.
+      </p>
+      <img class="big-img" src="/assets/north-korea/countryside_7.jpg" />
+      <img class="big-img" src="/assets/north-korea/countryside_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/countryside_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/countryside_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/countryside_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/countryside_5.jpg" />
+      <img class="big-img" src="/assets/north-korea/countryside_6.jpg" />
+      <p class="indent">
+        Halfway to the destination, we stopped for ten minutes at a rest stop,
+        arching above the highway. Below are two pictures looking in both
+        directions down the highway. Remember when we got in an accident
+        earlier???
+      </p>
+      <img class="big-img" src="/assets/north-korea/reststop_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/reststop_2.jpg" />
+      <p class="indent">
+        Staying on the transportation topic, throughout our trips across the
+        capital and countryside it was common to see monuments displaying the
+        political propaganda and although we actually never stopped to see any,
+        I tried to quickly snap a few pictures during my time there when we
+        drove by any. Also a common site traveling around the bigger cities are
+        people playing volleyball or basketball.
+      </p>
+      <img class="big-img" src="/assets/north-korea/sights_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/sights_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/sights_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/sights_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/sights_5.jpg" />
+      <img class="big-img" src="/assets/north-korea/sights_6.jpg" />
+      <p class="indent">
+        Also, adorning the highway, particularly as we got closer to the DMZ
+        were very large concrete towers with a cut out wedge near the base. This
+        is to quickly lay explosives and block the highway from tanks and other
+        vehicles during an oncoming invasion.
+      </p>
+      <p class="indent">
+        Finally, a mile from the border, we stopped at a small building, which
+        we learned was the
+        <a href="https://en.wikipedia.org/wiki/North_Korea_Peace_Museum"
+          >North Korea Peace Museum</a
+        >. It is the building where the
+        <a href="https://en.wikipedia.org/wiki/Korean_Armistice_Agreement"
+          >Korean War Armistice Agreement</a
+        >
+        was signed. The building was quite bare, containing three tables in the
+        center with a copy of the agreement in a glass case. Along the walls
+        hung various portraits and pictures of the Dear Leaders. Also, it housed
+        the axe used by the Americans to cut down a large tree in the Joint
+        Security Area (JSA), which resulted in a skirmish that killed US Army
+        soldiers in the
+        <a href="https://en.wikipedia.org/wiki/Korean_axe_murder_incident"
+          >Korean axe murder incident</a
+        >
+        of 1976.
+      </p>
+      <img class="big-img" src="/assets/north-korea/peace_1.jpg" />
+      <div class="half">
+        <img class="half-img" src="/assets/north-korea/peace_2.jpg" />
+        <img class="half-img" src="/assets/north-korea/peace_3.jpg" />
+      </div>
+      <img class="big-img" src="/assets/north-korea/peace_4.jpg" />
+      <img class="big-img" src="/assets/north-korea/peace_5.jpg" />
+      <p class="indent">
+        After this quick stop, we headed the mile up the road to the JSA. We
+        crossed the Bridge of 72 Hours parked right next to the Kim Il Sung Last
+        Letter Monument below, which is the same spot that the North Korean
+        defector,
+        <a href="https://en.wikipedia.org/wiki/Oh_Chong-song">Oh Chong-song</a>,
+        departed his vehicle in the
+        <a href="https://www.youtube.com/watch?v=u4hgyGkIw9s"
+          >infamous escape video</a
+        >
+        over a year later. Here, we visited the
+        <a href="https://en.wikipedia.org/wiki/Phanmun_Pavilion"
+          >Phanmun Pavilion</a
+        >, behind the famous blue buildings on the border. Unfortunately, we
+        were not able to visit the blue conference rooms, which is occasionally
+        allowed. However, I did make a trip to the DMZ from the south in the
+        summer of 2018 and visited the inside of the conference rooms, which is
+        a trip report for a later date. We were allowed up to the balcony of the
+        pavilion, which overlooked the border and took a picture with one of the
+        guards there.
+      </p>
+      <img class="big-img" src="/assets/north-korea/dmz_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/dmz_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/dmz_3.jpg" />
+      <p class="indent">
+        After an exciting visit to the DMZ, we made our way to the large town
+        ten minutes west called
+        <a href="https://en.wikipedia.org/wiki/Kaesong">Kaesong</a> for lunch.
+        Before lunch though, we went to the northern outskirts and stopped at a
+        preserved 17th-century Confucian academy which housed traditional
+        buildings, which held various pottery and relics of the time, which was
+        quite peaceful.
+      </p>
+      <img class="big-img" src="/assets/north-korea/goryeo_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/goryeo_2.jpg" />
+      <p class="indent">
+        All that I remember from lunch was that it was a fancier place, with a
+        beautiful mural. I do remember that the meal had an optional upcharge
+        for dog-meat, non-domesticated dog, which is a delicacy they refer to
+        locally as “sweet meat”. Being an avid dog person, although it was not
+        domesticated, I could not stomach or justify ordering such a meal. I'm
+        sure I just ordered another dish of cold noodles.
+      </p>
+      <img class="big-img" src="/assets/north-korea/kaesong_lunch_1.jpg" />
+      <p class="indent">
+        The exterior of the restaurant sat against the main road of the city,
+        and we could see much foot traffic.
+      </p>
+      <img class="big-img" src="/assets/north-korea/kaesong_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/kaesong_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/kaesong_3.jpg" />
+      <p class="indent">
+        As we left Kaesong to the northwest was the
+        <a href="https://en.wikipedia.org/wiki/Mausoleum_of_King_Wang_Kon"
+          >Mausoleum of King Wang Kon</a
+        >, a tomb belonging to the founder of the Goryeo Dynasty in the mid
+        10th-century. The tomb was largely destroyed during the Japanese
+        occupation, but has since been restored. This was actually one of the
+        most beautiful parts of my trip here in North Korea and I think of it
+        fondly. It was mesmerizing looking at the rolling hills through the
+        statues lining the steps to the tomb.
+      </p>
+      <img class="big-img" src="/assets/north-korea/tomb_1.jpg" />
+      <img class="big-img" src="/assets/north-korea/tomb_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/tomb_3.jpg" />
+      <p class="indent">
+        Our last stop on the way back to Pyongyang was a park in
+        <a href="https://en.wikipedia.org/wiki/Sariwon">Sariwon</a>. We walked
+        around for about half an hour, to take pictures and see a nice view of
+        the town from a pavilion, then made our way onward.
+      </p>
+      <video
+        src="/assets/north-korea/sariwon_1.mp4"
+        controls
+        type="video/mp4"
+      ></video>
+      <img class="big-img" src="/assets/north-korea/sariwon_2.jpg" />
+      <img class="big-img" src="/assets/north-korea/sariwon_3.jpg" />
+      <img class="big-img" src="/assets/north-korea/sariwon_4.jpg" />
+      <p class="indent">We finished our day back at the hotel.</p>
+      <hr />
+      <h2>Day 5: September 12, 2016</h2>
+      <p class="indent">
+        We woke up early the next morning to head to the airport, taking a
+        flight back to Beijing. Amusingly, I have pictures and remember seeing
+        the two movies below for sale at a gift shop in the airport. They must
+        be a hit in North Korea if there's a sequel.
+      </p>
+      <div class="half">
+        <img class="half-img" src="/assets/north-korea/pig_1.jpg" />
+        <img class="half-img" src="/assets/north-korea/pig_2.jpg" />
+      </div>
+      <p class="indent">
+        Boarding the flight I took the newspaper and was shocked by what was
+        inside. Being in North Korea, you hear nothing of what goes on inside
+        the country, unless you know Korean and watched the news or read the
+        local paper. This also meant that I had no idea what went on in the rest
+        of the world. I read in this english newspaper of the Pyongyang Times
+        that on September 9, my first full day in the country and the Grand
+        National Day, that North Korea had tested an underground nuclear bomb.
+        This was the fifth time they have done so,
+        <a
+          href="https://en.wikipedia.org/wiki/List_of_nuclear_weapons_tests_of_North_Korea"
+          >out of the six times in history</a
+        >. It was obviously big news around the world and likely in the country,
+        but I had no awareness of it for many days. When I look at the time that
+        nuclear bomb went off and crossreference it with the timestamps of my
+        photos that day, it went off during the time I was in the Kumsusan
+        Palace of the Sun, which was the mausoleum displaying the bodies of the
+        past Dear Leaders. It is surreal and frightening to think that I could
+        have been bowing before these dictators at the exact same time that the
+        nation was exploding their fifth ever nuclear bomb.
+      </p>
+      <img class="big-img" src="/assets/north-korea/newspaper_2.jpg" />
+      <hr />
+      <h2>Day +1: September 13, 2016</h2>
+      <p class="indent">
+        Although my trip had concluded by this day, I want to finish the trip
+        report similarly to how it started, with another fiasco related to my
+        North Korea travels involving China. In the evening of this day, I was
+        sitting in my hostel in Beijing having a cheeseburger in the hostel
+        owned restaurant/bar on the ground floor, in eye sight of reception.
+        During my meal, in walked a group of four Chinese policemen who started
+        to converse with the receptionist. The receptionist looked in my
+        direction, left the desk, and approached me. Apparently these officers
+        wanted to see my passport. My heart immediately started racing. In my
+        research on the safety of traveling to North Korea, I never read of any
+        issues related to China's perception of travel there. My heart started
+        beating fast. Thoughts started racing through my mind of if I'd have to
+        end up calling the US embassy from a Chinese prison that night. I didn't
+        even know the number to do so if I needed to.
+      </p>
+      <p class="indent">
+        I nervously left my meal on the table, shuffled up the stairs past the
+        officers up to my room. I grabbed my passport out of my bag and headed
+        back downstairs to them. I was shaking while handing my passport to the
+        one seemingly in charge. He spent about two minutes, but what felt like
+        a century flipping through my pages and taking notes in his little
+        notebook. He didn't talk to me, just diligently took notes. Finally, he
+        handed my passport back, and they turned around and left, without saying
+        a word. I was quite on edge for a while after that and stayed at the bar
+        for a little while afterward to order more drinks, understandably.
+      </p>
+      <p class="indent"></p>
+      <p class="indent"></p>
+      <p class="indent"></p>
+    </article>
+  </body>
+  <hr />
+  <footer>
+    <a href="/" style="margin-right: 30px; font-variant: small-caps">Home</a>
+    <a href="/blog/" style="margin-left: 0 30px; font-variant: small-caps"
+      >Blog</a
+    >
+    <a href="/about/" style="margin-left: 30px; font-variant: small-caps"
+      >About</a
+    >
+  </footer>
+</html>
