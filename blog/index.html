@@ -1,129 +1,162 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<meta name="author" content="Trey Manuszak">
-	<meta name="description" content="A blog written by Trey Manuszak
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Trey Manuszak" />
+    <meta
+      name="description"
+      content="A blog written by Trey Manuszak
 							containing his ramblings about many topics incuding, but not limited to: 
-							cryptography, math, cryptocurrency, security, and travel.">
-	<meta name="keywords" content="blog, cryptography, math, cryptocurrency,
-							security, travel.">
-	<link rel="icon" href="/assets/favicon/reutersvards-triangle-32px.png" type="image/png">
-	<title>BLOG || Trey Manuszak</title>
-	<style>
-		@font-face {
-			font-family: 'Source Serif Pro';
-			src: url('/assets/fonts/SourceSerifPro-Regular.ttf') format('truetype');
-		}
-		@font-face {
-			font-family: 'Source Serif Pro SemiBold';
-			src: url('/assets/fonts/SourceSerifPro-SemiBold.ttf') format('truetype'); 
-		}
+							cryptography, math, cryptocurrency, security, and travel."
+    />
+    <meta
+      name="keywords"
+      content="blog, cryptography, math, cryptocurrency,
+							security, travel."
+    />
+    <link
+      rel="icon"
+      href="/assets/favicon/reutersvards-triangle-32px.png"
+      type="image/png"
+    />
+    <title>BLOG || Trey Manuszak</title>
+    <style>
+      @font-face {
+        font-family: "Source Serif Pro";
+        src: url("/assets/fonts/SourceSerifPro-Regular.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "Source Serif Pro SemiBold";
+        src: url("/assets/fonts/SourceSerifPro-SemiBold.ttf") format("truetype");
+      }
 
-		body {
-			font-family: 'Source Serif Pro', serif;
-			background-color: black;
-			color: white;
-			font-size: 1.2em;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 30px;
-			margin-bottom: 0px;
-			padding: 0 50px;
-			max-width: 1120px;
-		}
-		header {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			text-align: center;
-		}
-		h1 {
-			font-family: 'Source Serif Pro SemiBold', serif;
-			display: inline-block;
-			font-variant: small-caps;
-			font-size: 3.5em;
-			margin: auto;
-		}
-		hr {
-			border: 0;
-			height: 4px;
-			margin-top: 10px;
-			background-image: linear-gradient(to right, transparent, #FF8360, #E8E288, #7DCE82, transparent);
-		}	
-		b {
-			font-family: 'Source Serif Pro SemiBold', serif;
-		}
-		a {
-			color: white;
-		}
-		ul {
-			list-style: none;
-			margin: 5%;
-			font-size: 1.5em;
-			padding: 0px;
-		} 
-		ul li:before {
-			content: ' ';
-			margin: 0 1em;
-		}
-		li {
-			display: flex;
-			margin: 30px 0;
-			align-items: flex-start;
-		}
-		.date {
-			display: inline-block;
-			padding-right: 8px;
-			min-width: 135px;
-			text-align: right;
-		}
-		.title {
-			margin-left: 30px;
-			display: inline;
-			word-wrap: break-word;
-		}
-		.color-border {
-			border-bottom: 3px solid;
-			border-right: 3px solid;
-			border-image: linear-gradient(to top right, transparent, #FF8360, #E8E288, #7DCE82, transparent);
-			border-image-slice: 1;
-		}
-		#returnhome {
-			display: inline-block;
-			text-decoration: none;
-		}
-		#returnimg {
-			height: 100px;
-			width: 100px;
-		}
-	</style>
-</head>
+      body {
+        font-family: "Source Serif Pro", serif;
+        background-color: black;
+        color: white;
+        font-size: 1.2em;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        margin-bottom: 0px;
+        padding: 0 50px;
+        max-width: 1120px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+      }
+      h1 {
+        font-family: "Source Serif Pro SemiBold", serif;
+        display: inline-block;
+        font-variant: small-caps;
+        font-size: 3.5em;
+        margin: auto;
+      }
+      hr {
+        border: 0;
+        height: 4px;
+        margin-top: 10px;
+        background-image: linear-gradient(
+          to right,
+          transparent,
+          #ff8360,
+          #e8e288,
+          #7dce82,
+          transparent
+        );
+      }
+      b {
+        font-family: "Source Serif Pro SemiBold", serif;
+      }
+      a {
+        color: white;
+      }
+      ul {
+        list-style: none;
+        margin: 5%;
+        font-size: 1.5em;
+        padding: 0px;
+      }
+      ul li:before {
+        content: " ";
+        margin: 0 1em;
+      }
+      li {
+        display: flex;
+        margin: 30px 0;
+        align-items: flex-start;
+      }
+      .date {
+        display: inline-block;
+        padding-right: 8px;
+        min-width: 135px;
+        text-align: right;
+      }
+      .title {
+        margin-left: 30px;
+        display: inline;
+        word-wrap: break-word;
+      }
+      .color-border {
+        border-bottom: 3px solid;
+        border-right: 3px solid;
+        border-image: linear-gradient(
+          to top right,
+          transparent,
+          #ff8360,
+          #e8e288,
+          #7dce82,
+          transparent
+        );
+        border-image-slice: 1;
+      }
+      #returnhome {
+        display: inline-block;
+        text-decoration: none;
+      }
+      #returnimg {
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
 
-<body>
-	<header>
-		<a id="returnhome" href="/index.html">
-			<img id="returnimg" src="/assets/reutersvards-triangle-100px.png"/>
-			<h4 style="font-variant: small-caps; margin: 0;">Home</h4>
-		</a>
-		<h1>Blog</h1>
-	</header>
-	<hr>
-	<section>
-		<ul>
-			<li>
-				<span class="date color-border">12-21-2022</span>
-				<a class="title" href="/blog/north-korea-trip-report">North Korea Trip Report 2016</a>
-			</li>
-			<li>
-				<span class="date color-border">12-14-2022</span>
-				<a class="title" href="/blog/yao-minimax">Game Theory and its Influence on Randomized Algorithms</a>
-			</li>
-			<li>
-				<span class="date color-border">12-12-2022</span>
-				<a class="title" href="/blog/decentralized-blog">How Decentralized is this Blog?</a>
-			</li>
-		</ul>	
-	</section>
-</body>
+  <body>
+    <header>
+      <a id="returnhome" href="/index.html">
+        <img
+          id="returnimg"
+          src="https://imagedelivery.net/kpjDIZy0BT0VX-Cr6PcgqA/d0efe9f5-4576-46b4-e782-f288ce4e5d00/public"
+        />
+        <h4 style="font-variant: small-caps; margin: 0">Home</h4>
+      </a>
+      <h1>Blog</h1>
+    </header>
+    <hr />
+    <section>
+      <ul>
+        <li>
+          <span class="date color-border">12-21-2022</span>
+          <a class="title" href="/blog/north-korea-trip-report"
+            >North Korea Trip Report 2016</a
+          >
+        </li>
+        <li>
+          <span class="date color-border">12-14-2022</span>
+          <a class="title" href="/blog/yao-minimax"
+            >Game Theory and its Influence on Randomized Algorithms</a
+          >
+        </li>
+        <li>
+          <span class="date color-border">12-12-2022</span>
+          <a class="title" href="/blog/decentralized-blog"
+            >How Decentralized is this Blog?</a
+          >
+        </li>
+      </ul>
+    </section>
+  </body>
 </html>
