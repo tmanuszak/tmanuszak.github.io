@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Trey Manuszak">
+	<meta name="description" content="A blog written by Trey Manuszak
+							containing his ramblings about many topics incuding, but not limited to: 
+							cryptography, math, cryptocurrency, security, and travel.">
+	<meta name="keywords" content="blog, cryptography, math, cryptocurrency,
+							security, travel.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/assets/favicon/reutersvards-triangle-32px.png" type="image/png">
+	<title>BLOG || Trey Manuszak</title>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" async
+  	src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	</script>
+	<style>
+		@font-face {
+			font-family: 'Source Serif Pro';
+			src: url('/assets/fonts/SourceSerifPro-Regular.ttf') format('truetype');
+		}
+		@font-face {
+			font-family: 'Source Serif Pro SemiBold';
+			src: url('/assets/fonts/SourceSerifPro-SemiBold.ttf') format('truetype'); 
+		}
+		body {
+			font-family: 'Source Serif Pro', serif;
+			background-color: black;
+			color: white;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 30px;
+			margin-bottom: 50px;
+			padding: 0 30px;
+			max-width: 1120px;
+		}
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-align: center;
+		}
+		footer {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 1.5em;
+			font-size: 1.5em;
+		}
+		h1 {
+			font-family: 'Source Serif Pro SemiBold', serif;
+			display: inline-block;
+			font-variant: small-caps;
+			margin: auto;
+		}
+		h2 {
+			font-family: 'Source Serif Pro SemiBold', serif;
+			display: inline-block;
+			font-variant: small-caps;
+		}	
+		hr {
+			border: 0;
+			height: 4px;
+			margin-top: 10px;
+			background-image: linear-gradient(to right, transparent, #FF8360, #E8E288, #7DCE82, transparent);
+		}	
+		b {
+			font-family: 'Source Serif Pro SemiBold', serif;
+			color: #7DCE82;
+		}
+		a {
+			color: white;
+		}
+		b > a {
+			font-family: 'Source Serif Pro SemiBold', serif;
+			color: #7DCE82;
+		}
+		p {
+			font-size: 1.2em;
+		}	
+		p.indent {
+			text-indent: 30px;
+		}
+		.qed-cube {
+			width: 10px;
+			height: 10px;
+			transform-style: preserve-3d;
+			animation: turn 5s linear infinite;
+			margin: 0 30px 0 auto;
+		}
+		.qed-face {
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			transform: translateZ(10px);
+		}
+    .qed-front {
+			background: #FF8360;
+			transform: translateZ(10px);
+		}
+		.qed-back {
+			background: #FF8360;
+			transform: translateZ(-10px) rotateY(180deg);
+		}
+		.qed-left {
+			background: #E8E288;
+			transform: translateX(-10px) rotateY(-90deg);
+		}
+		.qed-right {
+			background: #E8E288;
+			transform: translateX(10px) rotateY(90deg);
+		}
+		.qed-top {
+			background: #7DCE82;
+			transform: translateY(-10px) rotateX(90deg);
+		}
+		.qed-bottom {
+			background: #7DCE82;
+			transform: translateY(10px) rotateX(-90deg);
+		}
+		@keyframes turn {
+			from {
+				transform: rotate3d(0, 0, 0, 0);
+			}
+			to {
+				transform: rotate3d(1, .75, .25, 360deg);
+			}
+		}
+		.date {
+			display: inline-block;
+			text-align: right;
+			padding-right: 8px;
+			border-bottom: 3px solid;
+			border-right: 3px solid;
+			border-image: linear-gradient(to top right, transparent, #FF8360, #E8E288, #7DCE82, transparent);
+			border-image-slice: 1;
+		}				
+		.theorem-container {
+			display: flex;
+			justify-content: center;
+		}
+		.theorem {
+			padding: 20px 15px;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			flex-direction: column;
+			border: 3px solid;
+			border-image: linear-gradient(to bottom right, #FF8360, #E8E288, #7DCE82);
+			border-image-slice: 1;
+		}
+		.theorem > p {
+			margin: 0;
+		}
+		.protocol-header {
+			text-align: center;
+		}
+		#returnhome {
+			display: inline-block;
+			text-decoration: none;
+		}
+		#returnimg {
+			height: 100px;
+			width: 100px;
+		}
+		@media screen and (max-width: 600px) {
+			h1 {
+				font-size: 1.5em;
+			}
+			.MathJax {
+				overflow-x: scroll;
+				overflow-y: hidden;
+			}
+		}
+		@media screen and (min-width: 601px) {
+			.theorem {
+				max-width: 70%;
+			}
+		}
+		.container-work {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.left-work {
+			font-size: 5em;
+			display: flex;
+			justify-content: right;
+			align-items: center;
+			width: 30%;
+			text-align: right;
+		}
+
+		.center-work {
+			font-size: 1.2em;
+			width: 40%;
+			text-align: center;
+		}
+
+		.right-work {
+			font-size: 5em;
+			display: flex;
+			justify-content: left;
+			align-items: center;
+			width: 30%;
+			text-align: left;
+		}
+		.big-img {
+			display: block;
+			max-width: 100%;
+			max-height: 400px;
+			padding: 25px 0;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<a id="returnhome" href="/blog/index.html">
+			<img id="returnimg" src="https://imagedelivery.net/kpjDIZy0BT0VX-Cr6PcgqA/d0efe9f5-4576-46b4-e782-f288ce4e5d00/public"/>
+			<h4 style="font-variant: small-caps; margin: 0;">Back</h4>
+		</a>
+		<h1>The Power of Randomness</h1>
+	</header>
+	<hr>
+	<span class="date">3-22-23</span>
+	<article>
+		<p class="indent">
+			<a href="https://www.jstor.org/stable/27857495">Randomness is a fleeting commodity</a> if you believe in the 
+			"<a href="https://en.wikipedia.org/wiki/Future_of_an_expanding_universe">Big Freeze</a>" 
+			theory of our universe's fate [3]. Should we survive as flesh or metal to explore the universe,
+			a lack of randomness could make our algorithms and programs inefficient (if \(P \neq BPP\)), 
+			or at least it would likely be 
+			<a href="https://people.cs.rutgers.edu/~allender/papers/adleman.time.space.randomness.pdf">more complicated to write</a> (if \(P = BPP\)) [1]. 
+			It is currently unknown which case we exist in, although most likely the former case,
+			but neither are ideal situations. Randomness is <a href="https://www.wisdom.weizmann.ac.il/~oded/COL/rnd.pdf">particularly vital</a> 
+			to a field I find great interest in, that is <a href="https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.pdf">probabilistic proof systems</a> 
+			[2] [5]. Although it may make winning the big lottery jackpot harder, we should be cherishing randomness while we have it, 
+			because <b>in this blog post I will show examples where access to randomness can give us improvements in communication cost,
+			running time, and space cost</b>.
+		</p>
+		<h2>Communication Complexity Improvements</h2>
+		<img class="big-img" src="https://imagedelivery.net/kpjDIZy0BT0VX-Cr6PcgqA/1c40e207-a115-44ff-8405-9fb9daa30f00/public">
+		<p class="indent">
+			Imagine the following scenario. Alice and Bob are on opposite ends of the earth. Bob wants to check if a document that Alice
+			has on her computer is the same as the one Bob has on his. How might Bob be convinced of this? Well, the first idea that 
+			probably comes to mind is for Alice to just send her file to Bob. If Alice is not using any 
+			<a href="https://en.wikipedia.org/wiki/Error_detection_and_correction">coding theory</a> techniques to detect if any errors
+			occur during the transmission, which would be unlikely in practice, Alice would have to send the entire file to Bob. This may 
+			be doable if our file is small, but what if the file was all of 
+			<a href="https://en.wikipedia.org/wiki/Wikipedia:Size_of_Wikipedia">Wikipedia</a>? Or what if it were the 
+			<a href="https://blockchair.com/ethereum/charts/blockchain-size">Ethereum blockchain</a>? That would start to become an issue.
+			Unfortunately if we had to be 100% confident that our files were the same, there is no shortcut. However, if we were willing to
+			have <em>some</em> probability of error, that is being convinced the files are the same when they are not or vice versa, then 
+			we can utilize randomness to help us with this task. I will walk through an example of a protocol for this, then describe the 
+			protocol in technical detail, then prove the correctness of the protocol.
+		</p>
+		<p class="indent">
+			First, let's assume that they already established that their file is the same size, because if not, they quickly know the contents aren't the same.
+			Suppose Alice has a file containing "hello", as does Bob. Supposing we know the file contains only 
+			<a href="https://www.asciitable.com/">ASCII characters</a>, then each character can be mapped to a number between 0 and 127, inclusive.
+			So, "hello" gets mapped to "104 101 108 108 111". We then interpret this encoded message as the polynomial
+			\[p_{Alice}(x) = 104 + 101x + 108x^2 + 108x^3 + 111x^4,\] over the field \(\mathbb{F}_{131}\). If you dont know what a field is, don't worry. I
+			won't go over it here, since there are many introductions to fields available online 
+			[<a href="https://web.northeastern.edu/dummit/docs/fieldthy_2_fields_and_field_extensions.pdf">5</a>] 
+			[<a href="https://en.wikipedia.org/wiki/Field_(mathematics)">6</a>]
+			[<a href="https://www.youtube.com/watch?v=bjp4nF8TW7s&ab_channel=Socratica">7</a>]. All you need to know for the purpose of this article,
+			for the fields we will be working with, \(\mathbb{F}_p\) is a number system that works exactly like clock arithmetic, but on a clock with
+			\(p\) hours. You can do all your familiar operations you know and love, just mod by \(p\) in the end. Division is a little trickier, since 
+			you'll have to use the 
+			<a href="https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Computing_multiplicative_inverses_in_modular_structures">Extended 
+			Euclidean Algorithm</a>, or you can trust my math here.
+		</p>
+		<p class="indent">
+			Now that Alice encoded her message as a polynomial, she will pick an element uniformly random from the field, notated 
+			\(r \xleftarrow{\$} \mathbb{F}_{131}\), and evaluate it on the polynomial. For this example, say \(r = 71\). So, Alice calculates
+			$$\begin{aligned} p_{Alice}(71) &= 104 + 101(71) + 108(71^2) + 108(71^3) + 111(71^4) \\ &= 2859902682 \\ &\equiv 24 \pmod{131}.\end{aligned}$$
+		</p>
+		<p class="indent">
+			Alice then sends Bob the message \((p_{Alice}(r), r) = (24, 71)\). Now, Bob encodes his file contents as the polynomial \(p_{Bob}\) in the same way
+			that Alice did hers, and he also evaluates his polynomial on \(r\). So, he checks \(p_{Bob}(71) \stackrel{?}{\equiv} 24 \pmod{131}\). If so, he
+			is convinced that with high probability (at least 96.9%) that they share the same file, otherwise he knows the file contents are different. 
+			We prove this property of the protocol shortly below. This confidence can also be made <em>arbitrarily</em> high!
+		</p>
+		<div class="theorem-container">
+			<div class="theorem">
+				<p>
+					<b>Pause and Reflect</b>: Let's take a second to really appreciate the power of what we just did. Instead of Alice sending the 
+					<em>entire</em> file contents, which happen to be five elements from the field in this example, she instead only sent <em>two</em> 
+					field elements to Bob, 24 and 71. You might be thinking, we saved our communication by halfish, but we did FAR better than that! 
+					If you look closely, it doesn't matter how big the file is. We always only need to send <em>two</em> field elements to 
+					Bob to convince him of his question!
+				</p>
+			</div>
+		</div>
+		<div class="theorem-container" style="margin-top: 2em;">
+			<div class="theorem">
+				<h3 class="protocol-header">File Equality Check Protocol</h3>
+				<ul>
+					<li>
+						INPUT: Alice has file contents \(m_{A} = (m_{A,1}, m_{A,2}, \dots, m_{A,n})\) and Bob has file contents
+						\(m_B = (m_{B,1}, m_{B,2}, \dots, m_{B,n})\), whose characters come from an alphabet of size \(m\). 
+						Let \(p \geq \{m, n^2\}\) be prime.
+					</li>
+					<li>
+						GOAL: Bob wants to determine if \(m_A \stackrel{?}{=} m_B\). If so, he outputs \(\texttt{EQUAL}\), otherwise
+						he outputs \(\texttt{NOT-EQUAL}\).
+					</li>
+				</ul>
+				<ol>
+					<li>
+						Alice selects \(r \xleftarrow{$} \mathbb{F}_p\).
+					</li>
+					<li>
+						Alice sends the message \((p_A(r), r)\) to Bob, where \(p_A(x) = \sum_{i = 1}^{n} m_{A,i} \cdot x^{i - 1} \pmod{p}\). 
+					</li>
+					<li>
+						Bob checks \(p_A(r) \stackrel{?}{=} p_B(r)\), where \(p_B(x) = \sum_{i = 1}^n m_{B,i} \cdot x^{i - 1} \pmod{p}\). If true, output 
+						\(\texttt{EQUAL}\), otherwise output \(\texttt{NOT-EQUAL}\).
+					</li>
+				</ol>
+			</div>
+		</div>
+		<p class="indent">
+			Now, below, I will prove that if the contents of the file are always true and the prover is honest, meaning the prover may not deviate 
+			from the protocol to convince Bob otherwise, then Bob is convinced that the 
+			files are the same with probability 1. I will also prove that if the file contents are not the same and the prover is honest, 
+			then Bob will be convinced of the files actually being the same with probability \(\leq 1/n\). In otherwords, the probability that Bob is
+			is convinced of the contrary decreases linearly with the size of the file contents. Both properties have a technical term in the 
+			world of probabilitic checkable proofs where the first property is called <b>completeness</b> and the second being <b>soundness</b>. Completeness
+			is usually trivial, while soundness is not.
+		</p>
+		<p class="indent">
+			<b><em>Proof</em></b>.
+		</p>
+		<p class="indent">
+			Completeness: Suppose that \(m_A = m_B\) and the prover is honest. Since \(m_{A,i} = m_{B,i}\)
+			for all \(i\), then Bob outputs \(\texttt{EQUAL}\) for all choices of \(r\). 
+		</p>
+		<p class="indent">
+			Soundness: Suppose \(m_A \neq m_B\). Then the polynomials \(p_A(x)\) and \(p_B(x)\) are distinct, since \(m_{A,i} \neq m_{B,i}\)
+			for at least some \(i\). Since the degree of both polynomials is \(n - 1\) and they are distinct, then \(p_A(x) = p_B(x)\) for
+			at most \(n - 1\) values of \(x \in \mathbb{F}_p\). Now, since \(p \geq \{m, n^2\}\), then the probability that Bob outputs
+			\(\texttt{EQUAL}\) is \(\leq \frac{n-1}{p} = \frac{n-1}{n^2}\).
+		</p>
+		<div class="qed-cube">
+			<div class="qed-face qed-front"></div>
+			<div class="qed-face qed-right"></div>
+			<div class="qed-face qed-back"></div>
+			<div class="qed-face qed-left"></div>
+			<div class="qed-face qed-bottom"></div>
+			<div class="qed-face qed-top"></div>
+		</div>
+
+		<h2>Running Time Complexity Improvements</h2>
+
+		<img class="big-img" src="https://imagedelivery.net/kpjDIZy0BT0VX-Cr6PcgqA/2d117b0d-7066-4bfc-c455-d4308fde2500/public">
+		<p class="indent">
+			Now, I'll describe how randomness can improve the running time performance of algorithms.
+			Imagine this new scenario. Some salesman (with odd hands) comes to your door and is selling you a black box
+			which will spit out the result of two \(n \times n\) matrices multiplied together in \(O(1)\) time! 
+			Now, the naive time complexity of multiplying two 
+			\(n \times n\) matrices is \(O(n^3)\) with your normal matrix multiplication you would learn in a linear algebra class. A 
+			popular improvement used today is called <a href="https://en.wikipedia.org/wiki/Strassen_algorithm">Strassen's algorithm</a>, 
+			which runs in \(O(n^{\log_27 + o(1)}) \approx O(n^{2.8074})\) time. The <a href="https://arxiv.org/abs/2210.10173">fastest known</a> 
+			algorithm for multiplying two \(n \times n\) matrices currently runs in time \(O(n^{2.37188})\), however it isn't very useful
+			unless the matrices are incredibly large. 
+		</p>
+		<p class="indent">
+			This would be an incredibly useful tool to have to quickly satisfy all your square matrix multiplication needs! But, you dont really 
+			trust what the salesman says (maybe because of the aforementioned hands) and what he claims the product to do. 
+			You also don't want to spend a lot of time checking if it did the 
+			calculation right, which would require running one of those algorithms above, and at that point there would be no point in buying the box.
+			However, luckily we can use randomness to be highly convinced of the correctness of the answer in \(O(n^2)\) time!
+		</p>
+		<p class="indent">
+			Now, from a bird's eye view, how does this algorithm work? Imagine you have two matrices \(A,B \in \mathbb{F}_p^{n \times n}\) and you throw
+			them into this machine, which returns the supposed result \(C \in \mathbb{F}_p^{n \times n}\). Now, we don't want to check if 
+			\(C \stackrel{?}{=} A \cdot B\) since, again, we would need to use one of the algorithms above, which is too slow. Instead, what if we choose 
+			\(r \xleftarrow{$} \mathbb{F}_p\) and multiply both sides of the equation by the column vector 
+			\(x = (1, r, r^2, \dots, r^{n-1})\) so that we now check 
+			if \(C \cdot x \stackrel{?}{=} (A \cdot B) \cdot x\)? Well, now we still have a matrix multiplication, which is slow, but we are definitely 
+			getting somewhere because matrix multiplication is associative! So, we can check if \(C \cdot x \stackrel{?}{=} A \cdot (B \cdot x)\) without 
+			the slow matrix multiplication.
+		</p>
+		<div class="theorem-container">
+			<div class="theorem">
+				<h3 class="protocol-header">Freivald's Algorithm (Variant)</h3>
+				<ul>
+					<li>
+						INPUT: \(A,B,C \in \mathbb{F}_p^{n \times n}\)
+					</li>
+					<li>
+						GOAL: Determine \(C \stackrel{?}{=} A \cdot B\). Output \(\texttt{EQUAL}\) if true, and output \(\texttt{NOT-EQUAL}\) otherwise.
+					</li>
+				</ul>
+				<ol>
+					<li>
+						Choose \(r \xleftarrow{$} \mathbb{F}_p\) and let \(x = (1, r, r^2, \dots, r^{n-1})\).
+					</li>
+					<li>
+						Check \(C \cdot x \stackrel{?}{=} A \cdot (B \cdot x)\). If true, output \(\texttt{EQUAL}\), otherwise output \(\texttt{NOT-EQUAL}\). 
+					</li>
+				</ol>
+			</div>
+		</div>
+		<p class="indent">
+			This algorithm is a variation of <a href="https://en.wikipedia.org/wiki/Freivalds%27_algorithm">Freivald's Algorithm</a>, runs in time
+			\(O(n^2)\), and can verify the matrix product with a probability of failure \(\leq (n-1)/p\). This is a variation to the original because
+			the original algorithm actually chooses \(x \xleftarrow{$} \mathbb{F}_p^n\), which still runs in time \(O(n^2)\), but has an error probability of 
+			\(\leq 1/2\). You can see that we get a tradeoff where if \(n/p \approx 1\), then we can sacrifice tapping into more randomness to get
+			a better confidence in our verification. I chose to show the variation of Freivald's algorithm because it's analysis is actually easier, 
+			especially given the proof we already established in the section above.
+		</p>
+		<p class="indent">
+			<b><em>Proof</em></b>.
+		</p>
+		<p class="indent">
+			Completeness: Suppose that \(C = A \cdot B\). Let \(D = A \cdot B\). Then \(C = D\) because \(C_{i,j} = D_{i,j}\) for all \(i,j \in [n]\). Thus, 
+			\(C \cdot x = D \cdot x\) for all \(x\). Thus, we output \(\texttt{EQUAL}\) with probability 1.
+		</p>
+		<p class="indent">
+			Soundness: Suppose \(C \neq A \cdot B\). Let \(D = A \cdot B\). Then \(C_{i,j} \neq D_{i,j}\) for some \(i,j \in [n]\). Without loss of generality,
+			suppose it is such that \(i = 1\). Then we are testing the equality of two distinct polynomials at a point \(r\). 
+			Namely, the polynomial on the LHS is \(p_C(r) = \sum_{j = 1}^n C_{1,j} \cdot r^{j-1} \pmod{p}\) and the RHS polynomial is 
+			\(p_D(r) = \sum_{j = 1}^n D_{1,j} \cdot r^{j - 1} \pmod{p}\). Since they are distinct, they agree on at most \(n - 1\) points. Therefore, 
+			we will output \(\texttt{EQUAL}\) with probability \(\leq (n-1)/p\).
+		</p>
+		<div class="qed-cube">
+			<div class="qed-face qed-front"></div>
+			<div class="qed-face qed-right"></div>
+			<div class="qed-face qed-back"></div>
+			<div class="qed-face qed-left"></div>
+			<div class="qed-face qed-bottom"></div>
+			<div class="qed-face qed-top"></div>
+		</div>
+
+		<h2>Space Complexity Improvements</h2>
+		
+		<img class="big-img" src="https://imagedelivery.net/kpjDIZy0BT0VX-Cr6PcgqA/75676293-41a7-4d24-5039-e353e6897e00/public">
+		<p class="indent">
+			Lastly, we are going to look at an example where access to randomness can save us space. The problem we are going to look at is called the
+			undirected \(s\)-\(t\) connenctivity (<a href="https://en.wikipedia.org/wiki/SL_(complexity)">USTCON</a>) problem. 
+			Given an undirected graph \(G\) and two vertices \(s\) and \(t\) in \(G\), we must decide
+			whether \(s\) and \(t\) are in the same component, that is that there is a path going from one to the other. This may seem like an esoteric
+			example, but there could be actually many real world examples where this is useful. We could imagine that Google Maps stores all of the roads
+			as a graph where the vertices are intersections and the roads going in and out of intersections are edges. So, we could see Google Maps
+			being able to answer the question "Can you get from intersection \(x\) from intersection \(y\)"? 
+		</p>
+		<p class="indent">
+			How might we solve this problem if we wanted to be 100% sure of its connectivity? Well, the easiest way might be to do a depth-first search
+			starting from \(s\). The space complexity of this solution is \(O(m)\) and the time complexity is \(O(n)\), where \(n\) and \(m\) 
+			is the number of vertices and edges in the graph, respectively,
+			since it has to keep track of where it has been and possibly traverse the whole graph. As
+			with our previous examples, if we use randomness and we allow ourselves a probability of outputting the incorrect solution, we can find 
+			improvements in space complexity. 
+		</p>
+		<p class="indent">
+			Now, what if we just walk around the graph randomly? This could greatly reduce our space because all we need to do is keep track of the current
+			vertex we are on, which only takes \(O(\log_2n)\) space with a numbering scheme of the vertices. But, we don't want to be walking forever because 
+			it may be the case that \(s\) and \(t\) are
+			<em>not</em> connected. So, how long might we want to be randomly walking for in order to be highly confident in ouputting 
+			\(\texttt{NOT-CONNECTED}\) if we have not seen \(t\)? Luckily for us the study of 
+			<a href="https://en.wikipedia.org/wiki/Markov_chain">Markov Chains</a> gives us some terminology and prior results to solve this question. 
+		<p class="indent">
+			The <b>hitting time</b> between vertices \(u\) and \(v\), denoted \(h_{uv}\), is the extpected number of steps in a random walk that starts at 
+			\(u\) and ends upon first reaching \(v\). The <b>commute time</b> between vertices \(u\) and \(v\), denoted \(C_{uv}\), is the expected number of 
+			steps in a random walk that starts at \(u\), reaches \(v\), and returns to \(u\). Clearly, \(h_{uv} < C_{uv}\). I will prove that if we walk for
+			\(2n^3\) steps and \(s\) and \(t\) are connected, we will output \(\texttt{CONNECTED}\) with probability \(\geq 1/2\). The following theorem is 
+			useful to us, but will not be proved, as it is out of the scope of the blog post. See Chapter 6 of the Motwani and Raghavan book for details [4].
+		</p>
+		<p class="indent">
+			<b>Corollary</b>: For a graph \(G = (V,E)\) and vertices \(u,v \in V\), \(C_{uv} = n^3\).
+		</p>
+		<p class="indent">
+			<b>Theorem</b>: For a graph \(G = (V,E)\) and vertices \(s,t \in V\), if we perform a random walk of length \(2n^3\) starting at \(s\) 
+			and output \(\texttt{CONNECTED}\) if we reach \(t\), then if \(s\) and \(t\) are connected, we will output \(\texttt{CONNECTED}\) with 
+			probability \(\geq 1/2\), and if they are not connected, we will output \(\texttt{NOT-CONNECTED}\) with probability 1.
+		</p>
+		<p class="indent">
+			<b><em>Proof</em></b>.
+		</p>
+		<p class="indent">
+			Let \(G = (V,E)\). If \(s,t \in V\) are not connected, then our random walk of length \(2n^3\) starting at \(s\) will never reach \(t\). Thus,
+			we output \(\texttt{NOT-CONNECTED}\) with probability 1. If \(s\) and \(t\) are connected and \(C_{st} < n^3\) and \(h_{st} < C_{st}\) 
+			for all graphs, then when we walk for \(2n^3\) steps, we will output \(\texttt{CONNECTED}\) with probability \(\geq 1/2\). 
+		</p>
+		<div class="qed-cube">
+			<div class="qed-face qed-front"></div>
+			<div class="qed-face qed-right"></div>
+			<div class="qed-face qed-back"></div>
+			<div class="qed-face qed-left"></div>
+			<div class="qed-face qed-bottom"></div>
+			<div class="qed-face qed-top"></div>
+		</div>
+		<p class="indent">
+			So, notice that we have given ourselves a trade-off. The original solution was able to output an always correct answer in time \(O(m) = O(n^2)\),
+			while the randomized walk algorithm runs in time \(O(n^3)\), with a probability of outputting a correct answer. However, as noted previously,
+			we do not need to store all previously visited vertices in the randomized algorithm, just the current vertex, which gives us a greatly improved
+			space complexity of \(O(\log_2n)\).
+		</p>
+
+		<hr>
+
+		<div class="container-work">
+			<div class="left-work">
+				<div style="color: #FF8360">!</div>	
+				<div style="color: #E8E288">!</div>	
+				<div style="color: #7DCE82; margin-right: 20px">!</div>	
+			</div>
+  		<div class="center-work">I am currently on a job hunt, so if you enjoy my work, consider visiting my 
+				<a href="/about/">About</a> page to learn more about me and reaching out to me on 
+				<a href="https://www.linkedin.com/in/tmanuszak/">LinkedIn</a>!</div>
+  		<div class="right-work">
+				<div style="color: #7DCE82; margin-left: 20px">!</div>	
+				<div style="color: #E8E288">!</div>	
+				<div style="color: #FF8360">!</div>		
+			</div>
+		</div>
+
+		<hr> 
+
+		<h2>References</h2>
+		<p>
+			[1] Adleman, L. (1979). Time, space and randomness. <em>MIT/LCS/TM-131</em>.
+		</p>
+		<p>
+			[2] Goldreich, O. (2011). Randomness and Computation. In: Goldreich, O. (eds) Studies in Complexity and Cryptography. 
+			Miscellanea on the Interplay between Randomness and Computation. Lecture Notes in Computer Science, vol 6650. Springer, Berlin, Heidelberg.
+		</p>
+		<p>
+			[3] Hayes, B. (2001). Computing Science: Randomness as a Resource. <em>American Scientist</em>, 89(4), 300-304.
+		</p>
+		<p>
+			[4] Motwani, R., & Raghavan, P. (1995). <em>Randomized Algorithms</em>. Cambridge, England: Cambridge University Press.
+		</p>
+		<p>
+			[5] Thaler, J. (2023). Proofs, Arguments, and Zero-Knowedge (Draft).
+		</p>
+	</article>
+</body>
+
+<hr>
+
+<footer>
+<a href="/" style="margin-right: 30px; font-variant: small-caps;">Home</a>
+<a href="/blog/" style="margin-left: 0 30px; font-variant: small-caps;">Blog</a>
+<a href="/about/" style="margin-left: 30px; font-variant: small-caps;">About</a>
+</footer>
+</html>
